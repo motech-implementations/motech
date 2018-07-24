@@ -62,7 +62,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldNotBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        //TODO HARITHA deprecated
+        //TODO UPGRADE deprecated - below line
         //exception.setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 2);
 
@@ -83,7 +83,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        //TODO HARITHA deprecated
+        //TODO UPGRADE deprecated- below line
         //exception.setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 3);
 
@@ -104,7 +104,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldRedirectUserWithExpiredPassword() throws ServletException, IOException {
         AuthenticationException exception = new CredentialsExpiredException("Credentials expired");
-        //TODO HARITHA deprecated
+        //TODO UPGRADE deprecated- below line
         //exception.setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.MUST_CHANGE_PASSWORD, 0);
 

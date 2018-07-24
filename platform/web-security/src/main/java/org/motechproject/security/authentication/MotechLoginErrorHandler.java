@@ -59,7 +59,7 @@ public class MotechLoginErrorHandler extends ExceptionMappingAuthenticationFailu
             throws IOException, ServletException {
         //Wrong password or username
         if (exception instanceof BadCredentialsException) {
-            //TODO HARITHA this has to be done
+            //TODO UPGRADE this has to be done
             MotechUser motechUser = null;// allMotechUsers.findByUserName(exception.getAuthentication().getName());
             int failureLoginLimit = settingService.getFailureLoginLimit();
             if (motechUser != null && failureLoginLimit > 0) {
