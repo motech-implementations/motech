@@ -17,8 +17,8 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.junit</groupId>
-            <artifactId>org.motechproject.org.junit</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.junit</artifactId>
             <!-- Override parent scope -->
             <scope>compile</scope>
         </dependency>
@@ -34,7 +34,7 @@
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>com.springsource.javax.servlet</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.httpcomponents</groupId>

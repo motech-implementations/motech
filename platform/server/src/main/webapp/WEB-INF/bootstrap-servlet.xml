@@ -41,9 +41,10 @@
         <property name="defaultLocale" value="en"/>
     </bean>
 
+    <!-- TODO HARITHA This class has deperecated - not of much consequence , commenting
     <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
         <property name="interceptors">
             <ref bean="localeChangeInterceptor" />
         </property>
-    </bean>
+    </bean> -->
 </beans>

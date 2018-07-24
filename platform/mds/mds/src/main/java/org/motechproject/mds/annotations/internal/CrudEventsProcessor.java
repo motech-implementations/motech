@@ -62,6 +62,8 @@ public class CrudEventsProcessor implements Processor<CrudEvents> {
                             case ALL:
                                 trackingDto.setAllEvents(true);
                                 break forEach;
+                            default:
+                                break;
                         }
                     }
                 }

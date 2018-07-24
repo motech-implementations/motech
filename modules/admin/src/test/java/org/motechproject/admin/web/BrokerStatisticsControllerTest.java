@@ -13,17 +13,17 @@ import org.motechproject.admin.domain.TopicMBean;
 import org.motechproject.admin.jmx.MBeanService;
 import org.motechproject.admin.web.controller.BrokerStatisticsController;
 import org.motechproject.commons.api.Tenant;
-import org.springframework.test.web.server.MockMvc;
-import org.springframework.test.web.server.request.MockMvcRequestBuilders;
-import org.springframework.test.web.server.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Arrays;
 
 import static org.mockito.BDDMockito.given;
 import static org.mockito.Matchers.anyString;
 import static org.mockito.MockitoAnnotations.initMocks;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class BrokerStatisticsControllerTest {
 

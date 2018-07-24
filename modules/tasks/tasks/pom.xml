@@ -59,7 +59,12 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-test</artifactId>
+            <artifactId>gemini-blueprint-test</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
             <scope>test</scope>
         </dependency>
     </dependencies>

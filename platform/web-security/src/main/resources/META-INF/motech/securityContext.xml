@@ -56,6 +56,7 @@
     </security:http>
 
     <bean id="loginFormAuthentication" class="org.motechproject.security.authentication.MotechLoginUrlAuthenticationEntryPoint">
+        <constructor-arg value="/module/server/login"/>
         <property name="loginFormUrl" value="/module/server/login"/>
     </bean>
 
