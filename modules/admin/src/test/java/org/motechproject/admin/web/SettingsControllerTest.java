@@ -39,7 +39,7 @@ public class SettingsControllerTest {
     List<Settings> bundleSettingsList;
 
     @Mock
-    Map<Object, Object> paramMap;
+    Map<String, String[]> paramMap;
 
     @Mock
     HttpServletRequest httpServletRequest;

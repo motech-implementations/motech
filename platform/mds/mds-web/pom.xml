@@ -46,12 +46,26 @@
             <artifactId>gemini-blueprint-test</artifactId>
         </dependency>
         <!--<dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>test</scope>
+        </dependency>-->
+        <!--<dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-test-mvc</artifactId>
         </dependency>-->
         <dependency>
             <groupId>commons-fileupload</groupId>
             <artifactId>commons-fileupload</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>datanucleus-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.1</version>
         </dependency>
     </dependencies>
     <build>
@@ -88,6 +102,7 @@
                             org.springframework.context.support,
                             org.springframework.web.multipart.commons,
                             org.springframework.transaction,
+                            org.datanucleus.enhancer,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
