@@ -20,6 +20,10 @@
 
     <dependencies>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-core</artifactId>
+        </dependency>
+        <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>org.motechproject.com.google.code.gson</artifactId>
         </dependency>
@@ -54,10 +58,16 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Import-Package>
+                            org.springframework.core.*,
+                            org.motechproject.tasks.domain.*,
+                            *
+                        </Import-Package>
                         <Export-Package>
                             org.motechproject.commons.api;version=${project.version},
                             org.motechproject.commons.api.model;version=${project.version},
                             org.motechproject.commons.api.json;version=${project.version},
+                            org.motechproject.commons.api;version=${project.version},
                         </Export-Package>
                     </instructions>
                 </configuration>
