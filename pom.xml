@@ -457,6 +457,10 @@
                         <groupId>org.aopalliance</groupId>
                         <artifactId>com.springsource.org.aopalliance</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>javax.inject</groupId>
+                        <artifactId>javax.inject</artifactId>
+                    </exclusion>
                 </exclusions>
             </dependency>
             <dependency>
@@ -496,6 +500,10 @@
                     <exclusion>
                         <groupId>org.apache.commons</groupId>
                         <artifactId>com.springsource.org.apache.commons.logging</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.inject</groupId>
+                        <artifactId>javax.inject</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1089,6 +1097,7 @@
                 <version>2.1.0.RELEASE</version>
                 
                 <scope>test</scope>
+
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
