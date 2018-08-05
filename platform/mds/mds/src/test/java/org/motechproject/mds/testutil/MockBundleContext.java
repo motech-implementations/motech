@@ -1,10 +1,6 @@
 package org.motechproject.mds.testutil;
 
-import org.osgi.framework.Bundle;
-import org.osgi.framework.BundleContext;
-import org.osgi.framework.InvalidSyntaxException;
-import org.osgi.framework.ServiceReference;
-import org.osgi.framework.ServiceRegistration;
+import org.osgi.framework.*;
 
 import java.util.Collection;
 import java.util.Dictionary;
@@ -52,7 +48,19 @@ public class MockBundleContext extends org.eclipse.gemini.blueprint.mock.MockBun
     }
 
     @Override
+    public <S> ServiceRegistration<S> registerService(Class<S> clazz, ServiceFactory<S> service, Dictionary<String, ?> properties) {
+        return null;
+    }
+
+    @Override
     public <S> ServiceReference<S> getServiceReference(Class<S> clazz) {
+        return null;
+    }
+
+
+
+    @Override
+    public <S> ServiceObjects<S> getServiceObjects(ServiceReference<S> serviceReference) {
         return null;
     }
 
