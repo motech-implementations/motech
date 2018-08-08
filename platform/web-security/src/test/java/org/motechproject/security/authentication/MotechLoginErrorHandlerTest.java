@@ -14,6 +14,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -61,11 +62,11 @@ public class MotechLoginErrorHandlerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
+    //@Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
     public void shouldNotBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
         //TODO UPGRADE deprecated - below line
-        //exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 2);
 
         when(authentication.getName()).thenReturn("testUser");
@@ -83,11 +84,11 @@ public class MotechLoginErrorHandlerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
+    //@Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
     public void shouldBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
         //TODO UPGRADE deprecated- below line
-        //exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 3);
 
         when(authentication.getName()).thenReturn("testUser");
@@ -108,7 +109,7 @@ public class MotechLoginErrorHandlerTest {
     public void shouldRedirectUserWithExpiredPassword() throws ServletException, IOException {
         AuthenticationException exception = new CredentialsExpiredException("Credentials expired");
         //TODO UPGRADE deprecated- below line
-        //exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.MUST_CHANGE_PASSWORD, 0);
 
         when(authentication.getName()).thenReturn("testUser");
