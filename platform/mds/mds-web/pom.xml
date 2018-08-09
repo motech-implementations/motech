@@ -66,11 +66,7 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>gemini-blueprint-mock</artifactId>
-            <scope>compile</scope>
-        </dependency>
+
     </dependencies>
     <build>
         <testResources>
