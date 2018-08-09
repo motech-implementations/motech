@@ -42,7 +42,7 @@ public class UserControllerTest {
     }
 
     @Test
-    @Ignore//TODO UPGRADE assuming related to spring-security
+    //@Ignore//TODO UPGRADE assuming related to spring-security
     public void shouldReturnUsers() throws Exception {
         when(motechUserService.getUsers()).thenReturn(users());
 

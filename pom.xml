@@ -40,7 +40,7 @@
         <spring.integration.version>4.3.12.RELEASE-r034</spring.integration.version>
         <spring.orm.version>4.3.12.RELEASE_1</spring.orm.version>
         <spring.context.support.version>4.3.12.RELEASE_1</spring.context.support.version>
-        <spring.security.openid.version>3.1.0.RELEASE</spring.security.openid.version>
+        <spring.security.openid.version>4.2.4.RELEASE-r034</spring.security.openid.version>
 
         <activemq.version>5.4.2-${external.dependency.release.tag}</activemq.version>
 
@@ -1153,7 +1153,7 @@
             </dependency>
             <dependency>
                 <groupId>org.springframework.security</groupId>
-                <artifactId>spring-security-openid</artifactId>
+                <artifactId>org.motechproject.spring-security-openid</artifactId>
                 <version>${spring.security.openid.version}</version>
                 <exclusions>
                     <exclusion>

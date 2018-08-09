@@ -67,6 +67,11 @@
             <artifactId>commons-lang3</artifactId>
             <version>3.1</version>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
     <build>
         <testResources>
