@@ -29,7 +29,7 @@
 
 
         <felix.version>5.6.10</felix.version>
-        <felix.http.version>4.0.0</felix.http.version>
+        <felix.http.version>3.0.2</felix.http.version>
         <felix.http.api.version>3.0.0</felix.http.api.version>
         <felix.eventadmin.version>1.5.0</felix.eventadmin.version>
         <felix.scr.version>2.1.0</felix.scr.version>
@@ -49,7 +49,7 @@
 
         <flyway.version>2.3.1</flyway.version>
 
-        <exam.version>4.2.0</exam.version>
+        <exam.version>4.4.0</exam.version>
         <logback.version>0.9.20</logback.version>
 
         <check.code.skip>${maven.test.skip}</check.code.skip>
@@ -206,7 +206,7 @@
             <dependency>
                 <groupId>javax.servlet</groupId>
                 <artifactId>javax.servlet-api</artifactId>
-                <version>3.0.1</version>
+                <version>3.1.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
@@ -430,6 +430,10 @@
                     <exclusion>
                         <groupId>org.springframework</groupId>
                         <artifactId>spring-jms</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.springframework.integration</groupId>
+                        <artifactId>org.motechproject.org.springframework.integration.spring-integration-core</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -668,6 +672,11 @@
                 <groupId>commons-configuration</groupId>
                 <artifactId>commons-configuration</artifactId>
                 <version>1.10</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.el</groupId>
+                <artifactId>javax.el-api</artifactId>
+                <version>3.0.0</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.bval</groupId>
@@ -1215,6 +1224,11 @@
                 </exclusions>
             </dependency>
             <dependency>
+                <groupId>org.ops4j.base</groupId>
+                <artifactId>ops4j-base-util-property</artifactId>
+                <version>1.5.0</version>
+            </dependency>
+            <dependency>
                 <groupId>org.ops4j.pax.exam</groupId>
                 <artifactId>pax-exam-container-native</artifactId>
                 <version>${exam.version}</version>
@@ -1226,6 +1240,14 @@
                     <exclusion>
                         <groupId>com.google.guava</groupId>
                         <artifactId>guava</artifactId>
+                    </exclusion>
+                    <exclusion>
+                         <groupId>org.ops4j.base</groupId>
+                        <artifactId>ops4j-base-lang</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.ops4j.base</groupId>
+                        <artifactId>ops4j-base-util-property</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
@@ -1244,10 +1266,23 @@
                 <artifactId>org.apache.servicemix.bundles.javax-inject</artifactId>
                 <version>1_2</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-pool/commons-pool -->
+            <dependency>
+                <groupId>commons-pool</groupId>
+                <artifactId>commons-pool</artifactId>
+                <version>1.6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-pool2</artifactId>
+                <version>2.4.2</version>
+            </dependency>
+
             <dependency>
                 <groupId>org.ops4j.pax.url</groupId>
                 <artifactId>pax-url-aether</artifactId>
-                <version>2.1.0</version>
+                <version>2.4.7</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.codehaus.plexus</groupId>
