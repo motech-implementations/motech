@@ -44,6 +44,7 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.motechproject</groupId>
             <artifactId>motech-platform-osgi-extender-fragment</artifactId>
@@ -120,6 +121,10 @@
         <dependency>
             <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-api-jpa</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
+            <artifactId>javax.persistence</artifactId>
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
@@ -364,7 +369,9 @@
                             net.sf.cglib.proxy,
                             net.sf.cglib.reflect,
                             org.aopalliance.aop,
-                            org.apache.bval.jsr303,
+                            org.motechproject.bundle.extender,
+
+                            <!--TODO HARITHA COmmented check org.apache.bval.jsr303,-->
                             org.apache.bval.constraints,
                             org.apache.commons.vfs2.provider.gzip,
                             org.apache.commons.vfs2.provider.jar,

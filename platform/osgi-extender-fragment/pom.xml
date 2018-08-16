@@ -42,6 +42,10 @@
                 <artifactId>gemini-blueprint-mock</artifactId>
                 <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-extender</artifactId>
+        </dependency>
     </dependencies>
 
 

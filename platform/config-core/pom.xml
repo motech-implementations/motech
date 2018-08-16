@@ -99,6 +99,7 @@
                             org.springframework.cache.concurrent,
                             org.springframework.cache.support,
                             org.apache.commons.configuration,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>

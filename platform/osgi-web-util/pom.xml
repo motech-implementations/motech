@@ -46,6 +46,7 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+
         </dependency>
         <dependency>
             <groupId>commons-io</groupId>
@@ -97,7 +98,26 @@
                             org.osgi.util.tracker;version="0.0.0",
                             org.osgi.framework;version="0.0.0",
                             org.motechproject.server.api,
-                            *
+                            javax.annotation,
+                            javax.servlet;version=3.1.0,
+                            javax.servlet.http;version=3.1.0,
+                            javax.xml.parsers,
+                            org.apache.commons.collections,
+                            org.apache.commons.io, org.apache.commons.lang,
+                            org.apache.log4j, org.apache.log4j.xml,
+                            org.codehaus.jackson.annotate,
+                            org.eclipse.gemini.blueprint.context,
+                            org.eclipse.gemini.blueprint.context.support,
+                            org.eclipse.gemini.blueprint.util,
+                            org.motechproject.commons.api,
+                            org.motechproject.config.core, org.motechproject.config.core.domain,
+                            org.motechproject.config.core.service, org.osgi.service.http, org.slf4j,
+                            org.springframework.beans.factory.annotation, org.springframework.context,
+                            org.springframework.context.event, org.springframework.stereotype,
+                            org.springframework.web.context,
+                            org.springframework.web.servlet,
+                            org.springframework.web.servlet.view,
+                            org.w3c.dom, org.xml.sax
                         </Import-Package>
                         <Bundle-Activator>
                             org.motechproject.osgi.web.BlueprintActivator

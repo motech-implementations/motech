@@ -43,6 +43,10 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-pool2</artifactId>
         </dependency>
+        <dependency>
+            <groupId>commons-logging</groupId>
+            <artifactId>commons-logging</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -70,6 +74,7 @@
                             org.springframework.context.event,
                             org.springframework.core,
                             org.springframework.util,
+                            org.apache.commons.logging,
                             org.apache.commons.logging.impl,
                             org.springframework.aop.framework,
                             org.springframework.beans,
