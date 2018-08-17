@@ -2,8 +2,8 @@ package org.motechproject.mds.web.rest;
 
 import org.apache.commons.lang.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -50,7 +50,6 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(MockitoJUnitRunner.class)
-@Ignore //TODO UPGRADE assuming related to spring-security
 public class MdsRestControllerTest {
 
     private static final String ENTITY_NAME = "testrecord";
@@ -74,7 +73,7 @@ public class MdsRestControllerTest {
     @InjectMocks
     private MdsRestController mdsRestController = new MdsRestController();
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
 
     private MockMvc mockMvc;
 
