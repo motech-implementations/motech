@@ -172,7 +172,7 @@
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
-            <artifactId>org.motechproject.org.postgresql</artifactId>
+            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -469,7 +469,7 @@
                             </dependency>
                             <dependency>
                                 <groupId>org.postgresql</groupId>
-                                <artifactId>org.motechproject.org.postgresql</artifactId>
+                                <artifactId>postgresql</artifactId>
                                 <version>${postgres.version}</version>
                             </dependency>
                         </dependencies>
