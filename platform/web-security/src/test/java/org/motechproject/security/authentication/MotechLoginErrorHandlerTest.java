@@ -62,10 +62,8 @@ public class MotechLoginErrorHandlerTest {
     }
 
     @Test
-    //@Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
     public void shouldNotBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        //TODO UPGRADE deprecated - below line
         SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 2);
 
@@ -84,10 +82,8 @@ public class MotechLoginErrorHandlerTest {
     }
 
     @Test
-    //@Ignore //TODO UPGRADE -- fix the line in the method and remove upgrade
     public void shouldBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        //TODO UPGRADE deprecated- below line
         SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 3);
 
@@ -108,7 +104,6 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldRedirectUserWithExpiredPassword() throws ServletException, IOException {
         AuthenticationException exception = new CredentialsExpiredException("Credentials expired");
-        //TODO UPGRADE deprecated- below line
         SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.MUST_CHANGE_PASSWORD, 0);
 

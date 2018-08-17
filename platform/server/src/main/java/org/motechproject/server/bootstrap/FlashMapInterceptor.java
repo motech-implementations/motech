@@ -18,7 +18,6 @@ public class FlashMapInterceptor extends HandlerInterceptorAdapter {
 
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) {
-//        TODO UPGRADE - uncomment below
         Object flashMapObj = request.getAttribute(DispatcherServlet.OUTPUT_FLASH_MAP_ATTRIBUTE);
 
         if (flashMapObj != null && !(flashMapObj instanceof FlashMap)) {
