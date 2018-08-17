@@ -48,7 +48,7 @@
         </dependency>
         <dependency>
             <groupId>com.google.guava</groupId>
-            <artifactId>guava</artifactId>
+            <artifactId>org.motechproject.com.google.guava</artifactId>
         </dependency>
 
         <dependency>
