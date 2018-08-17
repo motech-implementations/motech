@@ -46,8 +46,8 @@
         <activemq.version>5.4.2-${external.dependency.release.tag}</activemq.version>
 
         <mysql.version>8.0.11</mysql.version>
-        <postgres.version>9.1-901.jdbc4-${external.dependency.release.tag}</postgres.version>
-
+        <postgres.version.old>9.1-901.jdbc4-${external.dependency.release.tag}</postgres.version.old>
+        <postgres.version>42.2.4</postgres.version>
         <flyway.version>2.3.1</flyway.version>
 
         <exam.version>4.4.0</exam.version>
@@ -249,7 +249,7 @@
             <dependency>
                 <groupId>javax.time</groupId>
                 <artifactId>org.motechproject.javax.time</artifactId>
-                <version>0.6.3-${external.dependency.release.tag}</version>
+                <version>0.6.3-${external.dependency.release.tag.new}</version>
             </dependency>
             <dependency>
                 <groupId>javax.jdo</groupId>
@@ -903,7 +903,7 @@
             <dependency>
                 <groupId>com.googlecode.lambdaj</groupId>
                 <artifactId>org.motechproject.com.googlecode.lambdaj</artifactId>
-                <version>2.3.3-${external.dependency.release.tag}</version>
+                <version>2.3.3-${external.dependency.release.tag.new}</version>
                 <exclusions>
                     <exclusion>
                         <artifactId>lambdaj</artifactId>
@@ -935,7 +935,7 @@
             <dependency>
                 <groupId>org.codehaus.jackson</groupId>
                 <artifactId>org.motechproject.org.codehaus.jackson</artifactId>
-                <version>1.9.7-${external.dependency.release.tag}</version>
+                <version>1.9.13-${external.dependency.release.tag.new}</version>
             </dependency>
             <dependency>
                 <groupId>org.hamcrest</groupId>
@@ -952,7 +952,7 @@
             <dependency>
                 <groupId>org.sonatype.aether</groupId>
                 <artifactId>org.motechproject.aether-api</artifactId>
-                <version>1.13.1-${external.dependency.release.tag}</version>
+                <version>1.13.1-${external.dependency.release.tag.new}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>org.apache.httpcomponents</groupId>
@@ -1013,9 +1013,14 @@
                 <artifactId>mysql-connector-java</artifactId>
                 <version>${mysql.version}</version>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.postgresql</groupId>
                 <artifactId>org.motechproject.org.postgresql</artifactId>
+                <version>${postgres.version.old}</version>
+            </dependency>-->
+            <dependency>
+                <groupId>org.postgresql</groupId>
+                <artifactId>postgresql</artifactId>
                 <version>${postgres.version}</version>
             </dependency>
             <dependency>
@@ -1799,7 +1804,7 @@
                             </dependency>
                             <dependency>
                                 <groupId>org.postgresql</groupId>
-                                <artifactId>org.motechproject.org.postgresql</artifactId>
+                                <artifactId>postgresql</artifactId>
                                 <version>${postgres.version}</version>
                             </dependency>
                         </dependencies>
