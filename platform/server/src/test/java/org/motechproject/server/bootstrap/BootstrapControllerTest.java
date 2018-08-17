@@ -75,12 +75,12 @@ public class BootstrapControllerTest {
     }
 
     @Test
-    @Ignore //TODO upgrade
     public void shouldRedirectToHomePageIfBootstrapConfigIsAlreadyLoaded() throws Exception {
         when(OsgiListener.isBootstrapPresent()).thenReturn(true);
         when(OsgiListener.isServerBundleActive()).thenReturn(true);
         mockMvc.perform(MockMvcRequestBuilders.get("/"))
-                .andExpect(MockMvcResultMatchers.status().isOk()).andExpect(MockMvcResultMatchers.view().name("redirect:.."));
+                .andExpect(MockMvcResultMatchers.status().is3xxRedirection())
+                .andExpect(MockMvcResultMatchers.view().name("redirect:.."));
     }
 
     @Test
