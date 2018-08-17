@@ -41,10 +41,9 @@
         <property name="defaultLocale" value="en"/>
     </bean>
 
-    <!-- TODO UPGRADE This class has deperecated - check
-    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.annotation.DefaultAnnotationHandlerMapping">
+    <bean id="handlerMapping" class="org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerMapping">
         <property name="interceptors">
             <ref bean="localeChangeInterceptor" />
         </property>
-    </bean> -->
+    </bean>
 </beans>
