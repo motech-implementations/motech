@@ -104,13 +104,13 @@ public class ResetController {
 
         if (recoveryService.validateToken(token)) {
             form.setToken(token);
-            viewData.setInvalidToken(false);
+            viewData.setIsInvalidToken(false);
         } else {
-            viewData.setInvalidToken(true);
+            viewData.setIsInvalidToken(true);
         }
 
         viewData.setResetForm(form);
-        viewData.setResetSucceed(false);
+        viewData.setIsResetSucceed(false);
         viewData.setPageLang(cookieLocaleResolver.resolveLocale(request));
 
         return viewData;
@@ -122,12 +122,12 @@ public class ResetController {
         ResetViewData viewData = new ResetViewData();
         viewData.setResetForm(form);
         viewData.setPageLang(cookieLocaleResolver.resolveLocale(request));
-        viewData.setInvalidToken(false);
+        viewData.setIsInvalidToken(false);
 
         List<String> errors = resetFormValidator.validate(form);
 
         if (!errors.isEmpty()) {
-            viewData.setResetSucceed(false);
+            viewData.setIsResetSucceed(false);
             viewData.setErrors(errors);
 
             return viewData;
@@ -137,13 +137,13 @@ public class ResetController {
             } catch (InvalidTokenException e) {
                 LOGGER.debug("Reset with invalid token attempted", e);
                 errors.add("server.reset.invalidToken");
-                viewData.setInvalidToken(true);
+                viewData.setIsInvalidToken(true);
             } catch (RuntimeException e) {
                 LOGGER.error("Error while reseting passsword", e);
                 errors.add("server.reset.error");
             }
 
-            viewData.setResetSucceed(true);
+            viewData.setIsResetSucceed(true);
             viewData.setErrors(errors);
         }
 

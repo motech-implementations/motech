@@ -1,8 +1,8 @@
 package org.motechproject.server.web.controller;
 
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Before;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.InjectMocks;
@@ -77,7 +77,6 @@ public class ResetControllerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- assuming related to spring-security
     public void testInvalidTokenOnView() throws Exception {
         ResetViewData expected = getResetViewData(true, false, null, new ResetForm());
 
@@ -85,11 +84,10 @@ public class ResetControllerTest {
         controller.perform(get("/forgotresetviewdata")
                 .locale(Locale.ENGLISH))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(expected)));
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(expected)));
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- assuming related to spring-security
     public void testValidView() throws Exception {
         ResetViewData expected = getResetViewData(false, false, null, getResetForm(TOKEN, null, null));
 
@@ -99,11 +97,10 @@ public class ResetControllerTest {
                 .locale(Locale.ENGLISH)
                 .param(TOKEN, TOKEN))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(expected)));
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(expected)));
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- assuming related to spring-security
     public void testValidationErrors() throws Exception {
         ResetViewData expected = getResetViewData(false, false, asList(ERROR), getResetForm(TOKEN, null, null));
 
@@ -114,11 +111,10 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getResetForm(TOKEN, null, null)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(expected)));
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(expected)));
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- assuming related to spring-security
     public void testReset() throws Exception {
         ResetViewData expected = getResetViewData(false, true, new ArrayList<String>(), getResetForm(TOKEN, PASSWORD, PASSWORD));
 
@@ -127,13 +123,12 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getResetForm(TOKEN, PASSWORD, PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(expected)));
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(expected)));
 
         verify(recoveryService).resetPassword(TOKEN, PASSWORD, PASSWORD);
     }
 
     @Test
-    @Ignore //TODO UPGRADE -- assuming related to spring-security
     public void testResetInvalidToken() throws Exception {
         ResetViewData expected = getResetViewData(true, true, asList("server.reset.invalidToken"), getResetForm(TOKEN, PASSWORD, PASSWORD));
 
@@ -144,7 +139,7 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getResetForm(TOKEN, PASSWORD, PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(expected)));
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(expected)));
 
         verify(recoveryService).resetPassword(TOKEN, PASSWORD, PASSWORD);
     }
@@ -158,7 +153,7 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getPasswordForm(USER, PASSWORD, NEW_PASSWORD, NEW_PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(getChangePasswordViewData(false, false,
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(getChangePasswordViewData(false, false,
                         asList("server.reset.wrongPassword"), getPasswordForm(EMPTY, EMPTY, EMPTY, EMPTY)))));
 
         verify(motechUserService).changeExpiredPassword(USER, PASSWORD, NEW_PASSWORD);
@@ -173,7 +168,7 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getPasswordForm(USER, PASSWORD, NEW_PASSWORD, PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(getChangePasswordViewData(false, false,
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(getChangePasswordViewData(false, false,
                         asList("server.error.invalid.password"), getPasswordForm(EMPTY, EMPTY, EMPTY, EMPTY)))));
 
         verify(motechUserService, never()).changeExpiredPassword(USER, PASSWORD, NEW_PASSWORD);
@@ -188,7 +183,7 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getPasswordForm(USER, PASSWORD, NEW_PASSWORD, NEW_PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(getChangePasswordViewData(true, false,
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(getChangePasswordViewData(true, false,
                         new ArrayList<String>(), getPasswordForm(EMPTY, EMPTY, EMPTY, EMPTY)))));
 
         verify(motechUserService).changeExpiredPassword(USER, PASSWORD, NEW_PASSWORD);
@@ -203,7 +198,7 @@ public class ResetControllerTest {
                 .content(new ObjectMapper().writeValueAsBytes(getPasswordForm(USER, PASSWORD, NEW_PASSWORD, NEW_PASSWORD)))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(new ObjectMapper().writeValueAsString(getChangePasswordViewData(false, true,
+                .andExpect(content().string(new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL).writeValueAsString(getChangePasswordViewData(false, true,
                         new ArrayList<String>(), getPasswordForm(EMPTY, EMPTY, EMPTY, EMPTY)))));
 
         verify(motechUserService).changeExpiredPassword(USER, PASSWORD, NEW_PASSWORD);
@@ -230,8 +225,8 @@ public class ResetControllerTest {
 
     private ResetViewData getResetViewData(boolean invalidToken, boolean resetSuceed, List<String> errors, ResetForm resetForm) {
         ResetViewData resetViewData = new ResetViewData();
-        resetViewData.setInvalidToken(invalidToken);
-        resetViewData.setResetSucceed(resetSuceed);
+        resetViewData.setIsInvalidToken(invalidToken);
+        resetViewData.setIsResetSucceed(resetSuceed);
         resetViewData.setPageLang(Locale.ENGLISH);
         resetViewData.setErrors(errors);
         resetViewData.setResetForm(resetForm);
