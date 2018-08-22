@@ -43,7 +43,7 @@
         <spring.context.support.version>4.3.12.RELEASE_1</spring.context.support.version>
         <spring.security.openid.version>4.2.4.RELEASE</spring.security.openid.version>
 
-        <activemq.version>5.4.2-${external.dependency.release.tag}</activemq.version>
+        <activemq.version>5.14.2-${external.dependency.release.tag.new}</activemq.version>
 
         <mysql.version>8.0.11</mysql.version>
         <postgres.version.old>9.1-901.jdbc4-${external.dependency.release.tag}</postgres.version.old>
@@ -773,31 +773,36 @@
                 </exclusions>
             </dependency>
             <!-- ActiveMQ -->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.activemq</groupId>-->
+                <!--<artifactId>org.motechproject.org.apache.activemq</artifactId>-->
+                <!--<version>${activemq.version}</version>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>org.apache.activemq</groupId>-->
+                        <!--<artifactId>activemq-core</artifactId>-->
+                    <!--</exclusion>-->
+                    <!--<exclusion>-->
+                        <!--<groupId>javax.annotation</groupId>-->
+                        <!--<artifactId>com.springsource.javax.annotation</artifactId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
+            <!--<dependency>-->
+                <!--<groupId>org.apache.activemq</groupId>-->
+                <!--<artifactId>kahadb</artifactId>-->
+                <!--<version>5.4.2</version>-->
+                <!--<exclusions>-->
+                    <!--<exclusion>-->
+                        <!--<artifactId>commons-logging</artifactId>-->
+                        <!--<groupId>commons-logging</groupId>-->
+                    <!--</exclusion>-->
+                <!--</exclusions>-->
+            <!--</dependency>-->
             <dependency>
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>org.motechproject.org.apache.activemq</artifactId>
                 <version>${activemq.version}</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.apache.activemq</groupId>
-                        <artifactId>activemq-core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.annotation</groupId>
-                        <artifactId>com.springsource.javax.annotation</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.apache.activemq</groupId>
-                <artifactId>kahadb</artifactId>
-                <version>5.4.2</version>
-                <exclusions>
-                    <exclusion>
-                        <artifactId>commons-logging</artifactId>
-                        <groupId>commons-logging</groupId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <!-- DataNucleus -->
             <dependency>
