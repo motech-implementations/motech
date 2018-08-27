@@ -59,10 +59,10 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>org.motechproject.org.apache.activemq</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>kahadb</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.activemq</groupId>-->
+            <!--<artifactId>kahadb</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>com.springsource.javax.transaction</artifactId>
@@ -78,7 +78,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -99,6 +99,7 @@
                             org.springframework.cache.concurrent,
                             org.springframework.cache.support,
                             org.apache.commons.configuration,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>

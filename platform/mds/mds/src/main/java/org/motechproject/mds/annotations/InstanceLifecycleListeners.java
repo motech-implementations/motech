@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  *
  * @see org.motechproject.mds.annotations.internal.InstanceLifecycleListenersProcessor
  */
-@Target({ElementType.TYPE})
+@Target({ ElementType.TYPE })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface InstanceLifecycleListeners {

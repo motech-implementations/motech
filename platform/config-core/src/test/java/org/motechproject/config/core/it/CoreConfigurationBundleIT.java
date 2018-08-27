@@ -1,5 +1,6 @@
 package org.motechproject.config.core.it;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.config.core.domain.BootstrapConfig;
@@ -35,6 +36,7 @@ public class CoreConfigurationBundleIT extends BasePaxIT {
     protected Collection<String> getAdditionalTestDependencies() {
         return Arrays.asList("org.codehaus.jackson:org.motechproject.org.codehaus.jackson");
     }
+
 
     @Test
     public void testBootstrapConfigBundleIT() {

@@ -15,7 +15,7 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <motech.version>${motechVersion}</motech.version>
-        <spring.version>3.1.0.RELEASE</spring.version>
+        <spring.version>5.0.6.RELEASE</spring.version>
     </properties>
 
     <dependencies>
@@ -33,9 +33,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.eclipse.gemini</groupId>
-            <artifactId>org.eclipse.gemini.blueprint.core</artifactId>
-            <version>1.0.2.RELEASE</version>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-core</artifactId>
+            <version>2.1.0.RELEASE</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.eclipse.osgi</groupId>
@@ -74,36 +74,36 @@
 
         <!-- Spring -->
         <dependency>
-            <groupId>org.springframework</groupId>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>spring-core</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>spring-beans</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
+            <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>spring-context</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context-support</artifactId>
             <version>${spring.version}</version>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-aop</artifactId>
             <version>${spring.version}</version>
         </dependency>
 #if ($http == 'true')
         <!-- HTTP -->
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-            <version>${spring.version}</version>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
+            <version>${spring.web.version}</version>
         </dependency>
         <dependency>
             <groupId>org.motechproject</groupId>
