@@ -13,6 +13,9 @@ import java.io.IOException;
  */
 public class MotechLoginUrlAuthenticationEntryPoint extends LoginUrlAuthenticationEntryPoint {
 
+    public MotechLoginUrlAuthenticationEntryPoint(String loginFromUrl){
+        super(loginFromUrl);
+    }
     /**
      * Performs the redirect (or forward) to the login form URL.
      */

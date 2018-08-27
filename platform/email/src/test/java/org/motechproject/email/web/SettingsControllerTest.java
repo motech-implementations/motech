@@ -10,8 +10,8 @@ import org.motechproject.email.purging.EmailPurger;
 import org.motechproject.email.settings.SettingsDto;
 import org.motechproject.server.config.SettingsFacade;
 import org.springframework.mail.javamail.JavaMailSenderImpl;
-import org.springframework.test.web.server.MockMvc;
-import org.springframework.test.web.server.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import java.util.Properties;
 
@@ -23,10 +23,10 @@ import static org.mockito.MockitoAnnotations.initMocks;
 import static org.motechproject.email.settings.SettingsDto.*;
 import static org.motechproject.testing.utils.rest.RestTestUtil.jsonMatcher;
 import static org.springframework.http.MediaType.APPLICATION_JSON;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class SettingsControllerTest {
     private static final String NEW_LINE = System.lineSeparator();
@@ -94,7 +94,7 @@ public class SettingsControllerTest {
         String logPurgeMultiplier = "days";
 
         controller.perform(
-                post("/settings").body(
+                post("/settings").content(
                         settingsJson(
                                 remotehost, port, logAddress, logSubject, logBody, logPurge, logPurgeTime,
                                 logPurgeMultiplier
@@ -124,7 +124,7 @@ public class SettingsControllerTest {
         String logPurgeMultiplier = "days";
 
         controller.perform(
-                post("/settings").body(settingsJson(
+                post("/settings").content(settingsJson(
                         "", port, logAddress, logSubject, logBody, logPurge, logPurgeTime,logPurgeMultiplier
                 ).getBytes()).contentType(APPLICATION_JSON)
         ).andExpect(
@@ -149,7 +149,7 @@ public class SettingsControllerTest {
         String logPurgeMultiplier = "days";
 
         controller.perform(
-                post("/settings").body(settingsJson(
+                post("/settings").content(settingsJson(
                         remotehost, "", logAddress, logSubject, logBody, logPurge, logPurgeTime,logPurgeMultiplier
                 ).getBytes()).contentType(APPLICATION_JSON)
         ).andExpect(
@@ -175,7 +175,7 @@ public class SettingsControllerTest {
         String logPurgeMultiplier = "days";
 
         controller.perform(
-                post("/settings").body(settingsJson(
+                post("/settings").content(settingsJson(
                         remotehost, port, logAddress, logSubject, logBody, logPurge, logPurgeTime,logPurgeMultiplier
                 ).getBytes()).contentType(APPLICATION_JSON)
         ).andExpect(
