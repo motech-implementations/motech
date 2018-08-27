@@ -19,8 +19,8 @@ import org.springframework.http.MediaType;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.User;
-import org.springframework.test.web.server.MockMvc;
-import org.springframework.test.web.server.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.servlet.http.HttpServletRequest;
 import java.util.Arrays;
@@ -35,10 +35,10 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class UserControllerTest {
 
@@ -95,7 +95,7 @@ public class UserControllerTest {
         userDto.setEmail("john@gmail.com");
         userDto.setPassword("invalid");
 
-        mockMvc.perform(post("/users/create").body(new ObjectMapper().writeValueAsBytes(userDto))
+        mockMvc.perform(post("/users/create").content(new ObjectMapper().writeValueAsBytes(userDto))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("literal:Error from validator"));
@@ -115,7 +115,7 @@ public class UserControllerTest {
         userDto.setEmail("john@gmail.com");
         userDto.setPassword("invalid");
 
-        mockMvc.perform(post("/users/create").body(new ObjectMapper().writeValueAsBytes(userDto))
+        mockMvc.perform(post("/users/create").content(new ObjectMapper().writeValueAsBytes(userDto))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isBadRequest())
                 .andExpect(content().string("key:security.validator.error.min_length\nparams:20"));
@@ -131,7 +131,7 @@ public class UserControllerTest {
         userDto.setEmail("john@email.com");
         userDto.setLocale(Locale.CANADA_FRENCH);
 
-        mockMvc.perform(post("/users/create").body(new ObjectMapper().writeValueAsBytes(userDto))
+        mockMvc.perform(post("/users/create").content(new ObjectMapper().writeValueAsBytes(userDto))
                 .contentType(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk());
 

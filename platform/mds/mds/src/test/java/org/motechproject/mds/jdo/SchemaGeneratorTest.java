@@ -1,6 +1,7 @@
 package org.motechproject.mds.jdo;
 
 import org.datanucleus.NucleusContext;
+import org.datanucleus.PersistenceNucleusContext;
 import org.datanucleus.api.jdo.JDOPersistenceManagerFactory;
 import org.datanucleus.store.StoreManager;
 import org.datanucleus.store.schema.SchemaAwareStoreManager;
@@ -31,7 +32,7 @@ public class SchemaGeneratorTest {
     private JDOPersistenceManagerFactory pmf;
 
     @Mock
-    private NucleusContext nucleusContext;
+    private PersistenceNucleusContext nucleusContext;
 
     @Mock(extraInterfaces = SchemaAwareStoreManager.class)
     private StoreManager storeManager;
@@ -39,7 +40,9 @@ public class SchemaGeneratorTest {
     private SchemaGenerator schemaGenerator;
 
     @Before
-    public void setUp() {
+
+    public
+    void setUp() {
         schemaGenerator = new SchemaGenerator(pmf);
     }
 
@@ -51,7 +54,7 @@ public class SchemaGeneratorTest {
         schemaGenerator.generateSchema();
 
         ArgumentCaptor<Set> captor = ArgumentCaptor.forClass(Set.class);
-        verify((SchemaAwareStoreManager) storeManager).createSchema(captor.capture(), eq(new Properties()));
+        verify((SchemaAwareStoreManager) storeManager).createSchemaForClasses(captor.capture(), eq(new Properties()));
 
         Set set = captor.getValue();
         assertNotNull(set);

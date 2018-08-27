@@ -2,6 +2,7 @@ package org.motechproject.mds.web.rest;
 
 import org.apache.commons.lang.StringUtils;
 import org.codehaus.jackson.map.ObjectMapper;
+import org.codehaus.jackson.map.annotate.JsonSerialize;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -21,9 +22,9 @@ import org.motechproject.mds.rest.MdsRestFacade;
 import org.motechproject.mds.rest.RestProjection;
 import org.motechproject.mds.rest.RestResponse;
 import org.motechproject.mds.util.Order;
-import org.springframework.test.web.server.MockMvc;
-import org.springframework.test.web.server.request.DefaultRequestBuilder;
-import org.springframework.test.web.server.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.request.MockHttpServletRequestBuilder;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import javax.validation.ConstraintViolationException;
 import java.io.InputStream;
@@ -41,12 +42,12 @@ import static org.mockito.Matchers.eq;
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.delete;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.put;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @RunWith(MockitoJUnitRunner.class)
 public class MdsRestControllerTest {
@@ -72,7 +73,7 @@ public class MdsRestControllerTest {
     @InjectMocks
     private MdsRestController mdsRestController = new MdsRestController();
 
-    private final ObjectMapper objectMapper = new ObjectMapper();
+    private final ObjectMapper objectMapper = new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
 
     private MockMvc mockMvc;
 
@@ -363,7 +364,7 @@ public class MdsRestControllerTest {
 
         mockMvc.perform(
                 post(buildUrl(ENTITY_NAME, MODULE_NAME, NAMESPACE))
-                        .body("Bad body".getBytes(Charset.forName("UTF-8")))
+                        .content("Bad body".getBytes(Charset.forName("UTF-8")))
         ).andExpect(status().isBadRequest());
 
         verify(restFacade).create(any(InputStream.class));
@@ -433,10 +434,10 @@ public class MdsRestControllerTest {
         when(restFacade.update(any(InputStream.class))).thenReturn(record);
 
         String url = buildUrl(entityName, moduleName, namespace);
-        DefaultRequestBuilder requestBuilder = (update) ? put(url) : post(url);
+        MockHttpServletRequestBuilder requestBuilder = (update) ? put(url) : post(url);
 
         mockMvc.perform(
-                requestBuilder.body(recordJson.getBytes())
+                requestBuilder.content(recordJson.getBytes())
         ).andExpect(status().isOk()).andExpect(content().string(recordJson));
 
         ArgumentCaptor<InputStream> captor = ArgumentCaptor.forClass(InputStream.class);

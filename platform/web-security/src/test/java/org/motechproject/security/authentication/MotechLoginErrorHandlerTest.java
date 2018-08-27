@@ -1,6 +1,7 @@
 package org.motechproject.security.authentication;
 
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.mockito.ArgumentCaptor;
 import org.mockito.InjectMocks;
@@ -13,6 +14,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
@@ -62,7 +64,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldNotBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 2);
 
         when(authentication.getName()).thenReturn("testUser");
@@ -82,7 +84,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldBlockUser() throws ServletException, IOException {
         AuthenticationException exception = new BadCredentialsException("Wrong Password");
-        exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.ACTIVE, 3);
 
         when(authentication.getName()).thenReturn("testUser");
@@ -102,7 +104,7 @@ public class MotechLoginErrorHandlerTest {
     @Test
     public void shouldRedirectUserWithExpiredPassword() throws ServletException, IOException {
         AuthenticationException exception = new CredentialsExpiredException("Credentials expired");
-        exception.setAuthentication(authentication);
+        SecurityContextHolder.getContext().setAuthentication(authentication);
         MotechUser user = createUser(UserStatus.MUST_CHANGE_PASSWORD, 0);
 
         when(authentication.getName()).thenReturn("testUser");

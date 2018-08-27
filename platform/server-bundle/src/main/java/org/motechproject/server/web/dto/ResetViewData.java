@@ -23,19 +23,19 @@ public class ResetViewData {
         this.resetForm = resetForm;
     }
 
-    public boolean isResetSucceed() {
+    public boolean isIsResetSucceed() {
         return isResetSucceed;
     }
 
-    public void setResetSucceed(boolean isResetSucceed) {
+    public void setIsResetSucceed(boolean isResetSucceed) {
         this.isResetSucceed = isResetSucceed;
     }
 
-    public boolean isInvalidToken() {
+    public boolean isIsInvalidToken() {
         return isInvalidToken;
     }
 
-    public void setInvalidToken(boolean invalidToken) {
+    public void setIsInvalidToken(boolean invalidToken) {
         this.isInvalidToken = invalidToken;
     }
 

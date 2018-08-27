@@ -5,7 +5,7 @@ import org.apache.activemq.command.ActiveMQObjectMessage;
 import org.apache.log4j.Logger;
 import org.motechproject.event.MotechEvent;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.integration.MessageHeaders;
+import org.springframework.messaging.MessageHeaders;
 import org.springframework.integration.jms.DefaultJmsHeaderMapper;
 
 import javax.jms.JMSException;

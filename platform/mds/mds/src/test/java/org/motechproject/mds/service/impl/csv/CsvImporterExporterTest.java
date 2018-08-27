@@ -249,7 +249,7 @@ public class CsvImporterExporterTest {
         }
     }
 
-    private List<Record2> testInstances(IdMode idMode) {
+    private List testInstances(IdMode idMode) {
         List<Record2> instances = new ArrayList<>();
 
         for (int i = 0; i < INSTANCE_COUNT; i++) {
