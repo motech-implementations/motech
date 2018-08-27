@@ -16,7 +16,7 @@ import java.lang.annotation.Target;
  * <li><code>int</code>, <code>double</code></li>
  * </ul>
  */
-@Target({ElementType.FIELD, ElementType.METHOD})
+@Target({ ElementType.FIELD, ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface InSet {
@@ -27,6 +27,6 @@ public @interface InSet {
      *
      * @return array of elements.
      */
-    String[] value() default {};
+    String[] value() default { };
 
 }

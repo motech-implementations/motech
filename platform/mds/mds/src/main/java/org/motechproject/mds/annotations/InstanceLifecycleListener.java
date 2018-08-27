@@ -20,7 +20,7 @@ import java.lang.annotation.Target;
  * @see org.motechproject.mds.annotations.internal.InstanceLifecycleListenerProcessor
  * @see InstanceLifecycleListenerType
  */
-@Target({ElementType.METHOD})
+@Target({ ElementType.METHOD })
 @Retention(RetentionPolicy.RUNTIME)
 @Documented
 public @interface InstanceLifecycleListener {
