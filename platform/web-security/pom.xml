@@ -71,8 +71,8 @@
             <artifactId>org.apache.servicemix.bundles.spring-security-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.spring-web</artifactId>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-lang</groupId>
@@ -181,7 +181,9 @@
                             org.motechproject.security.model;version=${project.version},
                             org.motechproject.security.repository;version=${project.version},
                             org.motechproject.security.service;version=${project.version},
-                            org.motechproject.security.validator;version=${project.version}
+                            org.motechproject.security.validator;version=${project.version},
+                            javax.servlet;version=3.1.0,
+                            javax.servlet.http;version=3.1.0
                         </Export-Package>
                         <Import-Package>
                             org.aopalliance.aop,
