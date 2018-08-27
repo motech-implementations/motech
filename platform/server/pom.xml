@@ -176,8 +176,8 @@
         </dependency>
         <!-- Webconsole dependencies -->
         <dependency>
-            <groupId>org.everit.osgi.bundles</groupId>
-            <artifactId>org.everit.osgi.bundles.org.json</artifactId>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-fileupload</groupId>
