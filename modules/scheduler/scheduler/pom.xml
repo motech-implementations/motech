@@ -144,7 +144,7 @@
                             org.apache.commons.dbcp,
                             com.mysql.jdbc,
                             org.postgresql,
-                            javax.ejb;resolution:=optional,
+                            javax.ejbMote
                             javax.jms;resolution:=optional,
                             javax.mail;resolution:=optional,
                             javax.mail.internet;resolution:=optional,

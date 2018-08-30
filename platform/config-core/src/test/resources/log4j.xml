@@ -14,7 +14,7 @@
     </appender>
 
     <logger name="org.motechproject">
-        <level value="ERROR" />
+        <level value="DEBUG" />
     </logger>
 
     <root>

@@ -70,8 +70,8 @@
             <artifactId>commons-lang</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.spring-security-core</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>

@@ -68,8 +68,24 @@
             <artifactId>com.springsource.javax.transaction</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <dependency>
             <groupId>javax.jms</groupId>
             <artifactId>com.springsource.javax.jms</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.api</artifactId>
         </dependency>
     </dependencies>
 
@@ -100,7 +116,7 @@
                             org.springframework.cache.support,
                             org.apache.commons.configuration,
                             org.springframework.core,
-                            *
+                            javax.servlet.annotation,
                         </Import-Package>
                     </instructions>
                 </configuration>

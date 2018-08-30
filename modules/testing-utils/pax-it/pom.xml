@@ -44,6 +44,7 @@
             <groupId>org.ops4j.pax.url</groupId>
             <artifactId>pax-url-aether</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.ops4j.base</groupId>
             <artifactId>ops4j-base-util-property</artifactId>
@@ -93,8 +94,8 @@
             <artifactId>org.apache.servicemix.bundles.javax-inject</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.servicemix.bundles</groupId>
-            <artifactId>org.apache.servicemix.bundles.spring-security-core</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -119,7 +120,15 @@
                     <instructions>
                         <Import-Package>
                             org.junit,
-                            com.sun.net.httpserver, javax.xml.parsers, org.apache.commons.io, org.apache.commons.lang, org.apache.commons.lang.reflect, org.apache.http, org.apache.http.auth, org.apache.http.client, org.apache.http.client.entity, org.apache.http.client.methods, org.apache.http.entity, org.apache.http.impl.client, org.apache.http.message, org.apache.http.protocol, org.apache.http.util, org.motechproject.commons.api, org.motechproject.testing.utils, org.ops4j.pax.exam, org.ops4j.pax.exam.options, org.ops4j.pax.exam.options.extra, org.osgi.framework, org.slf4j, org.springframework.context, org.springframework.core.io, org.springframework.security.authentication, org.springframework.security.core, org.springframework.security.core.authority, org.springframework.security.core.context, org.springframework.security.core.userdetails,
+                            com.sun.net.httpserver, javax.xml.parsers, org.apache.commons.io, org.apache.commons.lang, org.apache.commons.lang.reflect,
+                            org.apache.http, org.apache.http.auth, org.apache.http.client, org.apache.http.client.entity, org.apache.http.client.methods,
+                            org.apache.http.entity, org.apache.http.impl.client, org.apache.http.message, org.apache.http.protocol, org.apache.http.util,
+                            org.motechproject.commons.api, org.motechproject.testing.utils, org.ops4j.pax.exam, org.ops4j.pax.exam.options,
+                            org.ops4j.pax.exam.options.extra, org.osgi.framework, org.slf4j, org.springframework.context, org.springframework.core.io,
+                            org.springframework.security.authentication,
+                            org.springframework.security.core,
+                            org.springframework.security.core.authority, org.springframework.security.core.context,
+                            org.springframework.security.core.userdetails,
                             org.springframework.web.context, org.w3c.dom, org.xml.sax,
                             org.hamcrest, org.junit.internal, org.junit.runners,
                             junit.framework, junit.runner, org.junit.internal.builders,
