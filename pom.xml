@@ -109,11 +109,17 @@
             <groupId>org.eclipse.gemini.blueprint</groupId>
             <artifactId>gemini-blueprint-core</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
             <artifactId>org.motechproject.org.eclipse.gemini.blueprint.gemini-blueprint-extender</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.eclipse.gemini.blueprint</groupId>
+                    <artifactId>gemini-blueprint-extender</artifactId>
+                </exclusion>
+            </exclusions>
 
-        </dependency>
+        </dependency>-->
         <!-- SLF4J -->
         <dependency>
             <groupId>org.slf4j</groupId>
@@ -535,12 +541,12 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-            <dependency>
+            <!--<dependency>
                 <groupId>org.eclipse.gemini.blueprint</groupId>
                 <artifactId>org.motechproject.org.eclipse.gemini.blueprint.gemini-blueprint-extender</artifactId>
                 <version>2.1.0.RELEASE-${external.dependency.release.tag.new}</version>
 
-                <!--<exclusions>
+                <exclusions>
                     <exclusion>
                         <groupId>javax.inject</groupId>
                         <artifactId>javax.inject</artifactId>
@@ -581,8 +587,8 @@
                         <groupId>javax.inject</groupId>
                         <artifactId>javax.inject</artifactId>
                     </exclusion>
-                </exclusions>-->
-            </dependency>
+                </exclusions>
+            </dependency>-->
             <dependency>
                 <groupId>commons-dbcp</groupId>
                 <artifactId>commons-dbcp</artifactId>
