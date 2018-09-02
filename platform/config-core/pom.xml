@@ -59,6 +59,10 @@
             <groupId>org.apache.activemq</groupId>
             <artifactId>org.motechproject.org.apache.activemq</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-core</artifactId>
+        </dependency>
         <!--<dependency>-->
             <!--<groupId>org.apache.activemq</groupId>-->
             <!--<artifactId>kahadb</artifactId>-->
