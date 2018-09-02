@@ -99,8 +99,8 @@
                             org.osgi.framework;version="0.0.0",
                             org.motechproject.server.api,
                             javax.annotation,
-                            javax.servlet;version=3.1.0,
-                            javax.servlet.http;version=3.1.0,
+                            <!--javax.servlet;version=3.1.0,
+                            javax.servlet.http;version=3.1.0,-->
                             javax.xml.parsers,
                             org.apache.commons.collections,
                             org.apache.commons.io, org.apache.commons.lang,
