@@ -1,7 +1,7 @@
 package org.motechproject.mds.service;
 
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.Field;
 import org.motechproject.mds.util.Constants;
 

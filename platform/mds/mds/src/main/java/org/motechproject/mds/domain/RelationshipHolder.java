@@ -1,6 +1,6 @@
 package org.motechproject.mds.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.util.Constants;
 
 import static org.motechproject.mds.util.Constants.MetadataKeys.OWNING_SIDE;

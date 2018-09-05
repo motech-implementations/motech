@@ -31,7 +31,7 @@ import java.util.jar.JarEntry;
 import java.util.jar.JarInputStream;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.junit.Assert.assertEquals;
 import static org.motechproject.mds.util.Constants.Manifest;
 import static org.motechproject.mds.util.Constants.PackagesGenerated;

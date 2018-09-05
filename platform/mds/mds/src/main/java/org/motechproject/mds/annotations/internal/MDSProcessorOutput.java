@@ -1,6 +1,6 @@
 package org.motechproject.mds.annotations.internal;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.dto.LookupDto;
 
 import java.util.List;

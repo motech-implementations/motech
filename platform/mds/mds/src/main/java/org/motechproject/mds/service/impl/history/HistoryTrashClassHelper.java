@@ -7,7 +7,7 @@ import org.motechproject.mds.util.ClassName;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.wiring.BundleWiring;
 
-import static org.apache.commons.lang.StringUtils.uncapitalize;
+import static org.apache.commons.lang3.StringUtils.uncapitalize;
 
 /**
  * Contains utility methods for dealing with history and trash clasess

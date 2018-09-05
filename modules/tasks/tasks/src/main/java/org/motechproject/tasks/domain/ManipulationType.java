@@ -1,9 +1,9 @@
 package org.motechproject.tasks.domain;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.codehaus.jackson.annotate.JsonValue;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * Defines the type of various manipulations used in a task for both triggers and data sources.

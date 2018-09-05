@@ -1,6 +1,6 @@
 package org.motechproject.tasks.web;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.tasks.domain.TaskActivityType;
 
 import java.util.Arrays;

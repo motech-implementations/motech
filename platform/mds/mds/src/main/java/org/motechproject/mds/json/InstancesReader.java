@@ -1,7 +1,7 @@
 package org.motechproject.mds.json;
 
 import com.google.gson.stream.JsonReader;
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.mds.domain.ComboboxHolder;
 import org.motechproject.mds.domain.Entity;
 import org.motechproject.mds.domain.Field;

@@ -1,7 +1,7 @@
 package org.motechproject.mds.performance.service.impl;
 
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.eclipse.gemini.blueprint.util.OsgiBundleUtils;
 import org.joda.time.DateTime;
 import org.motechproject.mds.dto.EntityDto;

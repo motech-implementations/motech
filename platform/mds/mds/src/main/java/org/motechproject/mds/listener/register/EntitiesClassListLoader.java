@@ -1,7 +1,7 @@
 package org.motechproject.mds.listener.register;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.service.JarGeneratorService;
 import org.springframework.core.io.ClassPathResource;
 

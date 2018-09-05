@@ -14,8 +14,8 @@ import java.util.Collection;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.apache.commons.collections.CollectionUtils.isEmpty;
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.motechproject.tasks.domain.TaskErrorType.BLANK;
 import static org.motechproject.tasks.domain.TaskErrorType.EMPTY_COLLECTION;
 import static org.motechproject.tasks.domain.TaskErrorType.NULL;

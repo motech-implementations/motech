@@ -1,8 +1,8 @@
 package org.motechproject.mds.web;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * The <code>SelectData</code> class contains information from select2.js ajax request.

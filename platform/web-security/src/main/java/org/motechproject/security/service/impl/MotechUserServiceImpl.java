@@ -1,8 +1,8 @@
 package org.motechproject.security.service.impl;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.security.authentication.MotechPasswordEncoder;
 import org.motechproject.security.config.SettingService;
 import org.motechproject.security.constants.UserRoleNames;
@@ -34,7 +34,7 @@ import java.util.Collections;
 import java.util.List;
 import java.util.Locale;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.motechproject.security.constants.UserRoleNames.MOTECH_ADMIN;
 
 /**

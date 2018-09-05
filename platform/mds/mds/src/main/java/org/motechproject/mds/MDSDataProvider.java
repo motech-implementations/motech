@@ -1,6 +1,6 @@
 package org.motechproject.mds;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.eclipse.gemini.blueprint.util.OsgiBundleUtils;
 import org.motechproject.commons.api.AbstractDataProvider;
 import org.motechproject.commons.api.DataProvider;

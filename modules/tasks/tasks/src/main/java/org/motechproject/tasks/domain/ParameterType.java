@@ -12,7 +12,7 @@ import org.motechproject.commons.api.MotechException;
 
 import java.util.Arrays;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * Defines the type of various values used in a task including trigger parameters, action parameters and data source

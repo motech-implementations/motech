@@ -1,6 +1,6 @@
 package org.motechproject.mds.config;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * The <code>DeleteMode</code> presents what should happen with objects when they are deleted.

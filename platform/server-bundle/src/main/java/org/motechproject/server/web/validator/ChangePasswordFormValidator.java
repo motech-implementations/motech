@@ -1,6 +1,6 @@
 package org.motechproject.server.web.validator;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.server.web.form.ChangePasswordForm;
 
 import java.util.ArrayList;

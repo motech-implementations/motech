@@ -8,7 +8,7 @@ import org.motechproject.mds.event.CrudEventType;
 import java.io.Serializable;
 import java.util.Objects;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * Represents information about single task event. Task event is an abstract base for events utilized in the task

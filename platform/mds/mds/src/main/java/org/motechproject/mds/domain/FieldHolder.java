@@ -1,6 +1,6 @@
 package org.motechproject.mds.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.dto.FieldDto;
 import org.motechproject.mds.util.Pair;
 import org.motechproject.mds.util.TypeHelper;

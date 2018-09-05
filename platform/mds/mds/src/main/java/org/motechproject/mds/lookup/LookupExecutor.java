@@ -1,6 +1,6 @@
 package org.motechproject.mds.lookup;
 
-import org.apache.commons.lang.reflect.MethodUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.motechproject.commons.api.Range;
 import org.motechproject.mds.domain.ComboboxHolder;
 import org.motechproject.mds.dto.FieldDto;

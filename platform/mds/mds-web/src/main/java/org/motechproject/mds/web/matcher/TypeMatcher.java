@@ -3,8 +3,8 @@ package org.motechproject.mds.web.matcher;
 import org.motechproject.mds.dto.TypeDto;
 import org.springframework.context.MessageSource;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.startsWithIgnoreCase;
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.startsWithIgnoreCase;
 
 /**
  * The <code>TypeMatcher</code> checks if the field type display name matches the given term.

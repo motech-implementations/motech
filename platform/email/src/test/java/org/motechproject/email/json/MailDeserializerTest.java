@@ -10,7 +10,7 @@ import org.motechproject.email.contract.Mail;
 
 import java.io.IOException;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.hamcrest.core.IsEqual.equalTo;
 import static org.junit.Assert.assertThat;
 import static org.motechproject.email.constants.SendEmailConstants.FROM_ADDRESS;

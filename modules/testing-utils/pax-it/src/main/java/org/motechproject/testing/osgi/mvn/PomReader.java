@@ -1,6 +1,6 @@
 package org.motechproject.testing.osgi.mvn;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.commons.api.MotechException;
 import org.w3c.dom.Document;
 import org.w3c.dom.Element;

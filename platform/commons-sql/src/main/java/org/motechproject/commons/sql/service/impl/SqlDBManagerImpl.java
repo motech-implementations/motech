@@ -1,6 +1,6 @@
 package org.motechproject.commons.sql.service.impl;
 
-import org.apache.commons.lang.text.StrSubstitutor;
+import org.apache.commons.lang3.text.StrSubstitutor;
 import org.motechproject.commons.sql.service.SqlDBManager;
 import org.motechproject.commons.sql.util.Drivers;
 import org.motechproject.commons.sql.util.JdbcUrl;

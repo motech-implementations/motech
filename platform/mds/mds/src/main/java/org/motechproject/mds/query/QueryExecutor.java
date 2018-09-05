@@ -1,6 +1,6 @@
 package org.motechproject.mds.query;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.commons.api.Range;
 import org.motechproject.mds.filter.Filters;
 import org.motechproject.mds.util.InstanceSecurityRestriction;

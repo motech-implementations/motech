@@ -1,6 +1,6 @@
 package org.motechproject.tasks.service;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 import org.motechproject.event.listener.annotations.MotechListenerAbstractProxy;
 import org.motechproject.event.listener.annotations.MotechListenerEventProxy;
@@ -11,7 +11,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.apache.commons.collections.CollectionUtils.find;
+import static org.apache.commons.collections4.IterableUtils.find;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertTrue;

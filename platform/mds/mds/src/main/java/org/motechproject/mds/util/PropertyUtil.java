@@ -2,8 +2,8 @@ package org.motechproject.mds.util;
 
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.ex.object.PropertyCopyException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

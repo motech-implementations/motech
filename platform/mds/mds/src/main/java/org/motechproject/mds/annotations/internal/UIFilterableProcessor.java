@@ -1,6 +1,6 @@
 package org.motechproject.mds.annotations.internal;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.motechproject.mds.annotations.Field;

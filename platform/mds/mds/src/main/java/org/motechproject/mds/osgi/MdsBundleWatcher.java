@@ -37,7 +37,7 @@ import java.util.Map;
 import java.util.Queue;
 import java.util.concurrent.LinkedBlockingQueue;
 
-import static org.apache.commons.lang.StringUtils.startsWith;
+import static org.apache.commons.lang3.StringUtils.startsWith;
 
 /**
  * The <code>MdsBundleWatcher</code> in Motech Data Services listens for bundle installation and

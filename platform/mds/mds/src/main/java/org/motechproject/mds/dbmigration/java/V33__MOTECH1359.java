@@ -1,7 +1,7 @@
 package org.motechproject.mds.dbmigration.java;
 
-import org.apache.commons.lang.SerializationUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.SerializationUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.EntityType;
 import org.motechproject.mds.helper.ClassTableName;
 import org.motechproject.mds.util.Constants;

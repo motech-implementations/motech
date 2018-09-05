@@ -1,6 +1,6 @@
 package org.motechproject.security.config;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.config.service.ConfigurationService;
 import org.motechproject.security.validator.PasswordValidator;
 import org.motechproject.security.validator.impl.MinLengthValidatorDecorator;

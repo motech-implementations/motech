@@ -1,7 +1,7 @@
 package org.motechproject.config.core.validator;
 
 import org.apache.activemq.util.URISupport;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.UrlValidator;
 import org.motechproject.config.core.MotechConfigurationException;
 

@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 
 import java.io.IOException;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.motechproject.email.settings.SettingsDto.MAIL_PORT_PROPERTY;
 import static org.motechproject.email.settings.SettingsDto.MAIL_HOST_PROPERTY;
 import static org.motechproject.email.settings.SettingsDto.EMAIL_PROPERTIES_FILE_NAME;

@@ -7,7 +7,7 @@ import javassist.CtConstructor;
 import javassist.CtMethod;
 import javassist.CtNewConstructor;
 import javassist.NotFoundException;
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.mds.builder.EntityInfrastructureBuilder;
 import org.motechproject.mds.domain.ClassData;
 import org.motechproject.mds.domain.Entity;

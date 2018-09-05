@@ -1,7 +1,7 @@
 package org.motechproject.admin.web.controller;
 
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.exception.ExceptionUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.exception.ExceptionUtils;
 import org.motechproject.admin.bundles.ExtendedBundleInformation;
 import org.motechproject.admin.internal.service.ModuleAdminService;
 import org.motechproject.admin.service.StatusMessageService;
@@ -29,7 +29,7 @@ import java.io.IOException;
 import java.io.Writer;
 import java.util.List;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * The Spring controller responsible for operations on bundles (modules). It allows

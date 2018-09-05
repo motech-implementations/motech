@@ -1,6 +1,6 @@
 package org.motechproject.security.service.impl;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.motechproject.security.constants.HTTPMethod;
 import org.motechproject.security.constants.Protocol;
 import org.motechproject.security.constants.Scheme;

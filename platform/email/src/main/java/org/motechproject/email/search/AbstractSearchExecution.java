@@ -1,6 +1,6 @@
 package org.motechproject.email.search;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.commons.api.Range;
 import org.motechproject.email.builder.EmailRecordSearchCriteria;

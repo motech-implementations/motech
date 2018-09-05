@@ -1,6 +1,6 @@
 package org.motechproject.mds.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.dto.AdvancedSettingsDto;
 import org.motechproject.mds.dto.BrowsingSettingsDto;
 import org.motechproject.mds.dto.EntityDto;
@@ -33,8 +33,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import static org.apache.commons.lang.StringUtils.defaultIfBlank;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.motechproject.mds.util.Constants.Util.ENTITY;
 import static org.motechproject.mds.util.Constants.Util.TRUE;
 

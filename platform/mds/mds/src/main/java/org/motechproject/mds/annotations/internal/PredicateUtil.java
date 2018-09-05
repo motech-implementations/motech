@@ -1,6 +1,6 @@
 package org.motechproject.mds.annotations.internal;
 
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 import org.motechproject.mds.annotations.Field;
 import org.motechproject.mds.annotations.Ignore;
 import org.motechproject.mds.annotations.RestIgnore;
@@ -19,7 +19,7 @@ import static java.lang.reflect.Modifier.isPublic;
 import static java.lang.reflect.Modifier.isStatic;
 
 /**
- * This is a util class for {@link org.apache.commons.collections.Predicate} for MDS annotations.
+ * This is a util class for {@link org.apache.commons.collections4.Predicate} for MDS annotations.
  * It contains several, ready to use predicates, that can be used for filtering collections. It also
  * contains helper methods for basic logic operations on predicates.
  */

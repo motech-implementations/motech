@@ -3,7 +3,7 @@ package org.motechproject.tasks.contract;
 import java.util.Objects;
 import java.util.SortedSet;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * Object representation of a parameter in the channel action request definition.

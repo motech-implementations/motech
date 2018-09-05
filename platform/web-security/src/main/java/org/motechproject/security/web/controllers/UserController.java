@@ -1,7 +1,7 @@
 package org.motechproject.security.web.controllers;
 
-import org.apache.commons.lang.RandomStringUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.osgi.web.LocaleService;
 import org.motechproject.security.config.SettingService;
 import org.motechproject.security.domain.MotechUserProfile;

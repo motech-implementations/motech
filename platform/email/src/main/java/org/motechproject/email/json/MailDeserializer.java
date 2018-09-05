@@ -9,7 +9,7 @@ import org.motechproject.email.contract.Mail;
 
 import java.io.IOException;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 import static org.motechproject.email.constants.SendEmailConstants.FROM_ADDRESS;
 import static org.motechproject.email.constants.SendEmailConstants.MESSAGE;
 import static org.motechproject.email.constants.SendEmailConstants.SUBJECT;

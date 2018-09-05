@@ -29,7 +29,7 @@ import java.util.List;
 import java.util.Locale;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.mockito.Matchers.any;
 import static org.mockito.Mockito.never;
 import static org.mockito.Mockito.verify;

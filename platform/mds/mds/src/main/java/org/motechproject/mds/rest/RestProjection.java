@@ -1,7 +1,7 @@
 package org.motechproject.mds.rest;
 
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.mds.util.PropertyUtil;
 
 import java.util.ArrayList;

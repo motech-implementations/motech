@@ -1,6 +1,6 @@
 package org.motechproject.tasks.service;
 
-import org.apache.commons.lang.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 /**
  * DataSourceObject is the result of a {@link org.motechproject.commons.api.DataProvider} lookup.

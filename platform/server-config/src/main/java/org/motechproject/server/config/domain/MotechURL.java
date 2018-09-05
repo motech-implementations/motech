@@ -1,6 +1,6 @@
 package org.motechproject.server.config.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * A MOTECH class representing URL using "protocol://host" pattern.

@@ -1,8 +1,8 @@
 package org.motechproject.server.i18n;
 
 import org.apache.commons.io.FilenameUtils;
-import org.apache.commons.lang.LocaleUtils;
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.LocaleUtils;
+import org.apache.commons.lang3.text.WordUtils;
 import org.osgi.framework.Bundle;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.BundleEvent;

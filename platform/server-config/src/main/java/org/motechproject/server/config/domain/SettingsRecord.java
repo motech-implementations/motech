@@ -1,7 +1,7 @@
 package org.motechproject.server.config.domain;
 
-import org.apache.commons.collections.MapUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.collections4.MapUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.config.core.constants.ConfigurationConstants;
 import org.motechproject.mds.annotations.Access;

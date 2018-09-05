@@ -14,8 +14,8 @@ import java.io.IOException;
 import java.util.Objects;
 import java.util.Properties;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
-import static org.apache.commons.lang.StringUtils.isNumeric;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNumeric;
 import static org.motechproject.mds.util.Constants.Config.MDS_DELETE_MODE;
 import static org.motechproject.mds.util.Constants.Config.MDS_EMPTY_TRASH;
 import static org.motechproject.mds.util.Constants.Config.MDS_TIME_UNIT;

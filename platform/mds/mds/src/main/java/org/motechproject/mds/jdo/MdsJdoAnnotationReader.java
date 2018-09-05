@@ -1,6 +1,6 @@
 package org.motechproject.mds.jdo;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.datanucleus.api.jdo.metadata.JDOAnnotationReader;
 import org.datanucleus.metadata.MetaDataManager;
 import org.datanucleus.metadata.annotations.AnnotationObject;

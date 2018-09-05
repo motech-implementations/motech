@@ -33,7 +33,7 @@ import java.util.Set;
 
 import static java.lang.String.format;
 import static java.net.URLEncoder.encode;
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static org.apache.commons.lang3.CharEncoding.UTF_8;
 import static org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 

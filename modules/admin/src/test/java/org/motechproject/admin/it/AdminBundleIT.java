@@ -1,7 +1,7 @@
 package org.motechproject.admin.it;
 
 import ch.lambdaj.Lambda;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.codehaus.jackson.JsonFactory;

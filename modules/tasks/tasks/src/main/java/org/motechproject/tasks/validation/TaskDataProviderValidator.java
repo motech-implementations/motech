@@ -7,7 +7,7 @@ import org.motechproject.tasks.domain.TaskError;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.apache.commons.collections.CollectionUtils.isEmpty;
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
 /**
  * Utility class for validating data providers.

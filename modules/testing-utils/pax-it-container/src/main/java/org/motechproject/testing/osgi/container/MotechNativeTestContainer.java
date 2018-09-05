@@ -1,6 +1,6 @@
 package org.motechproject.testing.osgi.container;
 
-import org.apache.commons.lang.reflect.MethodUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.eclipse.gemini.blueprint.util.OsgiBundleUtils;
 import org.motechproject.server.osgi.util.PlatformConstants;
 import org.motechproject.server.osgi.status.PlatformStatusManager;

@@ -1,6 +1,6 @@
 package org.motechproject.osgi.web;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.eclipse.gemini.blueprint.context.BundleContextAware;
 import org.motechproject.commons.api.MotechException;
 import org.osgi.framework.Bundle;
