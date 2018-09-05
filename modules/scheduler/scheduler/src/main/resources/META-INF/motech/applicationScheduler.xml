@@ -11,7 +11,7 @@
            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
            http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-    <bean id="schedulerFlyway" class="com.googlecode.flyway.core.Flyway" init-method="migrate" depends-on="schedulerInitializer">
+    <bean id="schedulerFlyway" class="org.flywaydb.core.Flyway" init-method="migrate" depends-on="schedulerInitializer">
         <property name="dataSource">
             <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
                 <property name="driverClassName">

@@ -16,7 +16,7 @@
     </properties>
     <dependencies>
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
         <dependency>
@@ -64,7 +64,7 @@
                 <configuration>
                     <instructions>
                         <Fragment-Host>
-                            com.googlecode.flyway.core;bundle-version=${flyway.version}
+                            org.flywaydb.core;bundle-version=${flyway.version}
                         </Fragment-Host>
                     </instructions>
                 </configuration>

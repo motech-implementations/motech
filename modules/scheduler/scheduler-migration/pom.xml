@@ -55,7 +55,7 @@
                 <configuration>
                     <instructions>
                         <Fragment-Host>
-                            com.googlecode.flyway.core;bundle-version=${flyway.version}
+                            org.flywaydb.core;bundle-version=${flyway.version}
                         </Fragment-Host>
                     </instructions>
                 </configuration>

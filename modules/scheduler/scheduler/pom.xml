@@ -63,7 +63,7 @@
             <artifactId>commons-dbcp</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
         <!-- Adds mysql/psql imports to the c3p0 pool, do not remove -->
@@ -174,7 +174,7 @@
                             org.motechproject.commons.sql.service,
                             org.motechproject.mds.service,
                             org.motechproject.mds.service.impl,
-                            com.googlecode.flyway.core,
+                            org.flywaydb.core,
                             *
                         </Import-Package>
                         <!-- Spring context support has optional import of Quartz. This gives runtime exception.

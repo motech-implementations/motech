@@ -131,7 +131,7 @@
             <artifactId>datanucleus-jodatime</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
         <dependency>
@@ -367,7 +367,7 @@
                             org.motechproject.mdsmigration.java;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            com.googlecode.flyway.core,
+                            org.flywaydb.core,
                             javax.jdo.spi,
                             javax.validation,
                             javax.validation.constraints,

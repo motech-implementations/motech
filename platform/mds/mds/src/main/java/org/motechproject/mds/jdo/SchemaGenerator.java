@@ -1,7 +1,7 @@
 package org.motechproject.mds.jdo;
 
 
-import com.googlecode.flyway.core.Flyway;
+import org.flywaydb.core.Flyway;
 import org.apache.commons.io.IOUtils;
 import org.datanucleus.NucleusContext;
 import org.datanucleus.StoreNucleusContext;
@@ -97,7 +97,8 @@ public class SchemaGenerator implements InitializingBean {
         flyway.setLocations(Constants.EntitiesMigration.FILESYSTEM_PREFIX + migrationDirectory.getAbsolutePath());
         flyway.setSqlMigrationPrefix(Constants.EntitiesMigration.ENTITY_MIGRATIONS_PREFIX);
         flyway.setOutOfOrder(true);
-        flyway.setInitOnMigrate(true);
+        // TODO UPGRADE Check if it is the correct alternative for setInitOnMigrate
+        flyway.setValidateOnMigrate(true);
 
         flyway.migrate();
         LOGGER.info("Modules migration completed.");
