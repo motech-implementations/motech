@@ -22,7 +22,7 @@ public class PomInformationTest {
         properties.put("test.properties", "test");
         properties.put("modules.root.dir", "${basedir}/../..");
         // Because we use <version> and <groupId> tags in our tested pom, the parsing method should add this as properties
-        properties.put("project.version", "0-27-SNAPSHOT");
+        properties.put("project.version", "0-27.8-SNAPSHOT");
         properties.put("project.groupId", "testGroupId");
 
         Dependency dependency = new Dependency(new DefaultArtifact(
@@ -41,7 +41,7 @@ public class PomInformationTest {
         assertEquals(properties, pomInformation.getProperties());
 
         Parent parentFromParsing = pomInformation.getParent();
-        assertEquals("0.27-SNAPSHOT", parentFromParsing.getVersion());
+        assertEquals("0.27.8-SNAPSHOT", parentFromParsing.getVersion());
         assertEquals("motech", parentFromParsing.getArtifactId());
         assertEquals("org.motechproject", parentFromParsing.getGroupId());
 
@@ -53,7 +53,7 @@ public class PomInformationTest {
         Properties properties = new Properties();
         properties.put("test.properties", "testParent");
         // Because we use <version> and <artifactId> tags in our tested pom, the parsing method should add this as properties
-        properties.put("project.version", "0-27-SNAPSHOT");
+        properties.put("project.version", "0-27.8-SNAPSHOT");
         properties.put("project.artifactId", "motech-platform-server-api");
 
         try (InputStream inputStream = this.getClass().getClassLoader().getResourceAsStream("parentPom.xml")) {
