@@ -166,7 +166,7 @@
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.c3p0</artifactId>
-            <version>0.9.1.2_1</version>
+            <version>0.9.5.2_1</version>
         </dependency>
 
     </dependencies>
@@ -232,7 +232,7 @@
             <dependency>
                 <groupId>org.apache.servicemix.specs</groupId>
                 <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
-                <version>2.4.0</version>
+                <version>2.9.0</version>
             </dependency>
             <dependency>
                 <groupId>javax.annotation</groupId>
@@ -677,7 +677,7 @@
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.jsch</artifactId>
-                <version>0.1.51_1</version>
+                <version>0.1.54_1</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
@@ -750,7 +750,7 @@
             <dependency>
                 <groupId>org.apache.jackrabbit</groupId>
                 <artifactId>jackrabbit-webdav</artifactId>
-                <version>2.9.1</version>
+                <version>2.17.5</version>
             </dependency>
             <!-- SLF4J -->
             <dependency>
@@ -865,7 +865,7 @@
             <dependency>
                 <groupId>net.sf.supercsv</groupId>
                 <artifactId>super-csv</artifactId>
-                <version>2.2.0</version>
+                <version>2.4.0</version>
             </dependency>
             <dependency>
                 <groupId>com.itextpdf</groupId>
@@ -916,7 +916,7 @@
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.aspectj</artifactId>
-                <version>1.8.5_1</version>
+                <version>1.9.1_1</version>
             </dependency>
             <dependency>
                 <groupId>com.googlecode.lambdaj</groupId>
@@ -994,7 +994,7 @@
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
                 <artifactId>org.apache.servicemix.bundles.velocity</artifactId>
-                <version>1.6.4_4</version>
+                <version>1.7_6</version>
                 <exclusions>
                     <exclusion>
                         <groupId>commons-lang</groupId>
