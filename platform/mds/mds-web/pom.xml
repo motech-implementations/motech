@@ -66,6 +66,12 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
+        <!-- Added Servlet Library -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -104,6 +110,8 @@
                             org.springframework.transaction,
                             org.datanucleus.enhancer,
                             org.motechproject.mds.display,
+                            !javax.servlet,
+                            !javax.servlet.http,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

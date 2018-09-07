@@ -17,6 +17,7 @@
 
     <properties>
         <modules.root.dir>${basedir}/../..</modules.root.dir>
+        <extender.version>2.1.0.RELEASE</extender.version>
     </properties>
 
     <dependencies>
@@ -42,10 +43,6 @@
             <artifactId>gemini-blueprint-mock</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.org.eclipse.gemini.blueprint.gemini-blueprint-extender</artifactId>
-        </dependency>
     </dependencies>
 
 
@@ -63,15 +60,17 @@
                             This is a fragment bundle that attaches itself to the Blueprint extender.
                             This bundle is responsible for configuring the extender.
                         -->
-                        <Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>
+                        <Fragment-Host>org.motechproject.gemini-blueprint-extender</Fragment-Host>
                         <Export-Package>
                             org.eclipse.gemini.blueprint.extender,
-                            org.motechproject.bundle.extender,
+                            org.motechproject.bundle.extender
                         </Export-Package>
                         <Import-Package>
                             org.springframework.beans.factory.xml,
                             org.springframework.context.config,
                             org.springframework.context.support,
+                            !javax.servlet,
+                            !javax.servlet.http,
                             *
                         </Import-Package>
                     </instructions>

@@ -181,9 +181,9 @@
                             org.motechproject.security.model;version=${project.version},
                             org.motechproject.security.repository;version=${project.version},
                             org.motechproject.security.service;version=${project.version},
-                            org.motechproject.security.validator;version=${project.version},
-                            javax.servlet;version=3.1.0,
-                            javax.servlet.http;version=3.1.0
+                            org.motechproject.security.validator;version=${project.version}
+                            <!--javax.servlet;version=3.1.0,-->
+                            <!--javax.servlet.http;version=3.1.0-->
                         </Export-Package>
                         <Import-Package>
                             org.aopalliance.aop,
@@ -210,6 +210,8 @@
                             net.sf.cglib.core,
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
+                            !javax.servlet,
+                            !javax.servlet.http,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

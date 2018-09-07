@@ -270,6 +270,11 @@
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
          </dependency>
+        <!-- Added Servlet Library -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
     </dependencies>
     <build>
         <resources>

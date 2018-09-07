@@ -111,9 +111,7 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.org.eclipse.gemini.blueprint.gemini-blueprint-extender</artifactId>
-
-
+            <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
         </dependency>
         <!-- SLF4J -->
         <dependency>
@@ -168,7 +166,6 @@
             <artifactId>org.apache.servicemix.bundles.c3p0</artifactId>
             <version>0.9.5.2_1</version>
         </dependency>
-
     </dependencies>
 
     <dependencyManagement>
@@ -538,54 +535,21 @@
             </dependency>
             <dependency>
                 <groupId>org.eclipse.gemini.blueprint</groupId>
-                <artifactId>org.motechproject.org.eclipse.gemini.blueprint.gemini-blueprint-extender</artifactId>
+                <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
                 <version>2.1.0.RELEASE-${external.dependency.release.tag.new}</version>
-
                 <exclusions>
-                    <exclusion>
-                        <groupId>javax.inject</groupId>
-                        <artifactId>javax.inject</artifactId>
-                    </exclusion>
                     <exclusion>
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-extender</artifactId>
                     </exclusion>
-                    <!--<exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.springframework.aop</artifactId>
+                    <exclusion>
+                        <groupId>org.eclipse.gemini.blueprint</groupId>
+                        <artifactId>gemini-blueprint-core</artifactId>
                     </exclusion>
                     <exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.springframework.beans</artifactId>
+                        <groupId>org.eclipse.gemini.blueprint</groupId>
+                        <artifactId>gemini-blueprint-io</artifactId>
                     </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.springframework.context</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.springframework.core</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.servicemix.bundles</groupId>
-                        <artifactId>org.springframework.context.support</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.eclipse.osgi</groupId>
-                        <artifactId>org.eclipse.osgi</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.eclipse.osgi</groupId>
-                        <artifactId>org.eclipse.osgi.services</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>org.apache.commons</groupId>
-                        <artifactId>com.springsource.org.apache.commons.logging</artifactId>
-                    </exclusion>
-                    <exclusion>
-                        <groupId>javax.inject</groupId>
-                        <artifactId>javax.inject</artifactId>
-                    </exclusion>-->
                 </exclusions>
             </dependency>
             <dependency>
