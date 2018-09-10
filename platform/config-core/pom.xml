@@ -125,6 +125,8 @@
                             org.springframework.cache.annotation,
                             org.slf4j,
                             org.eclipse.gemini.blueprint.service.importer,
+                            org.apache.log4j,
+                            *
                         </Import-Package>
                     </instructions>
                 </configuration>

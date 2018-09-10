@@ -112,6 +112,7 @@
                             org.motechproject.mds.display,
                             !javax.servlet,
                             !javax.servlet.http,
+                            org.springframework.validation.beanvalidation,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
