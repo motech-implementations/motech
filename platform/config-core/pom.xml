@@ -123,6 +123,7 @@
                             org.springframework.core,
                             javax.servlet.annotation,
                             org.springframework.cache.annotation,
+                            org.slf4j,
                         </Import-Package>
                     </instructions>
                 </configuration>
