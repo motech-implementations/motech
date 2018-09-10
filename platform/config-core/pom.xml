@@ -124,6 +124,7 @@
                             javax.servlet.annotation,
                             org.springframework.cache.annotation,
                             org.slf4j,
+                            org.eclipse.gemini.blueprint.service.importer,
                         </Import-Package>
                     </instructions>
                 </configuration>
