@@ -45,7 +45,7 @@
         </property>
         <property name="sqlMigrationPrefix" value="V"/>
         <property name="outOfOrder" value="true"/>
-        <property name="initOnMigrate" value="true"/>
+        <property name="validateOnMigrate" value="true"/>
     </bean>
 
     <bean id="swaggerMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
