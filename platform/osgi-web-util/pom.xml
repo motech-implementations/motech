@@ -103,6 +103,7 @@
                             javax.xml.parsers,
                             org.apache.commons.collections,
                             org.apache.commons.io, org.apache.commons.lang,
+                            org.apache.commons.lang3,
                             org.apache.log4j, org.apache.log4j.xml,
                             org.codehaus.jackson.annotate,
                             org.eclipse.gemini.blueprint.context,
