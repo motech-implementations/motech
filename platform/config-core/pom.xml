@@ -124,9 +124,9 @@
                             org.motechproject.config.core.filestore;version=${project.version},
                             org.motechproject.config.core.domain;version=${project.version},
                             org.motechproject.config.core.constants;version=${project.version},
-                            org.motechproject.config.core.filters;version=${project.version}
-                            org.motechproject.config.core.validator;version=${project.version}
-
+                            org.motechproject.config.core.filters;version=${project.version},
+                            org.motechproject.config.core.validator;version=${project.version},
+                            org.eclipse.gemini.blueprint.service.importer,
                        </Export-Package>
                         <Import-Package>
                             org.aopalliance.aop,
