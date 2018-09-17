@@ -120,7 +120,7 @@
                     <instructions>
                         <Import-Package>
                             org.junit,
-                            com.sun.net.httpserver, javax.xml.parsers, org.apache.commons.io, org.apache.commons.lang, org.apache.commons.lang.reflect,
+                            com.sun.net.httpserver, javax.xml.parsers, org.apache.commons.io, org.apache.commons.lang,  org.apache.commons.lang3,org.apache.commons.lang.reflect,
                             org.apache.http, org.apache.http.auth, org.apache.http.client, org.apache.http.client.entity, org.apache.http.client.methods,
                             org.apache.http.entity, org.apache.http.impl.client, org.apache.http.message, org.apache.http.protocol, org.apache.http.util,
                             org.motechproject.commons.api, org.motechproject.testing.utils, org.ops4j.pax.exam, org.ops4j.pax.exam.options,
