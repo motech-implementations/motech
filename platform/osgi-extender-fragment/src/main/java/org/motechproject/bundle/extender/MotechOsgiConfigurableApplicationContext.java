@@ -1,6 +1,8 @@
 package org.motechproject.bundle.extender;
 
 import org.eclipse.gemini.blueprint.context.support.OsgiBundleXmlApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -21,6 +23,9 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
     private final Object lock = new Object();
     private boolean initialized;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MotechOsgiConfigurableApplicationContext.class);
+
+
     /**
      * Constructs the new context using the provided configuration locations.
      * @param configurationLocations the configuration location (Spring xml configuration files)
@@ -31,6 +36,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
             @Override
             public void onApplicationEvent(ApplicationEvent event) {
                 if (event instanceof ContextRefreshedEvent) {
+                    LOGGER.debug("Received ContextRefreshedEvent");
                     synchronized (lock) {
                         initialized = true;
                         lock.notifyAll();

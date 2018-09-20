@@ -111,7 +111,7 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
+            <artifactId>gemini-blueprint-extender</artifactId>
         </dependency>
         <!-- SLF4J -->
         <dependency>
@@ -535,9 +535,9 @@
             </dependency>
             <dependency>
                 <groupId>org.eclipse.gemini.blueprint</groupId>
-                <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
-                <version>2.1.0.RELEASE-${external.dependency.release.tag.new}</version>
-                <exclusions>
+                <artifactId>gemini-blueprint-extender</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <!--<exclusions>
                     <exclusion>
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-extender</artifactId>
@@ -550,7 +550,7 @@
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-io</artifactId>
                     </exclusion>
-                </exclusions>
+                </exclusions> -->
             </dependency>
             <dependency>
                 <groupId>commons-dbcp</groupId>
@@ -1192,6 +1192,15 @@
                 <scope>test</scope>
 
             </dependency>
+
+            <!-- https://mvnrepository.com/artifact/org.osgi/org.osgi.service.blueprint -->
+            <dependency>
+                <groupId>org.osgi</groupId>
+                <artifactId>org.osgi.service.blueprint</artifactId>
+                <version>1.0.2</version>
+            </dependency>
+
+
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.http.jetty</artifactId>
