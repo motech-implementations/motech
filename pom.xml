@@ -111,7 +111,7 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>gemini-blueprint-extender</artifactId>
+            <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
         </dependency>
         <!-- SLF4J -->
         <dependency>
@@ -535,14 +535,17 @@
             </dependency>
             <dependency>
                 <groupId>org.eclipse.gemini.blueprint</groupId>
-                <artifactId>gemini-blueprint-extender</artifactId>
-                <version>2.1.0.RELEASE</version>
-                <!--<exclusions>
-                    <exclusion>
+                <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
+                <version>2.1.0.RELEASE-${external.dependency.release.tag.new}</version>
+                <exclusions>
+                   <exclusion>
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-extender</artifactId>
                     </exclusion>
-                    <exclusion>
+                </exclusions>
+
+
+                 <!--   <exclusion>
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-core</artifactId>
                     </exclusion>
