@@ -76,6 +76,9 @@ public class PlatformActivator implements BundleActivator {
         // start the http bridge
         startBundles(BundleType.HTTP_BUNDLE);
 
+        // start platform bundles common ones depends on
+        startBundles(BundleType.PLATFORM_BUNDLE_PRE_MDS_COMMON);
+
         // start platform bundles on which MDS depends on
         startBundles(BundleType.PLATFORM_BUNDLE_PRE_MDS);
 

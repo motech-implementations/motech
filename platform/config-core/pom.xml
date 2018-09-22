@@ -107,6 +107,11 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.http.api</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.blueprint</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -118,6 +123,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <!--<Spring-Context> *;create-asynchronously:=false</Spring-Context>-->
                         <Export-Package>
                             org.motechproject.config.core;version=${project.version},
                             org.motechproject.config.core.service;version=${project.version},
@@ -142,6 +148,7 @@
                             org.slf4j,
                             org.eclipse.gemini.blueprint.service.importer,
                             org.apache.log4j,
+                            org.osgi.service.blueprint;version="[1.0.0,2.0.0)";resolution:=optional,
                             *
                         </Import-Package>
                     </instructions>

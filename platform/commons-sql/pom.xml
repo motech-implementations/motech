@@ -48,6 +48,10 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.blueprint</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -63,6 +67,7 @@
                             org.springframework.beans.*,
                             com.mysql.jdbc,
                             org.postgresql,
+                            org.osgi.service.blueprint;version="[1.0.0,2.0.0)";resolution:=optional,
                             *
                         </Import-Package>
                         <Export-Package>

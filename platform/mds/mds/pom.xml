@@ -380,7 +380,6 @@
                             net.sf.cglib.proxy,
                             net.sf.cglib.reflect,
                             org.aopalliance.aop,
-                            org.motechproject.bundle.extender,
 
                             <!--TODO HARITHA COmmented check org.apache.bval.jsr303,-->
                             org.apache.bval.constraints,

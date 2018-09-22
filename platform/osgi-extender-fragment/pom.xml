@@ -60,7 +60,7 @@
                             This is a fragment bundle that attaches itself to the Blueprint extender.
                             This bundle is responsible for configuring the extender.
                         -->
-                        <Fragment-Host>org.motechproject.gemini-blueprint-extender</Fragment-Host>
+                        <Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>
                         <Export-Package>
                             org.eclipse.gemini.blueprint.extender,
                             org.motechproject.bundle.extender
