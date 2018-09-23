@@ -11,10 +11,10 @@
     </appender>
 
     <logger name="org.motechproject">
-        <level value="DEBUG" />
+        <level value="ERROR" />
     </logger>
 
-    <logger name="org.eclipse.gemini.blueprint">
+    <!--<logger name="org.eclipse.gemini.blueprint">
         <level value="TRACE" />
     </logger>
 
@@ -24,7 +24,7 @@
 
     <logger name="org.eclipse.gemini.blueprint.extender.internal.support.NamespacePlugins">
         <level value="ERROR"/>
-    </logger>
+    </logger>-->
 
     <root>
         <priority value="ERROR" />
