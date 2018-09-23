@@ -537,24 +537,20 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
-            <!--<dependency>
+            <dependency>
                 <groupId>org.eclipse.gemini.blueprint</groupId>
-                <artifactId>gemini-blueprint-extender</artifactId>
+                <artifactId>gemini-blueprint-extensions</artifactId>
                 <version>2.1.0.RELEASE</version>
                 <exclusions>
                     <exclusion>
                         <groupId>javax.inject</groupId>
                         <artifactId>javax.inject</artifactId>
                     </exclusion>
+                    <exclusion>
+                        <groupId>org.eclipse.gemini.blueprint</groupId>
+                        <artifactId>gemini-blueprint-extender</artifactId>
+                    </exclusion>
                 </exclusions>
-
-            </dependency>-->
-
-            <dependency>
-                <groupId>org.eclipse.gemini.blueprint</groupId>
-                <artifactId>gemini-blueprint-extensions</artifactId>
-                <version>2.1.0.RELEASE</version>
 
             </dependency>
             <dependency>
@@ -562,9 +558,13 @@
                 <artifactId>org.motechproject.gemini-blueprint-extender</artifactId>
                 <version>2.1.0.RELEASE-${external.dependency.release.tag.new}</version>
                 <exclusions>
-                   <exclusion>
+                    <exclusion>
                         <groupId>org.eclipse.gemini.blueprint</groupId>
                         <artifactId>gemini-blueprint-extender</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>javax.inject</groupId>
+                        <artifactId>javax.inject</artifactId>
                     </exclusion>
                 </exclusions>
 
