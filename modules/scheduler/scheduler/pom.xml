@@ -175,6 +175,7 @@
                             org.motechproject.mds.service,
                             org.motechproject.mds.service.impl,
                             org.flywaydb.core,
+                            org.motechproject.bundle.extender,
                             *
                         </Import-Package>
                         <!-- Spring context support has optional import of Quartz. This gives runtime exception.

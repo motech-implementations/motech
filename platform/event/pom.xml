@@ -167,6 +167,11 @@
                             org.springframework.stereotype,
                             javax.servlet;version=3.1.0,
                             org.eclipse.gemini.blueprint.service.importer,
+                            org.apache.commons.lang3,
+                            org.apache.commons.io.filefilter,
+                            org.springframework.core.io,
+
+                            *
                         </Import-Package>
                     </instructions>
                 </configuration>

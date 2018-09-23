@@ -29,11 +29,11 @@
             <artifactId>motech-platform-config-core</artifactId>
             <version>${project.version}</version>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-osgi-extender-fragment</artifactId>
             <version>${project.version}</version>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-server-api</artifactId>
@@ -42,6 +42,10 @@
         <dependency>
             <groupId>org.motechproject</groupId>
             <artifactId>org.motechproject.spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-webmvc</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
@@ -71,6 +75,11 @@
             <version>${project.version}</version>
             <scope>test</scope>
         </dependency>
+
+
+
+
+
     </dependencies>
 
     <build>
@@ -91,13 +100,15 @@
                             org.motechproject.osgi.web.domain;version=${project.version},
                             org.motechproject.osgi.web.service;version=${project.version},
                             org.motechproject.osgi.web.settings;version=${project.version},
-                            org.motechproject.osgi.web.util;version=${project.version}
+                            org.motechproject.osgi.web.util;version=${project.version},
+                            org.apache.commons.io.filefilter,
+
                         </Export-Package>
                         <Import-Package>
                             org.osgi.util.tracker;version="0.0.0",
                             org.osgi.framework;version="0.0.0",
                             org.motechproject.server.api,
-                            javax.annotation,
+                            <!--javax.annotation,-->
                             javax.servlet;version=3.1.0,
                             javax.servlet.http;version=3.1.0,
                             javax.xml.parsers,
@@ -117,7 +128,10 @@
                             org.springframework.web.context,
                             org.springframework.web.servlet,
                             org.springframework.web.servlet.view,
-                            org.w3c.dom, org.xml.sax
+                            org.w3c.dom, org.xml.sax,
+                            org.apache.commons.io.filefilter,
+                            org.springframework.core.io,
+                            org.apache.commons.validator,
                         </Import-Package>
                         <Bundle-Activator>
                             org.motechproject.osgi.web.BlueprintActivator

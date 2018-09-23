@@ -409,6 +409,7 @@
                             org.springframework.orm.jdo,
                             org.springframework.security.config,
                             org.springframework.web.context,
+                            org.motechproject.bundle.extender,
                             *
                         </Import-Package>
                         <!--

@@ -58,6 +58,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+
                         <Bundle-Activator>
                             org.motechproject.server.osgi.PlatformActivator
                         </Bundle-Activator>

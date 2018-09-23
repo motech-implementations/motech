@@ -43,6 +43,14 @@
             <artifactId>gemini-blueprint-mock</artifactId>
             <scope>test</scope>
         </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-extensions</artifactId>
+
+        </dependency>
+
+
     </dependencies>
 
 
@@ -56,11 +64,13 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        `
                         <!--
                             This is a fragment bundle that attaches itself to the Blueprint extender.
                             This bundle is responsible for configuring the extender.
                         -->
-                        <Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>
+                        <!--<Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>-->
+                        <Fragment-Host>org.motechproject.gemini-blueprint-extender</Fragment-Host>
                         <Export-Package>
                             org.eclipse.gemini.blueprint.extender,
                             org.motechproject.bundle.extender
@@ -69,6 +79,7 @@
                             org.springframework.beans.factory.xml,
                             org.springframework.context.config,
                             org.springframework.context.support,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                     </instructions>

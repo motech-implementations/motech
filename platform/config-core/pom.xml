@@ -123,7 +123,13 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <!--<Spring-Context> *;create-asynchronously:=false</Spring-Context>-->
+                        <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+                        <!--Error creating bean with name 'org.eclipse.gemini.blueprint.service.exporter.support.
+                        OsgiServiceFactoryBean#0': Invocation of init method failed;
+                        nested exception is java.lang.IllegalArgumentException:
+                        Cannot locate bean named 'coreConfigurationService' inside the running bean factory.
+                        Error fixed by changing service name as impl  based on debugging
+                        <Spring-Context> *;create-asynchronously:=false</Spring-Context>-->
                         <Export-Package>
                             org.motechproject.config.core;version=${project.version},
                             org.motechproject.config.core.service;version=${project.version},
@@ -133,6 +139,7 @@
                             org.motechproject.config.core.filters;version=${project.version},
                             org.motechproject.config.core.validator;version=${project.version},
                             org.eclipse.gemini.blueprint.service.importer,
+                            org.apache.commons.io.filefilter,
                        </Export-Package>
                         <Import-Package>
                             org.aopalliance.aop,
@@ -147,9 +154,20 @@
                             org.springframework.cache.annotation,
                             org.slf4j,
                             org.eclipse.gemini.blueprint.service.importer,
+                            <!--org.eclipse.gemini.blueprint.service,-->
                             org.apache.log4j,
+                            org.apache.commons.logging.impl,
+                            org.apache.commons.lang3,
+                            org.apache.commons.io.filefilter,
+                            org.springframework.core.io,
+                            org.apache.commons.validator,
+                            org.apache.activemq.util,
                             org.osgi.service.blueprint;version="[1.0.0,2.0.0)";resolution:=optional,
+                            org.motechproject.commons.api,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
+                            
                             *
+
                         </Import-Package>
                     </instructions>
                 </configuration>

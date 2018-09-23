@@ -47,12 +47,12 @@
             <version>${project.version}</version>
             <!--<scope>provided</scope>-->
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.motechproject</groupId>
             <artifactId>motech-platform-osgi-extender-fragment</artifactId>
             <version>${project.version}</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-event</artifactId>

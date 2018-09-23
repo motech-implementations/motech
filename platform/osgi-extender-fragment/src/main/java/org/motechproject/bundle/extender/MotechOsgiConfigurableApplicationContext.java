@@ -32,7 +32,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
      */
     public MotechOsgiConfigurableApplicationContext(String[] configurationLocations) {
         super(configurationLocations);
-        addApplicationListener(new ApplicationListener<ApplicationEvent>() {
+        /**addApplicationListener(new ApplicationListener<ApplicationEvent>() {
             @Override
             public void onApplicationEvent(ApplicationEvent event) {
                 if (event instanceof ContextRefreshedEvent) {
@@ -43,7 +43,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
                     }
                 }
             }
-        });
+        });*/
     }
 
     /**
@@ -51,7 +51,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
      * {@link org.springframework.context.event.ContextRefreshedEvent}.
      * @param waitTimeInMillis the max wait in milliseconds
      */
-    public void waitForContext(int waitTimeInMillis) {
+    /**public void waitForContext(int waitTimeInMillis) {
         synchronized (lock) {
             if (!initialized) {
                 try {
@@ -67,7 +67,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
                 // done waiting
             }
         }
-    }
+    }*/
 
     @Override
     public ServletContext getServletContext() {
