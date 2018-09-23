@@ -26,7 +26,7 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:testMdsContext.xml"})
-@Rollback(value=false)
+@Rollback(value=true)
 //@TransactionConfiguration(defaultRollback = true)
 @Transactional
 public abstract class BaseIT {

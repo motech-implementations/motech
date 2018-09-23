@@ -297,8 +297,8 @@ public class BasePaxIT {
                 "org.ops4j.pax.swissbox:pax-swissbox-tracker",
                 "org.ops4j.pax.exam:pax-exam",
                 "org.ops4j.pax.swissbox:pax-swissbox-core",
-                "org.apache.commons:com.springsource.org.apache.commons.logging",
-                "org.slf4j:com.springsource.slf4j.api" // we ignore slf4j, since it gets added anyway instead of pax logging
+                "commons-logging:commons-logging",
+                "org.slf4j:slf4j-api" // we ignore slf4j, since it gets added anyway instead of pax logging
         ));
     }
 
