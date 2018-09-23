@@ -1,7 +1,6 @@
 package org.motechproject.config.core.it;
 
 
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.config.core.domain.BootstrapConfig;
@@ -40,7 +39,7 @@ public class CoreConfigurationBundleIT extends BasePaxIT {
 
 
 
-    @Ignore //TODO PIT
+
     @Test
     public void testBootstrapConfigBundleIT() {
         BootstrapConfig bootstrapConfig = coreConfigurationService.loadBootstrapConfig();
