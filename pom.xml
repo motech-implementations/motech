@@ -916,6 +916,12 @@
                 <groupId>com.google.guava</groupId>
                 <artifactId>org.motechproject.com.google.guava</artifactId>
                 <version>20.0-${external.dependency.release.tag.new}</version>
+                <exclusions>
+                    <exclusion>
+                          <groupId>com.google.guava</groupId>
+                          <artifactId>guava</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.servicemix.bundles</groupId>
