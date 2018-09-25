@@ -66,6 +66,12 @@
             <artifactId>motech-pax-it</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>org.motechproject.com.google.guava</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>org.motechproject</groupId>
@@ -195,6 +201,11 @@
                     <groupId>com.google.guava</groupId>
                 </exclusion>
             </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>org.motechproject.com.google.guava</artifactId>
         </dependency>
 
         <dependency>
