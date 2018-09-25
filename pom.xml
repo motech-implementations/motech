@@ -192,18 +192,6 @@
                 </exclusions>
             </dependency>
             <dependency>
-                <groupId>javax.jms</groupId>
-                <artifactId>com.springsource.javax.jms</artifactId>
-                <version>1.1.0</version>
-                <exclusions>
-                    <exclusion>
-                        <groupId>javax.inject</groupId>
-                        <artifactId>javax.inject</artifactId>
-                    </exclusion>
-                </exclusions>
-
-            </dependency>
-            <dependency>
                 <groupId>org.ow2.spec.ee</groupId>
                 <artifactId>ow2-ejb-3.1-spec</artifactId>
                 <version>1.0.13</version>
@@ -808,6 +796,52 @@
                 <groupId>org.apache.activemq</groupId>
                 <artifactId>org.motechproject.org.apache.activemq</artifactId>
                 <version>${activemq.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-broker</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-client</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-openwire-legacy</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-jaas</artifactId>
+                    </exclusion>
+                    <exclusion>
+                          <groupId>org.apache.geronimo.specs</groupId>
+                          <artifactId>geronimo-jms_1.1_spec</artifactId>
+                    </exclusion>
+                     <exclusion>
+                         <groupId>org.apache.geronimo.specs</groupId>
+                          <artifactId>geronimo-j2ee-management_1.1_spec</artifactId>
+                     </exclusion>
+                    <exclusion>
+                        <groupId>org.fusesource.hawtbuf</groupId>
+                        <artifactId>hawtbuf</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.jasypt</groupId>
+                        <artifactId>jasypt</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>com.ibm.icu</groupId>
+                        <artifactId>icu4j</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>org.apache.activemq</groupId>
+                        <artifactId>activemq-kahadb-store</artifactId>
+                    </exclusion>
+                    <exclusion>
+                          <groupId>org.apache.activemq.protobuf</groupId>
+                          <artifactId>activemq-protobuf</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <!-- DataNucleus -->
             <dependency>
@@ -871,6 +905,10 @@
                     <exclusion>
                         <groupId>org.slf4j</groupId>
                         <artifactId>com.springsource.slf4j.api</artifactId>
+                    </exclusion>
+                    <exclusion>
+                          <groupId>org.reflections</groupId>
+                          <artifactId>reflections</artifactId>
                     </exclusion>
                 </exclusions>
             </dependency>
