@@ -34,6 +34,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-config-core</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>com.springsource.javax.jms</artifactId>
+                    <groupId>javax.jms</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
             <groupId>${project.groupId}</groupId>
@@ -89,14 +95,14 @@
             <!--<groupId>org.apache.activemq</groupId>-->
             <!--<artifactId>kahadb</artifactId>-->
         <!--</dependency>-->
-        <dependency>
-            <groupId>javax.transaction</groupId>
-            <artifactId>com.springsource.javax.transaction</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>com.springsource.javax.jms</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.transaction</groupId>-->
+            <!--<artifactId>com.springsource.javax.transaction</artifactId>-->
+        <!--</dependency>-->
+        <!--<dependency>-->
+            <!--<groupId>javax.jms</groupId>-->
+            <!--<artifactId>com.springsource.javax.jms</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.management.j2ee</groupId>
             <artifactId>javax.management.j2ee-api</artifactId>
