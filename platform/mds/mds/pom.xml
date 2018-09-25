@@ -385,6 +385,7 @@
                             org.springframework.cglib.core,
                             org.springframework.cglib.reflect,
                             com.google.common.base,
+                            com.google.common.collect,
                             <!--TODO HARITHA COmmented check org.apache.bval.jsr303,-->
                             org.apache.bval.constraints,
                             org.apache.commons.vfs2.provider.gzip,
@@ -414,6 +415,8 @@
                             org.springframework.security.config,
                             org.springframework.web.context,
                             org.motechproject.bundle.extender,
+                            javassist.bytecode,
+                            javassist.bytecode.annotation,
                             *
                         </Import-Package>
                         <!--
