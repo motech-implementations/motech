@@ -1,9 +1,14 @@
 package org.motechproject.mds.config;
 
+import org.flywaydb.core.api.logging.Log;
+import org.flywaydb.core.api.logging.LogFactory;
 import org.motechproject.commons.api.MotechException;
 import org.motechproject.commons.sql.service.SqlDBManager;
 import org.motechproject.config.core.service.CoreConfigurationService;
 import org.motechproject.mds.util.Constants;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.slf4j.impl.Log4jLoggerAdapter;
 import org.springframework.core.io.ClassPathResource;
 import org.springframework.core.io.Resource;
 
@@ -44,6 +49,49 @@ public class MdsConfig {
         sqlDBManager.createDatabase(
             mdsSqlProperties.getProperty("javax.jdo.option.ConnectionURL")
         );
+
+        org.flywaydb.core.api.logging.LogFactory.setLogCreator(clazz -> {
+            return new TempLog(LoggerFactory.getLogger(clazz));
+        });
+    }
+
+    public class TempLog implements org.flywaydb.core.api.logging.Log {
+
+        Logger log;
+
+        public TempLog(Logger log) {
+            this.log = log;
+        }
+
+        @Override
+        public boolean isDebugEnabled() {
+            return log.isDebugEnabled();
+        }
+
+        @Override
+        public void debug(String message) {
+            log.debug(message);
+        }
+
+        @Override
+        public void info(String message) {
+            log.info(message);
+        }
+
+        @Override
+        public void warn(String message) {
+            log.warn(message);
+        }
+
+        @Override
+        public void error(String message) {
+            log.error(message);
+        }
+
+        @Override
+        public void error(String message, Exception e) {
+            log.error(message, e);
+        }
     }
 
     public void setConfig(List<Resource> resources) {
