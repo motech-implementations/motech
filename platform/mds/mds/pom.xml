@@ -445,6 +445,7 @@
                             files inside motech-platform-dataservices resolves the problem. This instruction
                             should be removed when problem will be solved inside flyway-core.
                         -->
+                        <!-- TODO DHIRAJ - I THINK THIS CAN BE REMOVED - CHECK AND REMOVE -->
                         <Embed-Dependency>
                             flyway-core;inline=com/googlecode/flyway/core/dbsupport/**/*.sql
                         </Embed-Dependency>

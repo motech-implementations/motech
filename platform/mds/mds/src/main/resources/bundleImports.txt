@@ -52,4 +52,6 @@ org.springframework.transaction,
 org.springframework.transaction.support,
 org.springframework.web.context,
 org.springframework.web.context.support,
-org.apache.felix.framework
+org.apache.felix.framework,
+org.springframework.validation.beanvalidation,
+org.springframework.transaction.annotation
