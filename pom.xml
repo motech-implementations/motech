@@ -725,12 +725,12 @@
                 <groupId>org.apache.bval</groupId>
                 <artifactId>org.apache.bval.bundle</artifactId>
                 <version>0.5</version>
-                <!--<exclusions>
+                <exclusions>
                     <exclusion>
-                        <groupId>org.apache.bval</groupId>
-                        <artifactId>bval-jsr303</artifactId>
+                        <groupId>org.apache.commons</groupId>
+                        <artifactId>commons-lang3</artifactId>
                     </exclusion>
-                </exclusions>-->
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.commons</groupId>
