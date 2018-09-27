@@ -318,7 +318,7 @@ public class PasswordRecoveryServiceTest {
         when(settingsFacade.getPlatformSettings()).thenReturn(motechSettings);
         when(motechSettings.getServerHost()).thenReturn("serverurl");
         when(motechSettings.getServerUrl()).thenReturn("http://serverurl");
-        when(motechSettings.getLoginMode()).thenReturn(LoginMode.REPOSITORY);
+        when(motechSettings.getLoginModeValue()).thenReturn(LoginMode.REPOSITORY.getName());
 
         PasswordRecovery newRecovery = new PasswordRecovery();
         newRecovery.setUsername(USERNAME);

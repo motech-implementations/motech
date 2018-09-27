@@ -41,7 +41,7 @@ public class SettingsRecordTest {
     public void shouldReturnLoginModeByStringSetter() {
         SettingsRecord settingsRecord = new SettingsRecord();
         settingsRecord.setLoginModeValue(LoginMode.REPOSITORY.getName());
-        assertThat(settingsRecord.getLoginMode(), is(LoginMode.REPOSITORY));
+        assertThat(settingsRecord.getLoginModeValue(), is(LoginMode.REPOSITORY.getName()));
         assertThat(settingsRecord.getLoginModeValue(), is(LoginMode.REPOSITORY.getName()));
     }
 

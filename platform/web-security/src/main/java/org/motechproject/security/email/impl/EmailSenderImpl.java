@@ -10,6 +10,7 @@ import org.motechproject.security.ex.ServerUrlIsEmptyException;
 import org.motechproject.security.ex.VelocityTemplateParsingException;
 import org.motechproject.security.velocity.VelocityTemplateParser;
 import org.motechproject.server.config.SettingsFacade;
+import org.motechproject.server.config.domain.LoginMode;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -142,7 +143,7 @@ public class EmailSenderImpl implements EmailSender {
 
         String path = "/module";
         String flag;
-        if (settingsFacade.getPlatformSettings().getLoginMode().isRepository()) {
+        if (settingsFacade.getPlatformSettings().getLoginModeValue().equals(LoginMode.REPOSITORY.getName())) {
             flag = RESET_PATH;
             path += "/server/";
         } else {

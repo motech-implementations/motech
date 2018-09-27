@@ -49,7 +49,7 @@ public class StartupManagerTest {
         when(configLoader.loadMotechSettings()).thenReturn(null);
         when(configurationService.getPlatformSettings()).thenReturn(new SettingsRecord());
         when(configLoader.loadMotechSettings()).thenReturn(settingsRecord);
-        when(settingsRecord.getLoginMode()).thenReturn(LoginMode.REPOSITORY);
+        when(settingsRecord.getLoginModeValue()).thenReturn(LoginMode.REPOSITORY.getName());
 
         startupManager.startup();
 

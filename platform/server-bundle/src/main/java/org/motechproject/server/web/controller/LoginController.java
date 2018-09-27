@@ -2,6 +2,7 @@ package org.motechproject.server.web.controller;
 
 import org.apache.commons.lang3.StringUtils;
 import org.motechproject.server.config.SettingsFacade;
+import org.motechproject.server.config.domain.LoginMode;
 import org.motechproject.server.startup.StartupManager;
 import org.motechproject.osgi.web.LocaleService;
 import org.motechproject.server.web.dto.LoginViewData;
@@ -58,7 +59,7 @@ public class LoginController {
     public LoginViewData getLoginViewData(final HttpServletRequest request) {
 
         LoginViewData view = new LoginViewData();
-        view.setLoginMode(settingsFacade.getPlatformSettings().getLoginMode());
+        view.setLoginMode(LoginMode.valueOf(settingsFacade.getPlatformSettings().getLoginModeValue()));
         view.setOpenIdProviderName(settingsFacade.getPlatformSettings().getProviderName());
         view.setOpenIdProviderUrl(settingsFacade.getPlatformSettings().getProviderUrl());
         view.setLoginForm(new LoginForm());

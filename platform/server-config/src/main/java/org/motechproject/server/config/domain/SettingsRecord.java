@@ -55,11 +55,12 @@ public class SettingsRecord implements MotechSettings {
         return platformSettings.get(ConfigurationConstants.STATUS_MSG_TIMEOUT);
     }
 
-    @Ignore
-    @Override
-    public LoginMode getLoginMode() {
-        return LoginMode.valueOf(platformSettings.get(ConfigurationConstants.LOGINMODE));
-    }
+//    @Ignore
+//    @Override
+//    public LoginMode getLoginMode() {
+//        return LoginMode.valueOf(platformSettings.get(ConfigurationConstants.LOGINMODE));
+//    }
+
 
     @Ignore
     public String getLoginModeValue() {

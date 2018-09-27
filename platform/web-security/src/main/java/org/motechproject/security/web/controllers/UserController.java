@@ -15,6 +15,7 @@ import org.motechproject.security.model.UserDto;
 import org.motechproject.security.service.MotechUserService;
 import org.motechproject.security.validator.ValidatorNames;
 import org.motechproject.server.config.SettingsFacade;
+import org.motechproject.server.config.domain.LoginMode;
 import org.motechproject.server.config.domain.MotechSettings;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -84,7 +85,7 @@ public class UserController {
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     @ResponseBody
     public List<MotechUserProfile> getUsers() {
-        return settingsFacade.getPlatformSettings().getLoginMode().isOpenId() ?
+        return settingsFacade.getPlatformSettings().getLoginModeValue().equals(LoginMode.OPEN_ID.getName()) ?
                 motechUserService.getOpenIdUsers() :
                 motechUserService.getUsers();
     }
@@ -149,7 +150,7 @@ public class UserController {
     @ResponseBody
     public String loginMode() {
         MotechSettings settings = settingsFacade.getPlatformSettings();
-        return settings.getLoginMode().getName().toLowerCase();
+        return settings.getLoginModeValue().toLowerCase();
     }
 
     /**
