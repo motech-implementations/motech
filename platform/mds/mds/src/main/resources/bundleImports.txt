@@ -59,4 +59,8 @@ org.springframework.core,
 org.springframework.cglib.proxy,
 org.springframework.cglib.core,
 org.springframework.cglib.reflect,
-org.datanucleus.enhancement
+org.datanucleus.enhancement,
+org.aspectj.lang,
+org.aspectj.runtime.internal,
+org.apache.bval.util
+

@@ -434,6 +434,9 @@
                             org.motechproject.bundle.extender,
                             javassist.bytecode,
                             javassist.bytecode.annotation,
+                            org.aspectj.lang,
+                            org.aspectj.runtime.internal,
+                            org.apache.bval.util,
                             *
                         </Import-Package>
                         <!--
