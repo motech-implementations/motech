@@ -103,6 +103,8 @@
                             org.springframework.beans.factory,
                             org.springframework.cache,
                             javax.annotation;version="0.0.0",
+                            org.datanucleus.enhancement,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>
