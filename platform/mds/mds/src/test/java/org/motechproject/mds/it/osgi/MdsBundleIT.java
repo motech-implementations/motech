@@ -291,12 +291,12 @@ public class MdsBundleIT extends BasePaxIT {
         Object instance5 = loadedClass.newInstance();
 
         // instance 1
-        updateInstance(instance, true, "trueNow", "trueNowCp", asList("1", "2", "3"),
+        updateInstance(instance, true, "trueNow", "trueNowCp", new ArrayList<>(asList("1", "2", "3")),
                        NOW, LD_NOW, TEST_MAP, TEST_PERIOD, BYTE_ARRAY_VALUE,
                        DATE_NOW, DOUBLE_VALUE_1, MORNING_TIME, 1, toEnum(loadedClass, "one"));
 
         // instance 2
-        updateInstance(instance2, true, "trueInRange", "trueInRangeCp", asList("2", "4"),
+        updateInstance(instance2, true, "trueInRange", "trueInRangeCp", new ArrayList<>(asList("2", "4")),
                        NOW.plusHours(1), LD_NOW.plusDays(1), TEST_MAP, TEST_PERIOD, BYTE_ARRAY_VALUE,
                        DATE_NOW, DOUBLE_VALUE_1, MORNING_TIME, 2, toEnum(loadedClass, "two"));
 
@@ -472,7 +472,7 @@ public class MdsBundleIT extends BasePaxIT {
         Class objClass = retrieved.getClass();
 
         // instance 1.1
-        updateInstance(retrieved, false, "anotherString", "anotherStringCp", asList("4", "5"),
+        updateInstance(retrieved, false, "anotherString", "anotherStringCp", new ArrayList<>(asList("4", "5")),
                 YEAR_LATER, LD_YEAR_AGO, TEST_MAP2, NEW_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_TOMORROW, DOUBLE_VALUE_2, NIGHT_TIME, 10, toEnum(objClass, "two"));
 
@@ -488,7 +488,7 @@ public class MdsBundleIT extends BasePaxIT {
         // Creating a new object using createOrUpdate() method and checking if it was really added
         Object instance = loadedClass.newInstance();
 
-        updateInstance(instance, false, "newInstance", "newInstance", asList("1", "2", "3"),
+        updateInstance(instance, false, "newInstance", "newInstance", new ArrayList<>(asList("1", "2", "3")),
                 NOW, LD_NOW, TEST_MAP, TEST_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_NOW, DOUBLE_VALUE_1, MORNING_TIME, 1, toEnum(loadedClass, "one"));
 
@@ -502,7 +502,7 @@ public class MdsBundleIT extends BasePaxIT {
         Object retrieved = allObjects.get(INSTANCE_COUNT);          // gets the last added object
         Class objClass = retrieved.getClass();
 
-        updateInstance(retrieved, false, "yetAnotherString", "yetAnotherStringCp", asList("1", "2", "3"),
+        updateInstance(retrieved, false, "yetAnotherString", "yetAnotherStringCp", new ArrayList<>(asList("1", "2", "3")),
                 YEAR_LATER, LD_YEAR_AGO, TEST_MAP2, NEW_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_TOMORROW, DOUBLE_VALUE_2, NIGHT_TIME, 10, toEnum(objClass, "two"));
 
@@ -512,7 +512,7 @@ public class MdsBundleIT extends BasePaxIT {
 
         Object updated = service.retrieveAll().get(INSTANCE_COUNT); // gets the last added object
 
-        assertInstance(updated, false, "yetAnotherString", "yetAnotherStringCp", asList("1", "2", "3"),
+        assertInstance(updated, false, "yetAnotherString", "yetAnotherStringCp", new ArrayList<>(asList("1", "2", "3")),
                 YEAR_LATER, LD_YEAR_AGO, TEST_MAP2, NEW_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_TOMORROW, DOUBLE_VALUE_2, NIGHT_TIME, 10, toEnum(objClass, "two"));
 
@@ -616,7 +616,7 @@ public class MdsBundleIT extends BasePaxIT {
         Object retrieved = allObjects.get(0);
         Class objClass = retrieved.getClass();
 
-        updateInstance(retrieved, false, "anotherString", "anotherStringCp", asList("0", "35"),
+        updateInstance(retrieved, false, "anotherString", "anotherStringCp", new ArrayList<>(asList("0", "35")),
                 YEAR_LATER, LD_YEAR_AGO, TEST_MAP2, NEW_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_TOMORROW, DOUBLE_VALUE_2, NIGHT_TIME, 3, toEnum(objClass, "two"));
         service.update(retrieved);
@@ -655,7 +655,7 @@ public class MdsBundleIT extends BasePaxIT {
         assertInstance(list.get(0), false, "fromCsv", "Capital CSV", Collections.emptyList(), null, new LocalDate(2012, 10, 14),
                 null, new Period(2, 0, 0, 0, 0, 0, 0, 0), null, new DateTime(2014, 12, 2, 16, 13, 40, 120, DateTimeZone.UTC).toDate(),
                 null, new Time(20, 20), null, null);
-        assertInstance(list.get(1), true, "fromCsv", "Capital CSV", Arrays.asList("one", "two"),
+        assertInstance(list.get(1), true, "fromCsv", "Capital CSV", new ArrayList<>(Arrays.asList("one", "two")),
                 new DateTime(2014, 12, 2, 13, 10, 40, 120, DateTimeZone.UTC).withZone(DateTimeZone.getDefault()),
                 new LocalDate(2012, 10, 15), null, new Period(1, 0, 0, 0, 0, 0, 0, 0), null,
                 new DateTime(2014, 12, 2, 13, 13, 40, 120, DateTimeZone.UTC).toDate(), null, new Time(10, 30), null, null);
@@ -709,26 +709,26 @@ public class MdsBundleIT extends BasePaxIT {
                 TypeDto.STRING,
                 new FieldBasicDto("Some String", "someString"),
                 false, null, null,
-                asList(
+                new ArrayList<>(asList(
                         new SettingDto("mds.form.label.textarea", false, BOOLEAN)
-                ), null));
+                )), null));
         // test with capitalized name
         fields.add(new FieldDto(null, entityDto.getId(),
                 TypeDto.STRING,
                 new FieldBasicDto("Capital Name", "CapitalName"),
                 false, null, null,
-                asList(
+                new ArrayList<>(asList(
                         new SettingDto("mds.form.label.textarea", false, BOOLEAN)
-                ), null));
+                )), null));
         fields.add(new FieldDto(null, entityDto.getId(),
                 COLLECTION,
                 new FieldBasicDto("Some List", "someList"),
                 false, null, null,
-                asList(
+                new ArrayList<>(asList(
                         new SettingDto(Constants.Settings.COMBOBOX_VALUES, new LinkedList<>(), COLLECTION, REQUIRE),
                         new SettingDto(Constants.Settings.ALLOW_USER_SUPPLIED, true, BOOLEAN),
                         new SettingDto(Constants.Settings.ALLOW_MULTIPLE_SELECTIONS, true, BOOLEAN)
-                ), null));
+                )), null));
         fields.add(new FieldDto(null, entityDto.getId(),
                 TypeDto.DATETIME,
                 new FieldBasicDto("dateTime", "someDateTime"),
@@ -736,9 +736,9 @@ public class MdsBundleIT extends BasePaxIT {
         fields.add(new FieldDto(null, entityDto.getId(),
                 TypeDto.MAP,
                 new FieldBasicDto("someMap", "someMap"),
-                false, Arrays.asList(
+                false, new ArrayList<>(asList(
                         new MetadataDto(MAP_KEY_TYPE, String.class.getName()),
-                        new MetadataDto(MAP_VALUE_TYPE, TestClass.class.getName())),
+                        new MetadataDto(MAP_VALUE_TYPE, TestClass.class.getName()))),
                 null, null,null));
         fields.add(new FieldDto(null, entityDto.getId(),
                 TypeDto.PERIOD,
@@ -761,8 +761,8 @@ public class MdsBundleIT extends BasePaxIT {
                 new FieldBasicDto("someTime", "someTime"),
                 false, null));
 
-        List<SettingDto> decimalSettings = asList(new SettingDto("mds.form.label.precision", 10),
-                new SettingDto("mds.form.label.scale", 5));
+        List<SettingDto> decimalSettings = new ArrayList<>(asList(new SettingDto("mds.form.label.precision", 10),
+                new SettingDto("mds.form.label.scale", 5)));
 
         fields.add(new FieldDto(null, entityDto.getId(),
                 TypeDto.DOUBLE,
@@ -778,11 +778,11 @@ public class MdsBundleIT extends BasePaxIT {
                 TypeDto.COLLECTION,
                 new FieldBasicDto("Some Enum", "someEnum"),
                 false, null, null,
-                asList(
+                new ArrayList<>(asList(
                         new SettingDto(Constants.Settings.COMBOBOX_VALUES, asList("one", "two", "three"), COLLECTION, REQUIRE),
                         new SettingDto(Constants.Settings.ALLOW_USER_SUPPLIED, false, BOOLEAN),
                         new SettingDto(Constants.Settings.ALLOW_MULTIPLE_SELECTIONS, false, BOOLEAN)
-                ), null));
+                )), null));
 
         entityService.addFields(entityDto, fields);
 
@@ -790,11 +790,11 @@ public class MdsBundleIT extends BasePaxIT {
         List<LookupFieldDto> lookupFields = new ArrayList<>();
 
         lookupFields.add(new LookupFieldDto(null, "someBoolean", LookupFieldType.VALUE));
-        lookups.add(new LookupDto("By boolean", false, false, lookupFields, true, "byBool", asList("someBoolean")));
+        lookups.add(new LookupDto("By boolean", false, false, lookupFields, true, "byBool", new ArrayList<>(asList("someBoolean"))));
 
         lookupFields = new ArrayList<>();
         lookupFields.add(new LookupFieldDto(null, "someString", LookupFieldType.VALUE));
-        lookups.add(new LookupDto("By unique String", true, false, lookupFields, true, "byUniqueString", asList("someString")));
+        lookups.add(new LookupDto("By unique String", true, false, lookupFields, true, "byUniqueString", new ArrayList<>(asList("someString"))));
 
         lookupFields = new ArrayList<>();
         lookupFields.add(new LookupFieldDto(null, "someBoolean", LookupFieldType.VALUE));
@@ -805,11 +805,11 @@ public class MdsBundleIT extends BasePaxIT {
 
         lookupFields = new ArrayList<>();
         lookupFields.add(new LookupFieldDto(null, "someInt", LookupFieldType.VALUE, "<="));
-        lookups.add(new LookupDto("With custom operator", false, false, lookupFields, true, "customOperator", asList("someInt")));
+        lookups.add(new LookupDto("With custom operator", false, false, lookupFields, true, "customOperator", new ArrayList<>(asList("someInt"))));
 
         lookupFields = new ArrayList<>();
         lookupFields.add(new LookupFieldDto(null, "someString", LookupFieldType.VALUE, "matches()"));
-        lookups.add(new LookupDto("With matches", false, false, lookupFields, true, "matchesOperator", asList("someString")));
+        lookups.add(new LookupDto("With matches", false, false, lookupFields, true, "matchesOperator", new ArrayList<>(asList("someString"))));
 
         lookupFields = new ArrayList<>();
         lookupFields.add(new LookupFieldDto(null, "someString", LookupFieldType.VALUE,
@@ -911,13 +911,13 @@ public class MdsBundleIT extends BasePaxIT {
     }
 
     private void assertInstanceOne(Object instance, Class objClass) throws Exception {
-        assertInstance(instance, true, "trueNow", "trueNowCp", asList("1", "2", "3"),
+        assertInstance(instance, true, "trueNow", "trueNowCp", new ArrayList<>(asList("1", "2", "3")),
                 NOW, LD_NOW, TEST_MAP, TEST_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_NOW, DOUBLE_VALUE_1, MORNING_TIME, 1, toEnum(objClass, "one"));
     }
 
     private void assertInstanceTwo(Object instance, Class objClass) throws Exception {
-        assertInstance(instance, true, "trueInRange", "trueInRangeCp", asList("2", "4"),
+        assertInstance(instance, true, "trueInRange", "trueInRangeCp", new ArrayList<>(asList("2", "4")),
                 NOW.plusHours(1), LD_NOW.plusDays(1), TEST_MAP, TEST_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_NOW, DOUBLE_VALUE_1, MORNING_TIME, 2, toEnum(objClass, "two"));
     }
@@ -929,7 +929,7 @@ public class MdsBundleIT extends BasePaxIT {
     }
 
     private void assertInstanceOneDotOne(Object instance, Class objClass) throws Exception {
-        assertInstance(instance, false, "anotherString", "anotherStringCp", asList("4", "5"),
+        assertInstance(instance, false, "anotherString", "anotherStringCp", new ArrayList<>(asList("4", "5")),
                 YEAR_LATER, LD_YEAR_AGO, TEST_MAP2, NEW_PERIOD, BYTE_ARRAY_VALUE,
                 DATE_TOMORROW, DOUBLE_VALUE_2, NIGHT_TIME, 10, toEnum(objClass, "two"));
     }
