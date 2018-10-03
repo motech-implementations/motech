@@ -135,6 +135,12 @@
             <groupId>org.apache.felix</groupId>
             <artifactId>org.apache.felix.eventadmin</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.motechproject</groupId>
+            <artifactId>motech-platform-osgi-extender-fragment</artifactId>
+            <version>${project.version}</version>
+        </dependency>
         <!-- Test -->
         <dependency>
             <groupId>junit-addons</groupId>
@@ -180,6 +186,7 @@
                             org.apache.commons.lang3,
                             org.apache.commons.io.filefilter,
                             org.springframework.core.io,
+                            org.motechproject.bundle.extender,
                             *
                         </Import-Package>
                     </instructions>
