@@ -69,8 +69,13 @@ public class SchemaGenerator implements InitializingBean {
 
         Set<String> classNames = classNames();
         if (!classNames.isEmpty()) {
-            SchemaAwareStoreManager storeManager = getStoreManager();
-            storeManager.createSchemaForClasses(classNames, new Properties());
+            try {
+                SchemaAwareStoreManager storeManager = getStoreManager();
+                storeManager.createSchemaForClasses(classNames, new Properties());
+            }
+            catch (Exception|Error e) {
+                throw e;
+            }
         }
 
         LOGGER.info("Entity schema generation completed.");
@@ -98,7 +103,7 @@ public class SchemaGenerator implements InitializingBean {
         flyway.setSqlMigrationPrefix(Constants.EntitiesMigration.ENTITY_MIGRATIONS_PREFIX);
         flyway.setOutOfOrder(true);
         // TODO UPGRADE Check if it is the correct alternative for setInitOnMigrate
-        flyway.setValidateOnMigrate(true);
+        flyway.setValidateOnMigrate(false);
 
         flyway.migrate();
         LOGGER.info("Modules migration completed.");
