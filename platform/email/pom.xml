@@ -182,6 +182,10 @@
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
                             org.datanucleus.enhancement,
+                            org.springframework.validation.beanvalidation,
+                            org.w3c.dom,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
