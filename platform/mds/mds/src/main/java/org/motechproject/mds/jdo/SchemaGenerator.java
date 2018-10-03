@@ -102,7 +102,7 @@ public class SchemaGenerator implements InitializingBean {
         flyway.setLocations(Constants.EntitiesMigration.FILESYSTEM_PREFIX + migrationDirectory.getAbsolutePath());
         flyway.setSqlMigrationPrefix(Constants.EntitiesMigration.ENTITY_MIGRATIONS_PREFIX);
         flyway.setOutOfOrder(true);
-        // TODO UPGRADE Check if it is the correct alternative for setInitOnMigrate
+        flyway.setBaselineOnMigrate(true);
         flyway.setValidateOnMigrate(false);
 
         flyway.migrate();
