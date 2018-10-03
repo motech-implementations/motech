@@ -101,7 +101,6 @@
                             org.motechproject.osgi.web.service;version=${project.version},
                             org.motechproject.osgi.web.settings;version=${project.version},
                             org.motechproject.osgi.web.util;version=${project.version},
-                            org.apache.commons.io.filefilter,
 
                         </Export-Package>
                         <Import-Package>
