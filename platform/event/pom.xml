@@ -124,6 +124,10 @@
             <artifactId>org.apache.servicemix.bundles.saaj-impl</artifactId>
         </dependency>
         <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context-support</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.apache.servicemix.specs</groupId>
             <artifactId>org.apache.servicemix.specs.activation-api-1.1</artifactId>
         </dependency>
@@ -176,7 +180,6 @@
                             org.apache.commons.lang3,
                             org.apache.commons.io.filefilter,
                             org.springframework.core.io,
-
                             *
                         </Import-Package>
                     </instructions>

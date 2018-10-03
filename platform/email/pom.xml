@@ -181,6 +181,7 @@
                             org.springframework.aop.framework,
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
+                            org.datanucleus.enhancement,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
