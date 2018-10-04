@@ -97,6 +97,10 @@ public class BasePaxIT {
 
     private static PollingHttpClient pollingHttpClient;
 
+    static {
+        System.setProperty("org.apache.activemq.SERIALIZABLE_PACKAGES", "*");
+    }
+
     /**
      * Returns the configuration for the Pax Exam test. This method collects configuration options from
      * more specific methods in this class. In general, overriding the more specific methods called by this method

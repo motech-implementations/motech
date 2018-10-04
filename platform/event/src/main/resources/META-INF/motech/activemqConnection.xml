@@ -26,6 +26,7 @@
         <property name="targetConnectionFactory">
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">
                 <property name="brokerURL" value="${jms.broker.url}"/>
+                <property name="trustAllPackages" value="true"/>
                 <property name="redeliveryPolicy.maximumRedeliveries" value="0"/>
                 <property name="redeliveryPolicy.initialRedeliveryDelay" value="0"/>
                 <property name="redeliveryPolicy.redeliveryDelay" value="0"/>
