@@ -146,6 +146,12 @@
             <groupId>junit-addons</groupId>
             <artifactId>junit-addons</artifactId>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <artifactId>xercesImpl</artifactId>
+                    <groupId>xerces</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 

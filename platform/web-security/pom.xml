@@ -86,6 +86,10 @@
                     <groupId>xml-apis</groupId>
                     <artifactId>xml-apis</artifactId>
                 </exclusion>
+                <exclusion>
+                    <artifactId>xercesImpl</artifactId>
+                    <groupId>xerces</groupId>
+                </exclusion>
             </exclusions>
         </dependency>
         <dependency>
@@ -209,6 +213,7 @@
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
                             org.datanucleus.enhancement,
+                            org.w3c.dom,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

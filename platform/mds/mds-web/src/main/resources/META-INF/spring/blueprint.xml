@@ -32,10 +32,10 @@
 
     <osgi:reference id="restDocumentationServiceOSGi" interface="org.motechproject.mds.service.RestDocumentationService"/>
 
-    <osgi:reference id="localeServiceOsgi" interface="org.motechproject.osgi.web.LocaleService"/>
+    <osgi:reference id="localeService" interface="org.motechproject.osgi.web.LocaleService"/>
 
     <osgi:reference id="mdsBundleRegenerationServiceOSGi" interface="org.motechproject.mds.service.MdsBundleRegenerationService"/>
 
-    <osgi:reference id="motechUserServiceOsgi" interface="org.motechproject.security.service.MotechUserService"/>
+    <osgi:reference id="motechUserService" interface="org.motechproject.security.service.MotechUserService"/>
 
 </beans>
