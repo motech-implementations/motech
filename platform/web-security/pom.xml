@@ -139,6 +139,10 @@
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-core</artifactId>
+        </dependency>
         <!--<dependency>
             <groupId>javax.validation</groupId>
             <artifactId>validation-api</artifactId>
@@ -225,6 +229,9 @@
                             org.springframework.security.crypto.password,
                             org.springframework.beans.factory,
                             org.springframework.validation.beanvalidation,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

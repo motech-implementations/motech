@@ -14,11 +14,11 @@
     </appender>
 
     <logger name="org.motechproject">
-        <level value="ERROR" />
+        <level value="DEBUG" />
     </logger>
 
     <root>
-        <priority value="ERROR" />
+        <priority value="DEBUG" />
         <appender-ref ref="CONSOLE" />
         <appender-ref ref="FILE" />
     </root>
