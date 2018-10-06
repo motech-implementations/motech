@@ -233,6 +233,9 @@
                             org.springframework.core,
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
+                            org.springframework.beans,org.springframework.security.access.method,
+                            org.aopalliance.intercept,
+                            org.springframework.cglib.reflect,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

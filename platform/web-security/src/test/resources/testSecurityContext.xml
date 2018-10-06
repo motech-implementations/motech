@@ -6,8 +6,22 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
         http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-    <security:global-method-security pre-post-annotations="enabled">
-    </security:global-method-security>
+    <bean id="motechAccessVoter" class="org.motechproject.security.authentication.MotechAccessVoter" />
+
+    <bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
+        <property name="rolePrefix" value=""></property>
+    </bean>
+
+    <bean id="motechAccessDecisionManager" class="org.springframework.security.access.vote.AffirmativeBased">
+        <constructor-arg>
+            <list>
+                <ref bean="roleVoter" />
+                <ref bean="motechAccessVoter" />
+            </list>
+        </constructor-arg>
+    </bean>
+    <security:global-method-security pre-post-annotations="enabled" access-decision-manager-ref="motechAccessDecisionManager" />
+
 
     <security:authentication-manager alias="authenticationManager">
         <security:authentication-provider user-service-ref="userService"/>
