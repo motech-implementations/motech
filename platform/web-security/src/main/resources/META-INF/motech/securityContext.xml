@@ -6,7 +6,7 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
        http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
-    <bean id="motechAccessVoter" class="org.motechproject.security.authentication.MotechAccessVoter" />
+    <bean id="motechMethodAccessVoter" class="org.motechproject.security.authentication.MotechMethodAccessVoter" />
 
     <bean id="roleVoter" class="org.springframework.security.access.vote.RoleVoter">
         <property name="rolePrefix" value=""></property>
@@ -16,7 +16,7 @@
         <constructor-arg>
             <list>
                 <ref bean="roleVoter" />
-                <ref bean="motechAccessVoter" />
+                <ref bean="motechMethodAccessVoter" />
             </list>
         </constructor-arg>
     </bean>
