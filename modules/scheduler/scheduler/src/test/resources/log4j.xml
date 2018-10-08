@@ -10,11 +10,15 @@
     </appender>
 
     <logger name="org.motechproject">
-        <level value="WARN"/>
+        <level value="ERROR"/>
+    </logger>
+
+    <logger name="org.eclipse.gemini.blueprint">
+        <level value="ERROR"></level>
     </logger>
 
     <root>
-        <priority value="WARN"/>
+        <priority value="ERROR"/>
         <appender-ref ref="CONSOLE"/>
     </root>
 

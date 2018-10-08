@@ -116,6 +116,8 @@ public class PlatformActivator implements BundleActivator {
         // we start other platform bundles
         startBundles(BundleType.PLATFORM_BUNDLE_POST_WS);
 
+        startBundles(BundleType.MOTECH_MODULE);
+
         platformStarted();
 
         LOGGER.info("MOTECH Platform started");

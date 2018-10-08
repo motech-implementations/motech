@@ -14,8 +14,12 @@
         <level value="DEBUG"/>
     </logger>
 
+    <logger name="org.springframework">
+        <level value="DEBUG"/>
+    </logger>
+
     <root>
-        <priority value="ERROR" />
+        <priority value="DEBUG" />
         <appender-ref ref="CONSOLE" />
     </root>
 
