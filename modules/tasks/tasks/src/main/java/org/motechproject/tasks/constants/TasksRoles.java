@@ -5,7 +5,7 @@ package org.motechproject.tasks.constants;
  */
 public final class TasksRoles {
     public static final String MANAGE_TASKS = "manageTasks";
-    public static final String HAS_ROLE_MANAGE_TASKS = "hasRole('manageTasks')";
+    public static final String HAS_ROLE_MANAGE_TASKS = "hasAuthority('manageTasks')";
 
     private TasksRoles() {
 

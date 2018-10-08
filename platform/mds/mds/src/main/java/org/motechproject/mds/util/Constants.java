@@ -39,21 +39,21 @@ public final class Constants {
          *
          * @see #SCHEMA_ACCESS
          */
-        public static final String HAS_SCHEMA_ACCESS = "hasRole('" + SCHEMA_ACCESS + "')";
+        public static final String HAS_SCHEMA_ACCESS = "hasAuthority('" + SCHEMA_ACCESS + "')";
 
         /**
          * Spring security el expression to check if the given user has the 'Settings Access' role.
          *
          * @see #SETTINGS_ACCESS
          */
-        public static final String HAS_SETTINGS_ACCESS = "hasRole('" + SETTINGS_ACCESS + "')";
+        public static final String HAS_SETTINGS_ACCESS = "hasAuthority('" + SETTINGS_ACCESS + "')";
 
         /**
          * Spring security el expression to check if the given user has the 'Data Access' role.
          *
          * @see #DATA_ACCESS
          */
-        public static final String HAS_DATA_ACCESS = "hasRole('" + DATA_ACCESS + "')";
+        public static final String HAS_DATA_ACCESS = "hasAuthority('" + DATA_ACCESS + "')";
 
         /**
          * Spring security el expression to check if the given user has the 'Schema Access' or
@@ -62,7 +62,7 @@ public final class Constants {
          * @see #SCHEMA_ACCESS
          * @see #DATA_ACCESS
          */
-        public static final String HAS_DATA_OR_SCHEMA_ACCESS = "hasAnyRole('" + SCHEMA_ACCESS + "', '" + DATA_ACCESS + "')";
+        public static final String HAS_DATA_OR_SCHEMA_ACCESS = "hasAnyAuthority('" + SCHEMA_ACCESS + "', '" + DATA_ACCESS + "')";
 
         /**
          * Spring security el expression to check if the given user has any of the MDS roles.
@@ -71,7 +71,7 @@ public final class Constants {
          * @see #SETTINGS_ACCESS
          * @see #DATA_ACCESS
          */
-        public static final String HAS_ANY_MDS_ROLE = "hasAnyRole('" + SCHEMA_ACCESS + "', '" + DATA_ACCESS + "', '" + SETTINGS_ACCESS + "')";
+        public static final String HAS_ANY_MDS_ROLE = "hasAnyAuthority('" + SCHEMA_ACCESS + "', '" + DATA_ACCESS + "', '" + SETTINGS_ACCESS + "')";
 
         private Roles() {
         }

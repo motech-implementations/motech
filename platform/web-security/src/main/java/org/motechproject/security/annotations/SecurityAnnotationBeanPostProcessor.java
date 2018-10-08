@@ -29,7 +29,7 @@ import static org.springframework.util.ReflectionUtils.findMethod;
 /**
  * A {@link BeanPostProcessor} used by Motech to load permissions from modules. Given a module context, it looks for
  * {@link PreAuthorize} and {@link PostAuthorize} annotations. These annotations are then parsed using an
- * {@link ExpressionParser}. The permission names are deduced from {@code hasRole} and {@code hasAnyRole} in the
+ * {@link ExpressionParser}. The permission names are deduced from {@code hasAuthority} and {@code hasAnyAuthority} in the
  * annotation value. The names of permissions are then saved using the {@link MotechPermissionService}. The bundle
  * name used to construct the permission is retrieved from the application context.
  */
@@ -128,7 +128,7 @@ public class SecurityAnnotationBeanPostProcessor implements BeanPostProcessor {
     private List<String> findPermissions(SpelNode node) {
         List<String> list = new ArrayList<>(node.getChildCount());
 
-        if (startsWithIgnoreCase(node.toStringAST(), "hasRole") || startsWithIgnoreCase(node.toStringAST(), "hasAnyRole")) {
+        if (startsWithIgnoreCase(node.toStringAST(), "hasAuthority") || startsWithIgnoreCase(node.toStringAST(), "hasAnyAuthority")) {
             for (int i = 0; i < node.getChildCount(); ++i) {
                 list.add(remove(node.getChild(i).toStringAST(), '\''));
             }
