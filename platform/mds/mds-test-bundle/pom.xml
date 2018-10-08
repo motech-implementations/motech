@@ -93,6 +93,7 @@
                             net.sf.cglib.reflect,
                             org.springframework.transaction,
                             org.motechproject.event.listener,
+                            org.datanucleus.enhancement,
                             *
                         </Import-Package>
                     </instructions>

@@ -67,6 +67,10 @@
             <artifactId>gemini-blueprint-mock</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
