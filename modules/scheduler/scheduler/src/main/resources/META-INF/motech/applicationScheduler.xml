@@ -39,7 +39,7 @@
         <property name="locations">
             <bean factory-bean="schedulerInitializer" factory-method="getFlywayLocations" />
         </property>
-        <property name="initOnMigrate" value="true"/>
+        <property name="baselineOnMigrate" value="true"/>
     </bean>
 
     <bean id="schedulerSettings" class="org.motechproject.server.config.SettingsFacade" autowire="byType">

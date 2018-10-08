@@ -176,6 +176,9 @@
                             org.motechproject.mds.service.impl,
                             org.flywaydb.core,
                             org.motechproject.bundle.extender,
+                            org.springframework.validation.beanvalidation,
+                            org.apache.commons.pool.impl,
+                            javax.jdo.annotations,
                             *
                         </Import-Package>
                         <!-- Spring context support has optional import of Quartz. This gives runtime exception.
