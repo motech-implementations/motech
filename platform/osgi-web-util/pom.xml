@@ -131,6 +131,7 @@
                             org.apache.commons.io.filefilter,
                             org.springframework.core.io,
                             org.apache.commons.validator,
+                            org.apache.commons.collections4,
                         </Import-Package>
                         <Bundle-Activator>
                             org.motechproject.osgi.web.BlueprintActivator

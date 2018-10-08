@@ -165,6 +165,9 @@
                             org.springframework.web.multipart.commons,
                             org.springframework.web.servlet.config,
                             org.datanucleus.enhancement,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
