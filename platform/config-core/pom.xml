@@ -170,6 +170,7 @@
                             org.osgi.service.blueprint;version="[1.0.0,2.0.0)";resolution:=optional,
                             org.motechproject.commons.api,
                             org.eclipse.gemini.blueprint.extensions.annotation,
+                            org.eclipse.gemini.blueprint.service,
                             
                             *
 

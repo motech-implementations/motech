@@ -109,6 +109,8 @@
                             org.eclipse.gemini.blueprint.context.event,
                             org.eclipse.gemini.blueprint.util,
                             org.apache.commons.logging,
+                            org.apache.commons.logging.impl,
+                            org.slf4j.spi,
                             org.eclipse.gemini.blueprint.util.internal,
                             org.apache.commons.pool,
                             org.apache.commons.pool.impl,
