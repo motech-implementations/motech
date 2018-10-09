@@ -19,13 +19,13 @@
         <osgi:registration-listener ref="rolePermissionRegListener" />
     </osgi:service>
 
-    <osgi:service id="motechRoleService" ref="motechRoleService" interface="org.motechproject.security.service.MotechRoleService">
+    <osgi:service id="motechRoleServiceOsgi" ref="motechRoleService" interface="org.motechproject.security.service.MotechRoleService">
         <osgi:registration-listener ref="rolePermissionRegListener" />
     </osgi:service>
 
-    <osgi:service id="motechUserService" ref="motechUserService" interface="org.motechproject.security.service.MotechUserService"/>
+    <osgi:service id="motechUserServiceOsgi" ref="motechUserService" interface="org.motechproject.security.service.MotechUserService"/>
 
-    <osgi:service id="passwordRecoveryService" ref="passwordRecoveryServiceImpl" interface="org.motechproject.security.service.PasswordRecoveryService" />
+    <osgi:service id="passwordRecoveryServiceOsgi" ref="passwordRecoveryServiceImpl" interface="org.motechproject.security.service.PasswordRecoveryService" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.motechproject.osgi.web.BundledJspView"/>
@@ -33,7 +33,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <osgi:service ref="passwordRecoveryService" interface="org.motechproject.security.service.PasswordRecoveryService"/>
+    <osgi:service ref="passwordRecoveryServiceImpl" interface="org.motechproject.security.service.PasswordRecoveryService"/>
 
     <osgi:service ref="sessionHandler" interface="javax.servlet.http.HttpSessionListener"/>
 
