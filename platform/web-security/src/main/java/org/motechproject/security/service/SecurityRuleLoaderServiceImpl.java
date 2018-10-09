@@ -13,6 +13,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.core.io.Resource;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -46,6 +47,8 @@ public class SecurityRuleLoaderServiceImpl implements SecurityRuleLoaderService 
 
             } catch (IOException e) {
                 LOGGER.error("Unable to load security rules from " + applicationContext.getDisplayName(), e);
+            } catch (ServletException e) {
+                LOGGER.error("Unable to load security rules from " + applicationContext.getDisplayName(), e);
             }
         }
 
@@ -62,7 +65,7 @@ public class SecurityRuleLoaderServiceImpl implements SecurityRuleLoaderService 
      *
      * @param newRules list that contains new rules
      */
-    private void updateSecurityConfig(List<MotechURLSecurityRule> newRules) {
+    private void updateSecurityConfig(List<MotechURLSecurityRule> newRules) throws ServletException {
         LOGGER.debug("Updating security config");
 
         String origin = newRules.get(0).getOrigin();

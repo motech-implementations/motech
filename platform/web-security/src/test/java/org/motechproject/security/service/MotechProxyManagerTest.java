@@ -12,6 +12,7 @@ import org.motechproject.security.builder.SecurityRuleBuilder;
 import org.motechproject.security.domain.MotechURLSecurityRule;
 import org.motechproject.security.repository.AllMotechSecurityRules;
 
+import javax.servlet.ServletException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -39,7 +40,7 @@ public class MotechProxyManagerTest {
     }
 
     @Test
-    public void shouldOrderRulesByPriority() {
+    public void shouldOrderRulesByPriority() throws ServletException {
         List<MotechURLSecurityRule> rules = new ArrayList<>();
 
         rules.add(buildRule("priority-3", 3));

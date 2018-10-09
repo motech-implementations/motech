@@ -5,6 +5,7 @@ import org.motechproject.security.model.SecurityConfigDto;
 import org.motechproject.security.model.SecurityRuleDto;
 import org.springframework.security.access.prepost.PreAuthorize;
 
+import javax.servlet.ServletException;
 import java.util.List;
 
 /**

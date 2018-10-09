@@ -54,6 +54,7 @@ import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
+import javax.servlet.ServletException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -98,7 +99,7 @@ public class SecurityRuleBuilder {
      * @param method to be used in filter
      * @return new filter chain with security rule, matcher and filters
      */
-    public synchronized SecurityFilterChain buildSecurityChain(MotechURLSecurityRule securityRule, HTTPMethod method) {
+    public synchronized SecurityFilterChain buildSecurityChain(MotechURLSecurityRule securityRule, HTTPMethod method) throws ServletException {
         LOGGER.info("Building security chain for rule: {} and method: {}", securityRule.getPattern(), method);
 
         List<Filter> filters = new ArrayList<>();
@@ -165,7 +166,7 @@ public class SecurityRuleBuilder {
         return result;
     }
 
-    private List<Filter> addFilters(MotechURLSecurityRule securityRule) {
+    private List<Filter> addFilters(MotechURLSecurityRule securityRule) throws ServletException {
         List<Filter> filters = new ArrayList<>();
 
         SecurityContextRepository contextRepository = new HttpSessionSecurityContextRepository();
@@ -201,8 +202,10 @@ public class SecurityRuleBuilder {
         filters.add(logoutFilter);
     }
 
-    private void addSecurityContextHolderAwareRequestFilter(List<Filter> filters) {
+    private void addSecurityContextHolderAwareRequestFilter(List<Filter> filters) throws ServletException {
         SecurityContextHolderAwareRequestFilter securityFilter = new SecurityContextHolderAwareRequestFilter();
+        securityFilter.setRolePrefix(StringUtils.EMPTY);
+        securityFilter.afterPropertiesSet();
         filters.add(securityFilter);
     }
 
