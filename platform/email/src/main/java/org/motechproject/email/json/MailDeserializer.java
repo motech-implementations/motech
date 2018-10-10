@@ -1,10 +1,10 @@
 package org.motechproject.email.json;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.map.DeserializationContext;
-import org.codehaus.jackson.map.JsonDeserializer;
-import org.codehaus.jackson.map.JsonMappingException;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.JsonMappingException;
 import org.motechproject.email.contract.Mail;
 
 import java.io.IOException;
@@ -32,7 +32,7 @@ public class MailDeserializer extends JsonDeserializer<Mail> {
         String value = null;
 
         if (jsonNode.has(key)) {
-            value = jsonNode.get(key).getTextValue();
+            value = jsonNode.get(key).textValue();
         }
 
         if (required && isBlank(value)) {

@@ -27,9 +27,13 @@
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-lang3</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>org.motechproject.org.codehaus.jackson</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
@@ -61,7 +65,9 @@
                         </Bundle-Activator>
                         <Import-Package>
                             org.eclipse.gemini.blueprint,
-                            org.codehaus.jackson.annotate,
+                            <!--org.codehaus.jackson.annotate,-->
+                            com.fasterxml.jackson.core,
+                            com.fasterxml.jackson.annotation,
                             org.eclipse.gemini.blueprint.context.event,
                             org.eclipse.gemini.blueprint.util,
                             org.osgi.framework,

@@ -1,6 +1,6 @@
 package org.motechproject.server.web.helper;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.motechproject.commons.api.ClassUtils;
 import org.motechproject.osgi.web.util.BundleHeaders;
 import org.osgi.framework.Bundle;

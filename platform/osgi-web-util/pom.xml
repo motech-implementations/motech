@@ -55,9 +55,13 @@
             <groupId>commons-io</groupId>
             <artifactId>commons-io</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>org.codehaus.jackson</groupId>
             <artifactId>org.motechproject.org.codehaus.jackson</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
@@ -115,7 +119,9 @@
                             org.apache.commons.io, org.apache.commons.lang,
                             org.apache.commons.lang3,
                             org.apache.log4j, org.apache.log4j.xml,
-                            org.codehaus.jackson.annotate,
+                            <!--org.codehaus.jackson.annotate,-->
+                            com.fasterxml.jackson.core,
+                            com.fasterxml.jackson.annotation,
                             org.eclipse.gemini.blueprint.context,
                             org.eclipse.gemini.blueprint.context.support,
                             org.eclipse.gemini.blueprint.util,

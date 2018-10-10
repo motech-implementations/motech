@@ -1,14 +1,14 @@
 package org.motechproject.tasks.json;
 
 import org.apache.commons.beanutils.BeanUtils;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.ObjectCodec;
-import org.codehaus.jackson.map.DeserializationContext;
-import org.codehaus.jackson.map.JsonDeserializer;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.type.TypeFactory;
-import org.codehaus.jackson.type.JavaType;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.type.TypeFactory;
+import com.fasterxml.jackson.databind.JavaType;
 import org.joda.time.DateTime;
 import org.motechproject.tasks.domain.Task;
 import org.motechproject.tasks.domain.TaskActionInformation;
@@ -86,7 +86,7 @@ public class TaskDeserializer extends JsonDeserializer<Task> {
     private void setProperty(String propertyName, String jsonPropertyName, JavaType javaType) {
         if (jsonNode.has(jsonPropertyName)) {
             try {
-                Object value = mapper.readValue(jsonNode.get(jsonPropertyName), javaType);
+                Object value = mapper.readValue(jsonNode.get(jsonPropertyName).toString(), javaType);
                 BeanUtils.setProperty(task, propertyName, value);
             } catch (IllegalAccessException | InvocationTargetException | IOException e) {
                 LOGGER.error(e.getMessage(), e);

@@ -1,7 +1,7 @@
 package org.motechproject.security.domain;
 
 import org.apache.commons.collections4.CollectionUtils;
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 import java.util.List;

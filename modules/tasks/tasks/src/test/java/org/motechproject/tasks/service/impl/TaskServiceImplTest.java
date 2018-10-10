@@ -1,9 +1,9 @@
 package org.motechproject.tasks.service.impl;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.node.ArrayNode;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ArrayNode;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.hamcrest.Description;
 import org.hamcrest.TypeSafeMatcher;
 import org.junit.Before;
@@ -465,7 +465,7 @@ public class TaskServiceImplTest {
         // should preserve action values
         assertNotNull(((ObjectNode) node).findValue("id"));
 
-        assertEquals(expected, mapper.readValue(node, Task.class));
+        assertEquals(expected, mapper.readValue(node.toString(), Task.class));
     }
 
     private void notContainsIgnoreFields(JsonNode node) {

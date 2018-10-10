@@ -1,8 +1,9 @@
 package org.motechproject.tasks.web;
 
+import com.fasterxml.jackson.databind.SerializationFeature;
 import org.apache.commons.io.IOUtils;
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.motechproject.tasks.constants.TasksRoles;
 import org.motechproject.tasks.domain.Task;
 import org.motechproject.tasks.domain.TaskError;
@@ -34,7 +35,6 @@ import java.util.Set;
 import static java.lang.String.format;
 import static java.net.URLEncoder.encode;
 import static org.apache.commons.lang3.CharEncoding.UTF_8;
-import static org.codehaus.jackson.map.SerializationConfig.Feature.INDENT_OUTPUT;
 import static org.springframework.http.MediaType.APPLICATION_JSON_VALUE;
 
 /**
@@ -128,13 +128,13 @@ public class TaskController {
     @RequestMapping(value = "/task/{taskId}/export", method = RequestMethod.GET)
     public void exportTask(@PathVariable Long taskId, HttpServletResponse response)
             throws IOException {
-        ObjectMapper mapper = new ObjectMapper().enable(INDENT_OUTPUT);
+        ObjectMapper mapper = new ObjectMapper().enable(SerializationFeature.INDENT_OUTPUT);
 
         String json = taskService.exportTask(taskId);
         JsonNode node = mapper.readTree(json);
 
         String fileName = node.has(JSON_NAME_FIELD)
-                ? node.get(JSON_NAME_FIELD).getTextValue()
+                ? node.get(JSON_NAME_FIELD).textValue()
                 : "task";
 
         response.setContentType(APPLICATION_JSON_VALUE);

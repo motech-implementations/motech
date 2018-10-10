@@ -1,6 +1,6 @@
 package org.motechproject.mds.testutil.records;
 
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.joda.time.DateTime;
 import org.motechproject.mds.annotations.Entity;
 

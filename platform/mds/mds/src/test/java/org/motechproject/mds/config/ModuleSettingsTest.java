@@ -1,7 +1,7 @@
 package org.motechproject.mds.config;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -65,7 +65,7 @@ public class ModuleSettingsTest {
                 json.get("timeValue").asText(), json.get("timeUnit").asText()
         );
 
-        ModuleSettings fromJSON = mapper.readValue(json, ModuleSettings.class);
+        ModuleSettings fromJSON = mapper.readValue(json.toString(), ModuleSettings.class);
         assertValues(
                 fromJSON.getDeleteMode(), fromJSON.isEmptyTrash(),
                 fromJSON.getTimeValue(), fromJSON.getTimeUnit()

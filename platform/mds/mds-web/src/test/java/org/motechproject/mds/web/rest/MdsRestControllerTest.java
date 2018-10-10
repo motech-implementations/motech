@@ -1,9 +1,10 @@
 package org.motechproject.mds.web.rest;
 
 import org.apache.commons.lang3.StringUtils;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.map.annotate.JsonSerialize;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -73,7 +74,7 @@ public class MdsRestControllerTest {
     @InjectMocks
     private MdsRestController mdsRestController = new MdsRestController();
 
-    private final ObjectMapper objectMapper = new ObjectMapper().setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
+    private final ObjectMapper objectMapper = new ObjectMapper();//.setSerializationInclusion(JsonSerialize.Inclusion.NON_NULL);
 
     private MockMvc mockMvc;
 

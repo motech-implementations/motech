@@ -1,11 +1,11 @@
 package org.motechproject.tasks.json;
 
-import org.codehaus.jackson.JsonNode;
-import org.codehaus.jackson.JsonParser;
-import org.codehaus.jackson.ObjectCodec;
-import org.codehaus.jackson.map.DeserializationContext;
-import org.codehaus.jackson.map.JsonDeserializer;
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.core.JsonParser;
+import com.fasterxml.jackson.core.ObjectCodec;
+import com.fasterxml.jackson.databind.DeserializationContext;
+import com.fasterxml.jackson.databind.JsonDeserializer;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.motechproject.tasks.domain.TaskConfig;
 import org.motechproject.tasks.domain.TaskConfigStep;
 
@@ -33,10 +33,10 @@ public class TaskConfigDeserializer extends JsonDeserializer<TaskConfig> {
         }
 
         if (jsonNode.has("steps")) {
-            Iterator<JsonNode> steps = jsonNode.get("steps").getElements();
+            Iterator<JsonNode> steps = jsonNode.get("steps").elements();
 
             while (steps.hasNext()) {
-                config.add(mapper.readValue(steps.next(), TaskConfigStep.class));
+                config.add(mapper.readValue(steps.next().toString(), TaskConfigStep.class));
             }
         }
 

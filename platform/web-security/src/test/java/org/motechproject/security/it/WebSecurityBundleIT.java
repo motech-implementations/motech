@@ -166,6 +166,7 @@ public class WebSecurityBundleIT extends BaseIT {
 
     private void updateSecurity(String fileName) throws IOException, InterruptedException {
         HttpPost request = new HttpPost(String.format(UPDATE_URL, TestContext.getJettyPort()));
+        request.addHeader("Content-Type", "application/json");
         addAuthHeader(request, USER_NAME, USER_PASSWORD);
 
         StringEntity entity = new StringEntity(getSecurityString(fileName), "application/json", "UTF-8");

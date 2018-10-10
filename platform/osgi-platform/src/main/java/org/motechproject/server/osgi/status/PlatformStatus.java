@@ -1,6 +1,6 @@
 package org.motechproject.server.osgi.status;
 
-import org.codehaus.jackson.annotate.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import org.motechproject.server.osgi.util.PlatformConstants;
 
 import java.io.Serializable;

@@ -1,6 +1,6 @@
 package org.motechproject.email.contract;
 
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.motechproject.email.json.MailDeserializer;
 
 import java.util.Objects;
@@ -32,6 +32,9 @@ public class Mail {
         this.message = message;
     }
 
+    public Mail(){
+
+    }
     /**
      * Gets the email address of the sender.
      *

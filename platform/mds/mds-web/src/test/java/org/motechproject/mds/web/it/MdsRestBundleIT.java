@@ -1,6 +1,8 @@
 package org.motechproject.mds.web.it;
 
 import ch.lambdaj.Lambda;
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.databind.DeserializationFeature;
 import org.apache.commons.beanutils.MethodUtils;
 import org.apache.commons.beanutils.PropertyUtils;
 import org.apache.commons.httpclient.HttpStatus;
@@ -15,9 +17,9 @@ import org.apache.http.client.params.AuthPolicy;
 import org.apache.http.entity.ContentType;
 import org.apache.http.entity.StringEntity;
 import org.apache.http.impl.client.BasicResponseHandler;
-import org.codehaus.jackson.map.DeserializationConfig;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.JavaType;
+import com.fasterxml.jackson.databind.DeserializationConfig;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.JavaType;
 import org.junit.Before;
 import org.junit.BeforeClass;
 import org.junit.Test;
@@ -80,7 +82,7 @@ public class MdsRestBundleIT extends BasePaxIT {
 
     private static final Set<String> FILTERED_REST_FIELDS = new HashSet<>(asList("intField", "owner", "id"));
 
-    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().enable(DeserializationConfig.Feature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
+    private static final ObjectMapper OBJECT_MAPPER = new ObjectMapper().enable(DeserializationFeature.ACCEPT_SINGLE_VALUE_AS_ARRAY);
 
     @Inject
     private EntityService entityService;
