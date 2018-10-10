@@ -193,6 +193,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Spring-Context> *;timeout:=600</Spring-Context>
                         <Bundle-Activator>
                             org.motechproject.security.osgi.Activator
                         </Bundle-Activator>

@@ -142,6 +142,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Spring-Context> *;timeout:=600</Spring-Context>
                         <BluePrint-Enabled>true</BluePrint-Enabled>
                         <Context-Path>server</Context-Path>
                         <Resource-path>server/resources</Resource-path>
