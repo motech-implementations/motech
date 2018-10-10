@@ -168,6 +168,9 @@
                             org.springframework.context.support,
                             org.springframework.web.servlet.i18n,
                             org.springframework.web.servlet.view,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
                             *
                         </Import-Package>
                     </instructions>
