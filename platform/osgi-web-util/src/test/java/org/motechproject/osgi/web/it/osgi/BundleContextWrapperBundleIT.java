@@ -27,7 +27,6 @@ public class BundleContextWrapperBundleIT extends BasePaxIT {
     private BundleContext bundleContext;
 
     //TODO Upgrade Atish
-    @Ignore
     @Test
     public void testThatBundleContextWrapperReturnsCorrectApplicationContext() throws InterruptedException {
         BundleContextWrapper bundleContextWrapper = new BundleContextWrapper(bundleContext);
