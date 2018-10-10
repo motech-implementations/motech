@@ -171,6 +171,7 @@
                             org.springframework.validation.beanvalidation,
                             org.springframework.core,
                             org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                     </instructions>
