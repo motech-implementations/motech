@@ -19,6 +19,7 @@ import org.osgi.framework.BundleContext;
 
 import javax.inject.Inject;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Collections;
 import java.util.Locale;
 
@@ -143,7 +144,7 @@ public class MotechRoleServiceBundleIT extends BaseIT {
         assertEquals(asList("Role1"), user.getRoles());
 
         // remove the role from the user so we can delete it
-        user.setRoles(Collections.<String>emptyList());
+        user.setRoles(new ArrayList<>());
         motechUserService.updateUserDetailsWithoutPassword(user);
 
         // delete the role and make sure that it's gone
