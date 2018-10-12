@@ -1,10 +1,10 @@
 package org.motechproject.mds.web.controller;
 
+import com.fasterxml.jackson.core.type.TypeReference;
 import org.apache.commons.codec.binary.Base64;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.type.TypeReference;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.motechproject.mds.dto.CsvImportResults;
 import org.motechproject.mds.dto.FieldInstanceDto;
 import org.motechproject.mds.dto.TypeDto;
@@ -44,7 +44,7 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
-import static org.apache.commons.lang.CharEncoding.UTF_8;
+import static org.apache.commons.lang3.CharEncoding.UTF_8;
 
 /**
  * The <code>InstanceController</code> is the Spring Framework Controller used by view layer for
@@ -284,7 +284,7 @@ public class InstanceController extends MdsController {
         if (gridSettings.getFields() == null) {
             return null;
         } else {
-            return objectMapper.readValue(gridSettings.getFields(), new TypeReference<LinkedHashMap>() {});
+            return objectMapper.readValue(gridSettings.getFields(), new TypeReference() {});
         }
     }
 

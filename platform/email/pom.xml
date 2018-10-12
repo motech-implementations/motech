@@ -4,13 +4,13 @@
     <parent>
         <artifactId>motech</artifactId>
         <groupId>org.motechproject</groupId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
 
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
     <description>MOTECH Platform Email</description>
 
@@ -62,10 +62,14 @@
             <artifactId>org.apache.servicemix.bundles.javax.mail</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test-mvc</artifactId>
-            <scope>test</scope>
+            <groupId>javax.jdo</groupId>
+            <artifactId>jdo-api</artifactId>
         </dependency>
+        <!--<dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-test-mvc</artifactId>
+            <scope>test</scope>
+        </dependency>-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
@@ -78,11 +82,11 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
         </dependency>
         <dependency>
             <groupId>net.sf.supercsv</groupId>
@@ -154,7 +158,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -177,6 +181,11 @@
                             org.springframework.aop.framework,
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
+                            org.datanucleus.enhancement,
+                            org.springframework.validation.beanvalidation,
+                            org.w3c.dom,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

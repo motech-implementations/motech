@@ -1,8 +1,8 @@
 package org.motechproject.mds.display;
 
 import org.apache.bsf.util.MethodUtils;
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.format.DateTimeFormat;
 import org.joda.time.format.DateTimeFormatter;
 import org.motechproject.mds.domain.ManyToManyRelationship;

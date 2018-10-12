@@ -1,6 +1,6 @@
 package org.motechproject.config.core.bootstrap.impl;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.commons.api.Tenant;
 import org.motechproject.config.core.MotechConfigurationException;
 import org.motechproject.config.core.bootstrap.BootstrapManager;

@@ -5,38 +5,52 @@
     <parent>
         <groupId>org.motechproject</groupId>
         <artifactId>motech</artifactId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>motech-platform-osgi-extender-fragment</artifactId>
     <name>MOTECH Platform OSGi Extender Fragment</name>
     <description>Extends Eclipse Gemini Extender Bundle</description>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
 
     <properties>
         <modules.root.dir>${basedir}/../..</modules.root.dir>
+        <extender.version>2.1.0.RELEASE</extender.version>
     </properties>
 
     <dependencies>
         <dependency>
             <groupId>javax.servlet</groupId>
-            <artifactId>com.springsource.javax.servlet</artifactId>
+            <artifactId>javax.servlet-api</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-webmvc</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-webmvc</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-test</artifactId>
+            <artifactId>gemini-blueprint-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
+            <scope>test</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-extensions</artifactId>
+
+        </dependency>
+
+
     </dependencies>
 
 
@@ -46,22 +60,26 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        `
                         <!--
                             This is a fragment bundle that attaches itself to the Blueprint extender.
                             This bundle is responsible for configuring the extender.
                         -->
-                        <Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>
+                        <!--<Fragment-Host>org.eclipse.gemini.blueprint.extender</Fragment-Host>-->
+                        <Fragment-Host>org.motechproject.gemini-blueprint-extender</Fragment-Host>
                         <Export-Package>
-                            org.motechproject.bundle.extender;version=${project.version},
+                            org.eclipse.gemini.blueprint.extender,
+                            org.motechproject.bundle.extender
                         </Export-Package>
                         <Import-Package>
                             org.springframework.beans.factory.xml,
                             org.springframework.context.config,
                             org.springframework.context.support,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                     </instructions>

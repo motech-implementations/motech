@@ -1,6 +1,6 @@
 package org.motechproject.mds.ex;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * The <code>MdsException</code> exception is a basic class for all other exceptions defined

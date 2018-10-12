@@ -1,7 +1,7 @@
 package org.motechproject.security.builder;
 
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.security.authentication.MotechAccessVoter;
 import org.motechproject.security.authentication.MotechLogoutSuccessHandler;
 import org.motechproject.security.authentication.MotechRestBasicAuthenticationEntryPoint;
@@ -48,12 +48,13 @@ import org.springframework.security.web.savedrequest.RequestCache;
 import org.springframework.security.web.savedrequest.RequestCacheAwareFilter;
 import org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter;
 import org.springframework.security.web.session.SessionManagementFilter;
-import org.springframework.security.web.util.AntPathRequestMatcher;
-import org.springframework.security.web.util.AnyRequestMatcher;
-import org.springframework.security.web.util.RequestMatcher;
+import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
+import org.springframework.security.web.util.matcher.AnyRequestMatcher;
+import org.springframework.security.web.util.matcher.RequestMatcher;
 import org.springframework.stereotype.Component;
 
 import javax.servlet.Filter;
+import javax.servlet.ServletException;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Collection;
@@ -98,7 +99,7 @@ public class SecurityRuleBuilder {
      * @param method to be used in filter
      * @return new filter chain with security rule, matcher and filters
      */
-    public synchronized SecurityFilterChain buildSecurityChain(MotechURLSecurityRule securityRule, HTTPMethod method) {
+    public synchronized SecurityFilterChain buildSecurityChain(MotechURLSecurityRule securityRule, HTTPMethod method) throws ServletException {
         LOGGER.info("Building security chain for rule: {} and method: {}", securityRule.getPattern(), method);
 
         List<Filter> filters = new ArrayList<>();
@@ -109,7 +110,7 @@ public class SecurityRuleBuilder {
         String pattern = securityRule.getPattern();
 
         if (pattern.equals(SecurityConfigConstants.ANY_PATTERN) || "/**".equals(pattern) || "**".equals(pattern)) {
-            matcher = new AnyRequestMatcher();
+            matcher = AnyRequestMatcher.INSTANCE;
         } else if (ANY == method) {
             matcher = new AntPathRequestMatcher(pattern);
         } else {
@@ -165,7 +166,7 @@ public class SecurityRuleBuilder {
         return result;
     }
 
-    private List<Filter> addFilters(MotechURLSecurityRule securityRule) {
+    private List<Filter> addFilters(MotechURLSecurityRule securityRule) throws ServletException {
         List<Filter> filters = new ArrayList<>();
 
         SecurityContextRepository contextRepository = new HttpSessionSecurityContextRepository();
@@ -201,8 +202,10 @@ public class SecurityRuleBuilder {
         filters.add(logoutFilter);
     }
 
-    private void addSecurityContextHolderAwareRequestFilter(List<Filter> filters) {
+    private void addSecurityContextHolderAwareRequestFilter(List<Filter> filters) throws ServletException {
         SecurityContextHolderAwareRequestFilter securityFilter = new SecurityContextHolderAwareRequestFilter();
+        securityFilter.setRolePrefix(StringUtils.EMPTY);
+        securityFilter.afterPropertiesSet();
         filters.add(securityFilter);
     }
 
@@ -214,7 +217,7 @@ public class SecurityRuleBuilder {
     private void addFilterSecurityInterceptor(List<Filter> filters, MotechURLSecurityRule securityRule) {
         Map<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<>();
 
-        List<AccessDecisionVoter> voters = new ArrayList<>();
+        List<AccessDecisionVoter<? extends Object>> voters = new ArrayList<>();
         Collection<ConfigAttribute> configAtts = new ArrayList<>();
 
         if (CollectionUtils.isEmpty(securityRule.getPermissionAccess()) && CollectionUtils.isEmpty(securityRule.getUserAccess())) {
@@ -266,7 +269,7 @@ public class SecurityRuleBuilder {
 
             if (securityRule.getMethodsRequired().contains(ANY) &&
                     (pattern.equals(SecurityConfigConstants.ANY_PATTERN) || "/**".equals(pattern))) {
-                matcher = new AnyRequestMatcher();
+                matcher = AnyRequestMatcher.INSTANCE;
             } else if (securityRule.getMethodsRequired().contains(ANY)) {
                 matcher = new AntPathRequestMatcher(pattern, null);
             } else {
@@ -323,7 +326,7 @@ public class SecurityRuleBuilder {
         ChannelProcessingFilter channelProcessingFilter = new ChannelProcessingFilter();
         channelProcessingFilter.setChannelDecisionManager(channelDecisionManager);
 
-        RequestMatcher anyRequest = new AnyRequestMatcher();
+        RequestMatcher anyRequest = AnyRequestMatcher.INSTANCE;
 
         LinkedHashMap<RequestMatcher, Collection<ConfigAttribute>> requestMap = new LinkedHashMap<>();
         Collection<ConfigAttribute> configAtts = new ArrayList<>();

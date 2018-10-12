@@ -1,6 +1,6 @@
 package org.motechproject.mds.jdo;
 
-import static org.apache.commons.lang.StringUtils.defaultIfBlank;
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
 import static org.motechproject.mds.util.SecurityUtil.getUsername;
 
 public abstract class UsernameValueGeneratorTest extends AbstractObjectValueGeneratorTest<String> {

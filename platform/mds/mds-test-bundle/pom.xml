@@ -4,14 +4,14 @@
     <parent>
         <artifactId>motech</artifactId>
         <groupId>org.motechproject</groupId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>motech-platform-dataservices-test-bundle</artifactId>
     <name>MOTECH Platform Data Services Test Bundle</name>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
 
     <properties>
@@ -36,6 +36,10 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-web-security</artifactId>
             <version>${project.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
         </dependency>
     </dependencies>
 
@@ -89,6 +93,7 @@
                             net.sf.cglib.reflect,
                             org.springframework.transaction,
                             org.motechproject.event.listener,
+                            org.datanucleus.enhancement,
                             *
                         </Import-Package>
                     </instructions>

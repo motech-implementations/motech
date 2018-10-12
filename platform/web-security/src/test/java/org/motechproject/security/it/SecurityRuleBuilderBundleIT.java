@@ -9,6 +9,7 @@ import org.motechproject.security.domain.MotechURLSecurityRule;
 import org.motechproject.security.ex.SecurityConfigException;
 import org.springframework.security.web.SecurityFilterChain;
 
+import javax.servlet.ServletException;
 import java.util.Arrays;
 
 import static junit.framework.Assert.assertNotNull;
@@ -34,7 +35,7 @@ public class SecurityRuleBuilderBundleIT extends BaseIT {
     }
 
     @Test
-    public void testShouldRequirePattern() {
+    public void testShouldRequirePattern() throws ServletException {
 
         configException.expect(SecurityConfigException.class);
         configException.expectMessage(SecurityRuleBuilder.NO_PATTERN_EXCEPTION_MESSAGE);
@@ -44,7 +45,7 @@ public class SecurityRuleBuilderBundleIT extends BaseIT {
     }
 
     @Test
-    public void testShouldRequireProtocol() {
+    public void testShouldRequireProtocol() throws ServletException {
 
         configException.expect(SecurityConfigException.class);
         configException.expectMessage(SecurityRuleBuilder.NO_PROTOCOL_EXCEPTION_MESSAGE);
@@ -55,7 +56,7 @@ public class SecurityRuleBuilderBundleIT extends BaseIT {
     }
 
     @Test
-    public void testShouldRequireSupportedScheme() {
+    public void testShouldRequireSupportedScheme() throws ServletException {
         configException.expect(SecurityConfigException.class);
         configException.expectMessage(SecurityRuleBuilder.NO_SUPPORTED_SCHEMES_EXCEPTION_MESSAGE);
 
@@ -67,7 +68,7 @@ public class SecurityRuleBuilderBundleIT extends BaseIT {
     }
 
     @Test
-    public void testShouldRequireMethodsSupported() {
+    public void testShouldRequireMethodsSupported() throws ServletException {
 
         configException.expect(SecurityConfigException.class);
         configException.expectMessage(SecurityRuleBuilder.NO_METHODS_REQUIRED_EXCEPTION_MESSAGE);
@@ -81,7 +82,7 @@ public class SecurityRuleBuilderBundleIT extends BaseIT {
     }
 
     @Test
-    public void testMinimalRequirements() {
+    public void testMinimalRequirements() throws ServletException {
 
         MotechURLSecurityRule securityRule = new MotechURLSecurityRule();
         securityRule.setPattern("pattern");

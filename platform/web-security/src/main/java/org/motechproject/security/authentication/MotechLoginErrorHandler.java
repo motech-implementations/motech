@@ -11,6 +11,7 @@ import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.security.authentication.CredentialsExpiredException;
 import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.AuthenticationException;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.web.DefaultRedirectStrategy;
 import org.springframework.security.web.RedirectStrategy;
 import org.springframework.security.web.authentication.ExceptionMappingAuthenticationFailureHandler;
@@ -59,7 +60,7 @@ public class MotechLoginErrorHandler extends ExceptionMappingAuthenticationFailu
             throws IOException, ServletException {
         //Wrong password or username
         if (exception instanceof BadCredentialsException) {
-            MotechUser motechUser = allMotechUsers.findByUserName(exception.getAuthentication().getName());
+            MotechUser motechUser = allMotechUsers.findByUserName(SecurityContextHolder.getContext().getAuthentication().getName());
             int failureLoginLimit = settingService.getFailureLoginLimit();
             if (motechUser != null && failureLoginLimit > 0) {
                 int failureLoginCounter = motechUser.getFailureLoginCounter();

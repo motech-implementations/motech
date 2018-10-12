@@ -2,8 +2,8 @@ package org.motechproject.mds.javassist;
 
 import javassist.ClassClassPath;
 import javassist.ClassPool;
-import org.apache.commons.collections.CollectionUtils;
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.Predicate;
 import org.motechproject.mds.domain.ClassData;
 import org.motechproject.mds.repository.MotechDataRepository;
 import org.motechproject.mds.service.DefaultMotechDataService;

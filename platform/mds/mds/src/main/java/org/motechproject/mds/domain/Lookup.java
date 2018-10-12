@@ -1,6 +1,6 @@
 package org.motechproject.mds.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.dto.LookupDto;
 import org.motechproject.mds.dto.LookupFieldDto;
 import org.motechproject.mds.dto.LookupFieldType;
@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Objects;
 
-import static org.apache.commons.lang.BooleanUtils.toBoolean;
+import static org.apache.commons.lang3.BooleanUtils.toBoolean;
 import static org.motechproject.mds.util.Constants.Util.TRUE;
 
 /**

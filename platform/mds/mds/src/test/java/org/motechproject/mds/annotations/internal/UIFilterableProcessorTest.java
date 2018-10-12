@@ -14,8 +14,8 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-import static org.apache.commons.lang.reflect.FieldUtils.getDeclaredField;
-import static org.apache.commons.lang.reflect.MethodUtils.getAccessibleMethod;
+import static org.apache.commons.lang3.reflect.FieldUtils.getDeclaredField;
+import static org.apache.commons.lang3.reflect.MethodUtils.getAccessibleMethod;
 import static org.junit.Assert.assertEquals;
 import static org.motechproject.mds.testutil.MemberTestUtil.assertHasField;
 

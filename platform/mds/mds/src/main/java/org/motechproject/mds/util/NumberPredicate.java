@@ -1,6 +1,6 @@
 package org.motechproject.mds.util;
 
-import org.apache.commons.collections.Predicate;
+import org.apache.commons.collections4.Predicate;
 
 import java.math.BigDecimal;
 

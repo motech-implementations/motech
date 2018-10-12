@@ -1,9 +1,10 @@
 package org.motechproject.mds.jdo;
 
 
-import com.googlecode.flyway.core.Flyway;
+import org.flywaydb.core.Flyway;
 import org.apache.commons.io.IOUtils;
 import org.datanucleus.NucleusContext;
+import org.datanucleus.StoreNucleusContext;
 import org.datanucleus.api.jdo.JDOPersistenceManagerFactory;
 import org.datanucleus.store.rdbms.datasource.dbcp.BasicDataSource;
 import org.datanucleus.store.schema.SchemaAwareStoreManager;
@@ -68,8 +69,13 @@ public class SchemaGenerator implements InitializingBean {
 
         Set<String> classNames = classNames();
         if (!classNames.isEmpty()) {
-            SchemaAwareStoreManager storeManager = getStoreManager();
-            storeManager.createSchema(classNames, new Properties());
+            try {
+                SchemaAwareStoreManager storeManager = getStoreManager();
+                storeManager.createSchemaForClasses(classNames, new Properties());
+            }
+            catch (Exception|Error e) {
+                throw e;
+            }
         }
 
         LOGGER.info("Entity schema generation completed.");
@@ -96,7 +102,8 @@ public class SchemaGenerator implements InitializingBean {
         flyway.setLocations(Constants.EntitiesMigration.FILESYSTEM_PREFIX + migrationDirectory.getAbsolutePath());
         flyway.setSqlMigrationPrefix(Constants.EntitiesMigration.ENTITY_MIGRATIONS_PREFIX);
         flyway.setOutOfOrder(true);
-        flyway.setInitOnMigrate(true);
+        flyway.setBaselineOnMigrate(true);
+        flyway.setValidateOnMigrate(false);
 
         flyway.migrate();
         LOGGER.info("Modules migration completed.");
@@ -137,7 +144,7 @@ public class SchemaGenerator implements InitializingBean {
     }
 
     private SchemaAwareStoreManager getStoreManager() {
-        NucleusContext nucleusContext = persistenceManagerFactory.getNucleusContext();
+        StoreNucleusContext nucleusContext = persistenceManagerFactory.getNucleusContext();
         return (SchemaAwareStoreManager) nucleusContext.getStoreManager();
     }
 }

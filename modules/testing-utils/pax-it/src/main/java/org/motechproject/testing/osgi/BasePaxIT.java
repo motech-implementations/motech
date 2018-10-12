@@ -1,9 +1,9 @@
 package org.motechproject.testing.osgi;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.reflect.MethodUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -96,6 +96,10 @@ public class BasePaxIT {
     public static final String MOTECH_ADMIN_PASSWORD = "motech";
 
     private static PollingHttpClient pollingHttpClient;
+
+    static {
+        System.setProperty("org.apache.activemq.SERIALIZABLE_PACKAGES", "*");
+    }
 
     /**
      * Returns the configuration for the Pax Exam test. This method collects configuration options from
@@ -297,8 +301,8 @@ public class BasePaxIT {
                 "org.ops4j.pax.swissbox:pax-swissbox-tracker",
                 "org.ops4j.pax.exam:pax-exam",
                 "org.ops4j.pax.swissbox:pax-swissbox-core",
-                "org.apache.commons:com.springsource.org.apache.commons.logging",
-                "org.slf4j:com.springsource.slf4j.api" // we ignore slf4j, since it gets added anyway instead of pax logging
+                "commons-logging:commons-logging",
+                "org.slf4j:slf4j-api" // we ignore slf4j, since it gets added anyway instead of pax logging
         ));
     }
 

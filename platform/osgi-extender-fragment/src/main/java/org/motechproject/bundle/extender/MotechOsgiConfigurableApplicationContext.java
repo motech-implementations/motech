@@ -1,6 +1,8 @@
 package org.motechproject.bundle.extender;
 
 import org.eclipse.gemini.blueprint.context.support.OsgiBundleXmlApplicationContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.ApplicationEvent;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
@@ -21,23 +23,27 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
     private final Object lock = new Object();
     private boolean initialized;
 
+    private static final Logger LOGGER = LoggerFactory.getLogger(MotechOsgiConfigurableApplicationContext.class);
+
+
     /**
      * Constructs the new context using the provided configuration locations.
      * @param configurationLocations the configuration location (Spring xml configuration files)
      */
     public MotechOsgiConfigurableApplicationContext(String[] configurationLocations) {
         super(configurationLocations);
-        addApplicationListener(new ApplicationListener<ApplicationEvent>() {
+        /**addApplicationListener(new ApplicationListener<ApplicationEvent>() {
             @Override
             public void onApplicationEvent(ApplicationEvent event) {
                 if (event instanceof ContextRefreshedEvent) {
+                    LOGGER.debug("Received ContextRefreshedEvent");
                     synchronized (lock) {
                         initialized = true;
                         lock.notifyAll();
                     }
                 }
             }
-        });
+        });*/
     }
 
     /**
@@ -45,7 +51,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
      * {@link org.springframework.context.event.ContextRefreshedEvent}.
      * @param waitTimeInMillis the max wait in milliseconds
      */
-    public void waitForContext(int waitTimeInMillis) {
+    /**public void waitForContext(int waitTimeInMillis) {
         synchronized (lock) {
             if (!initialized) {
                 try {
@@ -61,7 +67,7 @@ public class MotechOsgiConfigurableApplicationContext extends OsgiBundleXmlAppli
                 // done waiting
             }
         }
-    }
+    }*/
 
     @Override
     public ServletContext getServletContext() {

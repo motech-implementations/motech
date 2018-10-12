@@ -1,6 +1,6 @@
 package org.motechproject.admin.messages;
 
-import org.codehaus.jackson.annotate.JsonValue;
+import com.fasterxml.jackson.annotation.JsonValue;
 
 /**
  * Represents the level of a {@link org.motechproject.admin.domain.StatusMessage}, which is reflected on the UI.

@@ -13,7 +13,7 @@ import org.motechproject.commons.date.exception.ParseException;
 
 import java.util.Locale;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * Class responsible for parsing and formatting several classes from {@code org.joda.time} package.

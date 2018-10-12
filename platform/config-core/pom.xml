@@ -5,13 +5,13 @@
     <parent>
         <artifactId>motech</artifactId>
         <groupId>org.motechproject</groupId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <name>MOTECH Core Config</name>
     <artifactId>motech-platform-config-core</artifactId>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
 
     <properties>
@@ -40,36 +40,83 @@
             <artifactId>commons-lang</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-configuration</groupId>
-            <artifactId>commons-configuration</artifactId>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-io</groupId>
-            <artifactId>commons-io</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-aop</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-expression</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>commons-configuration</groupId>
+            <artifactId>commons-configuration</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-validator</groupId>
             <artifactId>commons-validator</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-digester</groupId>
-            <artifactId>commons-digester</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-digester3</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.activemq</groupId>
             <artifactId>org.motechproject.org.apache.activemq</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.apache.activemq</groupId>
-            <artifactId>kahadb</artifactId>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-core</artifactId>
+            </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-test</artifactId>
+            <scope>test</scope>
         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>org.apache.activemq</groupId>-->
+            <!--<artifactId>kahadb</artifactId>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>com.springsource.javax.transaction</artifactId>
         </dependency>
         <dependency>
-            <groupId>javax.jms</groupId>
-            <artifactId>com.springsource.javax.jms</artifactId>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>javax.jms</groupId>-->
+            <!--<artifactId>com.springsource.javax.jms</artifactId>-->
+        <!--</dependency>-->
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.http.api</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.osgi</groupId>
+            <artifactId>org.osgi.service.blueprint</artifactId>
         </dependency>
     </dependencies>
 
@@ -78,18 +125,26 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Bundle-ManifestVersion>2</Bundle-ManifestVersion>
+                        <!--Error creating bean with name 'org.eclipse.gemini.blueprint.service.exporter.support.
+                        OsgiServiceFactoryBean#0': Invocation of init method failed;
+                        nested exception is java.lang.IllegalArgumentException:
+                        Cannot locate bean named 'coreConfigurationService' inside the running bean factory.
+                        Error fixed by changing service name as impl  based on debugging
+                        <Spring-Context> *;create-asynchronously:=false</Spring-Context>-->
                         <Export-Package>
                             org.motechproject.config.core;version=${project.version},
                             org.motechproject.config.core.service;version=${project.version},
                             org.motechproject.config.core.filestore;version=${project.version},
                             org.motechproject.config.core.domain;version=${project.version},
                             org.motechproject.config.core.constants;version=${project.version},
-                            org.motechproject.config.core.filters;version=${project.version}
-                            org.motechproject.config.core.validator;version=${project.version}
+                            org.motechproject.config.core.filters;version=${project.version},
+                            org.motechproject.config.core.validator;version=${project.version},
+                            org.eclipse.gemini.blueprint.service.importer
                        </Export-Package>
                         <Import-Package>
                             org.aopalliance.aop,
@@ -99,7 +154,25 @@
                             org.springframework.cache.concurrent,
                             org.springframework.cache.support,
                             org.apache.commons.configuration,
+                            org.springframework.core,
+                            javax.servlet.annotation,
+                            org.springframework.cache.annotation,
+                            org.slf4j,
+                            org.eclipse.gemini.blueprint.service.importer,
+                            <!--org.eclipse.gemini.blueprint.service,-->
+                            org.apache.log4j,
+                            org.apache.commons.logging.impl,
+                            org.apache.commons.lang3,
+                            org.apache.commons.io.filefilter;version=2.6,
+                            org.springframework.core.io,
+                            org.apache.commons.validator,
+                            org.apache.activemq.util,
+                            org.osgi.service.blueprint;version="[1.0.0,2.0.0)";resolution:=optional,
+                            org.motechproject.commons.api,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
+                            
                             *
+
                         </Import-Package>
                     </instructions>
                 </configuration>

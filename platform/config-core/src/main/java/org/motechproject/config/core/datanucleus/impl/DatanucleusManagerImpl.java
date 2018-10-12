@@ -1,6 +1,6 @@
 package org.motechproject.config.core.datanucleus.impl;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.config.core.MotechConfigurationException;
 import org.motechproject.config.core.constants.ConfigurationConstants;
 import org.motechproject.config.core.datanucleus.DatanucleusManager;

@@ -16,7 +16,7 @@ public interface MotechRoleService {
      *
      * @return list that contains roles
      */
-    @PreAuthorize("hasAnyRole('manageRoleAndPermission', 'manageUser')")
+    @PreAuthorize("hasAnyAuthority('manageRoleAndPermission', 'manageUser')")
     List<RoleDto> getRoles();
 
     /**

@@ -1,6 +1,6 @@
 package org.motechproject.commons.api;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Holds identity of a tenant.

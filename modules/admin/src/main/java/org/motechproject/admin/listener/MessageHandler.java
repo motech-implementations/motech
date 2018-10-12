@@ -1,6 +1,6 @@
 package org.motechproject.admin.listener;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.admin.events.EventKeys;
 import org.motechproject.admin.events.EventSubjects;

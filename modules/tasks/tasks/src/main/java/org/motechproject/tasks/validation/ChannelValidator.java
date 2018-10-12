@@ -9,7 +9,7 @@ import org.motechproject.tasks.domain.TriggerEvent;
 import java.util.HashSet;
 import java.util.Set;
 
-import static org.apache.commons.collections.CollectionUtils.isEmpty;
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 
 /**
  * Utility class for validating channels.

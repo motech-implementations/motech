@@ -14,6 +14,18 @@
         <level value="ERROR" />
     </logger>
 
+    <!--<logger name="org.eclipse.gemini.blueprint">
+        <level value="TRACE" />
+    </logger>
+
+    <logger name="org.springframework">
+        <level value="DEBUG" />
+    </logger>
+
+    <logger name="org.eclipse.gemini.blueprint.extender.internal.support.NamespacePlugins">
+        <level value="ERROR"/>
+    </logger>-->
+
     <root>
         <priority value="ERROR" />
         <appender-ref ref="CONSOLE" />

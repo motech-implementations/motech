@@ -1,8 +1,7 @@
 package org.motechproject.tasks.domain;
 
-import org.apache.commons.collections.Predicate;
-import org.codehaus.jackson.annotate.JsonProperty;
-import org.codehaus.jackson.map.annotate.JsonDeserialize;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
 import org.motechproject.mds.annotations.Access;
 import org.motechproject.mds.annotations.Cascade;
 import org.motechproject.mds.annotations.Entity;
@@ -18,8 +17,8 @@ import java.util.List;
 import java.util.Objects;
 import java.util.Set;
 
-import static org.apache.commons.collections.CollectionUtils.find;
-import static org.apache.commons.collections.CollectionUtils.isNotEmpty;
+import static org.apache.commons.collections4.IterableUtils.find;
+import static org.apache.commons.collections4.CollectionUtils.isNotEmpty;
 
 /**
  * A task is set of actions that are executed in response to a trigger. The actions and the trigger are defined by their
@@ -196,13 +195,8 @@ public class Task {
     }
 
     public void removeValidationError(final String message) {
-        TaskError taskError = (TaskError) find(getValidationErrors(), new Predicate() {
-            @Override
-            public boolean evaluate(Object object) {
-                return object instanceof TaskError
-                        && ((TaskError) object).getMessage().equalsIgnoreCase(message);
-            }
-        });
+        TaskError taskError = (TaskError) find(getValidationErrors(), object -> object instanceof TaskError
+                    && ((TaskError) object).getMessage().equalsIgnoreCase(message));
 
         getValidationErrors().remove(taskError);
     }

@@ -1,6 +1,6 @@
 package org.motechproject.security.service.impl;
 
-import org.apache.commons.lang.RandomStringUtils;
+import org.apache.commons.lang3.RandomStringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.commons.date.util.DateUtil;
 import org.motechproject.security.authentication.MotechPasswordEncoder;

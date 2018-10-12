@@ -1,6 +1,6 @@
 package org.motechproject.mds.event;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.EntityInfo;
 
 import java.util.HashMap;

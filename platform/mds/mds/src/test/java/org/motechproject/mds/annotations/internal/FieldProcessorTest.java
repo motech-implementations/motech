@@ -1,7 +1,8 @@
 package org.motechproject.mds.annotations.internal;
 
 import org.apache.commons.beanutils.BeanPropertyValueEqualsPredicate;
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.IterableUtils;
 import org.eclipse.gemini.blueprint.mock.MockBundle;
 import org.junit.Before;
 import org.junit.Test;
@@ -45,8 +46,8 @@ import java.util.List;
 import java.util.Set;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.reflect.FieldUtils.getDeclaredField;
-import static org.apache.commons.lang.reflect.MethodUtils.getAccessibleMethod;
+import static org.apache.commons.lang3.reflect.FieldUtils.getDeclaredField;
+import static org.apache.commons.lang3.reflect.MethodUtils.getAccessibleMethod;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertNotNull;
@@ -464,8 +465,9 @@ public class FieldProcessorTest {
     }
 
     private FieldDto findFieldWithName(Collection<FieldDto> fields, String name) {
-        return (FieldDto) CollectionUtils.find(
-                fields, new BeanPropertyValueEqualsPredicate("basic.name", name)
+        BeanPropertyValueEqualsPredicate predicate = new BeanPropertyValueEqualsPredicate("basic.name", name);
+        return IterableUtils.find(
+                fields, predicate::evaluate
         );
     }
 

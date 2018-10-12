@@ -1,7 +1,7 @@
 package org.motechproject.testing.utils;
 
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * This class provides port information during tests. No ports should be hardcoded within tests,

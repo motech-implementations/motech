@@ -43,10 +43,13 @@ public class PlatformStatusManagerImpl implements PlatformStatusManager, OsgiBun
     @Override
     public void onOsgiApplicationEvent(OsgiBundleApplicationContextEvent event) {
         if (event instanceof OsgiBundleContextRefreshedEvent) {
+            LOGGER.trace("Received OsgiBundleContextRefreshedEvent", event);
             handleContextRefreshedEvent(event);
         } else if (event instanceof OsgiBundleContextClosedEvent) {
+            LOGGER.trace("Received OsgiBundleContextClosedEvent", event);
             handleContextClosedEvent(event);
         } else if (event instanceof OsgiBundleContextFailedEvent) {
+            LOGGER.trace("Received OsgiBundleContextFailedEvent", event);
             handleContextFailedEvent((OsgiBundleContextFailedEvent) event);
         } else {
             LOGGER.debug("Received an unknown event type: {}", event);

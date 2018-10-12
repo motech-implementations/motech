@@ -7,12 +7,12 @@
     <parent>
         <artifactId>motech</artifactId>
         <groupId>org.motechproject</groupId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../../</relativePath>
     </parent>
 
     <artifactId>motech-scheduler</artifactId>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
 
     <name>MOTECH Scheduler</name>
@@ -51,19 +51,19 @@
             <artifactId>joda-time</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-context-support</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context-support</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-dbcp</groupId>
             <artifactId>commons-dbcp</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
         <!-- Adds mysql/psql imports to the c3p0 pool, do not remove -->
@@ -126,7 +126,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -144,7 +144,7 @@
                             org.apache.commons.dbcp,
                             com.mysql.jdbc,
                             org.postgresql,
-                            javax.ejb;resolution:=optional,
+                            javax.ejbMote
                             javax.jms;resolution:=optional,
                             javax.mail;resolution:=optional,
                             javax.mail.internet;resolution:=optional,
@@ -174,7 +174,11 @@
                             org.motechproject.commons.sql.service,
                             org.motechproject.mds.service,
                             org.motechproject.mds.service.impl,
-                            com.googlecode.flyway.core,
+                            org.flywaydb.core,
+                            org.motechproject.bundle.extender,
+                            org.springframework.validation.beanvalidation,
+                            org.apache.commons.pool.impl,
+                            javax.jdo.annotations,
                             *
                         </Import-Package>
                         <!-- Spring context support has optional import of Quartz. This gives runtime exception.
@@ -319,7 +323,7 @@
                             </dependency>
                             <dependency>
                                 <groupId>org.postgresql</groupId>
-                                <artifactId>org.motechproject.org.postgresql</artifactId>
+                                <artifactId>postgresql</artifactId>
                                 <version>${postgres.version}</version>
                             </dependency>
                         </dependencies>

@@ -5,12 +5,12 @@
     <parent>
         <groupId>org.motechproject</groupId>
         <artifactId>motech</artifactId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>motech-platform-commons-date</artifactId>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <name>MOTECH Platform Commons Date</name>
     <packaging>bundle</packaging>
 
@@ -24,12 +24,12 @@
             <artifactId>joda-time</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
         </dependency>
     </dependencies>
 
@@ -38,7 +38,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>

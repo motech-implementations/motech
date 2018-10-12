@@ -1,6 +1,6 @@
 package org.motechproject.osgi.web;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.osgi.web.util.BundleHeaders;
 import org.motechproject.server.api.BundleLoadingException;
 import org.osgi.framework.Bundle;

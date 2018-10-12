@@ -1,6 +1,6 @@
 package org.motechproject.security.authentication;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.security.constants.SecurityConfigConstants;
 import org.springframework.security.access.AccessDecisionVoter;
 import org.springframework.security.access.ConfigAttribute;

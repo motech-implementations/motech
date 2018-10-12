@@ -6,8 +6,8 @@ import javassist.CtField;
 import javassist.CtMethod;
 import javassist.NotFoundException;
 import javassist.bytecode.Descriptor;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.osgi.framework.Bundle;
 
 import java.io.IOException;
@@ -116,7 +116,7 @@ public final class JavassistUtil {
             try {
                 ctClass.removeField(field);
             } catch (NotFoundException e) {
-                throw new IllegalStateException("Field was removed from class before we could do it - possible concurrency issue");
+                throw new IllegalStateException("Field was removed from class before we could do it - possible concurrency issue",e);
             }
         }
     }
@@ -127,7 +127,7 @@ public final class JavassistUtil {
             try {
                 ctClass.removeField(field);
             } catch (NotFoundException e) {
-                throw new IllegalStateException("Field was removed from class before we could do it - possible concurrency issue");
+                throw new IllegalStateException("Field was removed from class before we could do it - possible concurrency issue",e);
             }
         }
     }
@@ -174,7 +174,7 @@ public final class JavassistUtil {
             try {
                 ctClass.removeMethod(method);
             } catch (NotFoundException e) {
-                throw new IllegalStateException("Method was removed from class before we could do it - possible concurrency issue");
+                throw new IllegalStateException("Method was removed from class before we could do it - possible concurrency issue",e);
             }
         }
     }
@@ -185,7 +185,7 @@ public final class JavassistUtil {
             try {
                 ctClass.removeMethod(method);
             } catch (NotFoundException e) {
-                throw new IllegalStateException("Method was removed from class before we could do it - possible concurrency issue");
+                throw new IllegalStateException("Method was removed from class before we could do it - possible concurrency issue",e);
             }
         }
     }

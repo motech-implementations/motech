@@ -34,8 +34,8 @@ import java.io.IOException;
 import java.lang.reflect.Modifier;
 import java.util.Collection;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
-import static org.apache.commons.lang.StringUtils.uncapitalize;
+import static org.apache.commons.lang3.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.uncapitalize;
 
 /**
  * The <code>EntityBuilderImpl</code> is used to build classes for a given entity.

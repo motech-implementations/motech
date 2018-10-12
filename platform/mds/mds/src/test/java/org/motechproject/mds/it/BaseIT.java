@@ -11,9 +11,10 @@ import org.motechproject.mds.domain.Lookup;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.orm.jdo.JdoTransactionManager;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.transaction.TransactionConfiguration;
+//import org.springframework.test.context.transaction.TransactionConfiguration;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.jdo.PersistenceManager;
@@ -25,7 +26,8 @@ import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:testMdsContext.xml"})
-@TransactionConfiguration(defaultRollback = true)
+@Rollback(value=true)
+//@TransactionConfiguration(defaultRollback = true)
 @Transactional
 public abstract class BaseIT {
     private PersistenceManagerFactory persistenceManagerFactory;

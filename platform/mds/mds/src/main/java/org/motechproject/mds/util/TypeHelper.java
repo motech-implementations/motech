@@ -1,12 +1,12 @@
 package org.motechproject.mds.util;
 
-import org.apache.commons.collections.BidiMap;
-import org.apache.commons.collections.bidimap.DualHashBidiMap;
-import org.apache.commons.collections.bidimap.UnmodifiableBidiMap;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.LocaleUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.reflect.MethodUtils;
+import org.apache.commons.collections4.BidiMap;
+import org.apache.commons.collections4.bidimap.DualHashBidiMap;
+import org.apache.commons.collections4.bidimap.UnmodifiableBidiMap;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.LocaleUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.joda.time.Period;
@@ -35,8 +35,8 @@ import java.util.Set;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static org.apache.commons.lang.StringUtils.replaceEach;
-import static org.apache.commons.lang.StringUtils.split;
+import static org.apache.commons.lang3.StringUtils.replaceEach;
+import static org.apache.commons.lang3.StringUtils.split;
 import static org.motechproject.mds.util.Constants.MetadataKeys.MAP_KEY_TYPE;
 import static org.motechproject.mds.util.Constants.MetadataKeys.MAP_VALUE_TYPE;
 
@@ -74,7 +74,7 @@ public final class TypeHelper {
         primitiveTypeMap.put(Character.class, char.class);
         primitiveTypeMap.put(Boolean.class, boolean.class);
 
-        PRIMITIVE_TYPE_MAP = UnmodifiableBidiMap.decorate(primitiveTypeMap);
+        PRIMITIVE_TYPE_MAP = UnmodifiableBidiMap.unmodifiableBidiMap(primitiveTypeMap);
 
         Map<String, Class<?>> primitiveWrapperNameMap = new HashMap<>();
 

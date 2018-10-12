@@ -1,24 +1,24 @@
 package org.motechproject.email.web;
 
 import org.apache.http.HttpStatus;
-import org.codehaus.jackson.map.ObjectMapper;
-import org.codehaus.jackson.node.ObjectNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import org.junit.Before;
 import org.junit.Test;
 import org.mockito.Mock;
 import org.motechproject.email.contract.Mail;
 import org.motechproject.email.service.EmailSenderService;
 import org.springframework.http.MediaType;
-import org.springframework.test.web.server.MockMvc;
-import org.springframework.test.web.server.setup.MockMvcBuilders;
+import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import static org.mockito.Mockito.doThrow;
 import static org.mockito.Mockito.verify;
 import static org.mockito.MockitoAnnotations.initMocks;
 import static org.motechproject.email.constants.SendEmailConstants.*;
-import static org.springframework.test.web.server.request.MockMvcRequestBuilders.post;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.server.result.MockMvcResultMatchers.status;
+import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 public class SendEmailControllerTest {
 
@@ -49,7 +49,7 @@ public class SendEmailControllerTest {
     @Test
     public void shouldExecuteSendEmailRequest() throws Exception {
         controller.perform(
-                post("/send").body(convertMailToJson()).contentType(MediaType.APPLICATION_JSON)
+                post("/send").content(convertMailToJson()).contentType(MediaType.APPLICATION_JSON)
         ).andExpect(
                 status().is(HttpStatus.SC_OK)
         );
@@ -61,7 +61,7 @@ public class SendEmailControllerTest {
         doThrow(new IllegalStateException(message)).when(senderService).send(mail);
 
         controller.perform(
-                post("/send").body(convertMailToJson()).contentType(MediaType.APPLICATION_JSON)
+                post("/send").content(convertMailToJson()).contentType(MediaType.APPLICATION_JSON)
         ).andExpect(
                 status().is(HttpStatus.SC_NOT_FOUND)
         ).andExpect(

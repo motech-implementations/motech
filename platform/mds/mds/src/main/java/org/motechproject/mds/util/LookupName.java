@@ -1,6 +1,6 @@
 package org.motechproject.mds.util;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Utility class for dealing with lookup names.

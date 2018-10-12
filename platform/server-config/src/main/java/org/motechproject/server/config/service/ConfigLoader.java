@@ -59,8 +59,8 @@ public class ConfigLoader {
     }
 
     private void checkSettingsRecord(SettingsRecord settingsRecord) {
-        LoginMode loginMode = settingsRecord.getLoginMode();
-        if (loginMode == null || (!loginMode.isRepository() && !loginMode.isOpenId())) {
+        String loginMode = settingsRecord.getLoginModeValue();
+        if (loginMode == null || (!loginMode.equals(LoginMode.REPOSITORY.getName()) && !loginMode.equals(LoginMode.OPEN_ID.getName()))) {
             throw new MotechConfigurationException("Login mode has an incorrect value. Acceptable values: \"repository\", \"openId\".");
         }
     }

@@ -1,9 +1,9 @@
 package org.motechproject.mds.reflections;
 
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.lang.ObjectUtils;
-import org.apache.commons.lang.builder.ToStringBuilder;
-import org.apache.commons.lang.builder.ToStringStyle;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.lang3.ObjectUtils;
+import org.apache.commons.lang3.builder.ToStringBuilder;
+import org.apache.commons.lang3.builder.ToStringStyle;
 import org.motechproject.mds.annotations.internal.vfs.DoubleEncodedDirUrlType;
 import org.motechproject.mds.annotations.internal.vfs.JndiUrlType;
 import org.motechproject.mds.annotations.internal.vfs.MvnUrlType;
@@ -35,7 +35,7 @@ import java.util.List;
 import java.util.Set;
 import java.util.TreeSet;
 
-import static org.apache.commons.lang.StringUtils.defaultIfBlank;
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
 
 /**
  * The <code>ReflectionsUtil</code> class is a helper class, providing handy

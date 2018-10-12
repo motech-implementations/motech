@@ -1,9 +1,9 @@
 package org.motechproject.server.config.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.junit.Test;
 
-import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 import static org.hamcrest.core.Is.is;
 import static org.hamcrest.core.IsNull.nullValue;
 import static org.junit.Assert.assertNull;
@@ -41,7 +41,7 @@ public class SettingsRecordTest {
     public void shouldReturnLoginModeByStringSetter() {
         SettingsRecord settingsRecord = new SettingsRecord();
         settingsRecord.setLoginModeValue(LoginMode.REPOSITORY.getName());
-        assertThat(settingsRecord.getLoginMode(), is(LoginMode.REPOSITORY));
+        assertThat(settingsRecord.getLoginModeValue(), is(LoginMode.REPOSITORY.getName()));
         assertThat(settingsRecord.getLoginModeValue(), is(LoginMode.REPOSITORY.getName()));
     }
 

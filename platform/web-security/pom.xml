@@ -4,7 +4,7 @@
     <artifactId>motech-platform-web-security</artifactId>
     <packaging>bundle</packaging>
     <name>MOTECH Web Security</name>
-    <version>0.27</version>
+    <version>0.27.8</version>
 
     <properties>
         <modules.root.dir>${basedir}/../..</modules.root.dir>
@@ -13,7 +13,7 @@
     <parent>
         <groupId>org.motechproject</groupId>
         <artifactId>motech</artifactId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
@@ -60,39 +60,59 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-security-config</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-security-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-openid</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.openid4java</groupId>
-            <artifactId>com.springsource.org.openid4java</artifactId>
+            <artifactId>org.motechproject.spring-security-openid</artifactId>
             <exclusions>
-                <!-- We have an explicit dependency to newer version of xerces. -->
                 <exclusion>
-                    <groupId>org.apache.xerces</groupId>
-                    <artifactId>com.springsource.org.apache.xerces</artifactId>
+                    <groupId>xml-apis</groupId>
+                    <artifactId>xml-apis</artifactId>
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.openid4java</groupId>
+            <artifactId>org.motechproject.com.springsource.org.openid4java</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupId>org.codehaus.jackson</groupId>
+            <artifactId>org.motechproject.org.codehaus.jackson</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+
+        </dependency>
+
+        <!--<dependency>-->
+            <!--<groupId>org.openid4java</groupId>-->
+            <!--<artifactId>com.springsource.org.openid4java</artifactId>-->
+            <!--<exclusions>-->
+                <!--&lt;!&ndash; We have an explicit dependency to newer version of xerces. &ndash;&gt;-->
+                <!--<exclusion>-->
+                    <!--<groupId>org.apache.xerces</groupId>-->
+                    <!--<artifactId>com.springsource.org.apache.xerces</artifactId>-->
+                <!--</exclusion>-->
+            <!--</exclusions>-->
+        <!--</dependency>-->
         <dependency>
             <groupId>com.google.guice</groupId>
             <artifactId>com.springsource.com.google.inject</artifactId>
@@ -117,9 +137,30 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test-mvc</artifactId>
+            <groupId>xml-apis</groupId>
+            <artifactId>xml-apis</artifactId>
         </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-beans</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-core</artifactId>
+        </dependency>
+        <!--<dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+            <scope>test</scope>
+        </dependency>-->
+        <!--<dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-test-mvc</artifactId>
+        </dependency>-->
     </dependencies>
     <build>
         <plugins>
@@ -148,10 +189,11 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Spring-Context> *;timeout:=600</Spring-Context>
                         <Bundle-Activator>
                             org.motechproject.security.osgi.Activator
                         </Bundle-Activator>
@@ -192,6 +234,15 @@
                             net.sf.cglib.core,
                             org.motechproject.scheduler.contract;resolution:=optional,
                             org.motechproject.scheduler.service;resolution:=optional,
+                            org.datanucleus.enhancement,
+                            org.w3c.dom,
+                            org.springframework.security.crypto.password,
+                            org.springframework.beans.factory,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
+                            org.springframework.cglib.reflect,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

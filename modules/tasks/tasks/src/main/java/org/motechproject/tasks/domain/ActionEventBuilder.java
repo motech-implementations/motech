@@ -6,7 +6,7 @@ import org.motechproject.tasks.contract.ActionParameterRequest;
 import java.util.SortedSet;
 import java.util.TreeSet;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * The <code>ActionEventBuilder</code> class provides methods for constructing action events.

@@ -5,6 +5,7 @@ import org.osgi.framework.Constants;
 
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 /**
@@ -20,6 +21,11 @@ public enum BundleType {
      * The HTTP bridge bundle, required for HTTP access to MOTECH.
      */
     HTTP_BUNDLE,
+
+    /**
+     * Common Bundles that event/mds is dependant on -- hence creating addiitonal ( facing errors after all versions upgrade)
+     */
+    PLATFORM_BUNDLE_PRE_MDS_COMMON,
     /**
      * Bundles that MDS depends on - commons bundles, osgi-web-util, server-api and config-core.
      */
@@ -54,9 +60,13 @@ public enum BundleType {
       */
     FRAMEWORK_BUNDLE;
 
-    public static final Set<String> PLATFORM_PRE_MDS_BUNDLES = new HashSet<>(Arrays.asList(
-            "commons-api", "commons-sql", "commons-date", "osgi-web-util", "server-api", "config-core", "event"
-    ));
+    public static final List<String> PLATFORM_PRE_MDS_BUNDLES = Arrays.asList(
+             "server-api", "event"
+    );
+
+    public static final List<String> PLATFORM_PRE_MDS_COMMON_BUNDLES = Arrays.asList(
+            "commons-api", "commons-sql", "commons-date", "osgi-web-util", "config-core"
+    );
 
     public static final Set<String> PLATFORM_PRE_WS_BUNDLES = new HashSet<>(Arrays.asList(
         "server-config"
@@ -69,7 +79,7 @@ public enum BundleType {
             return BundleType.FRAGMENT_BUNDLE;
         } else if (symbolicName == null || PlatformConstants.PAX_IT_SYMBOLIC_NAME.equals(symbolicName)) {
             return BundleType.THIRD_PARTY_BUNDLE;
-        } else if (symbolicName.startsWith(PlatformConstants.MDS_BUNDLE_PREFIX)) {
+        } else if (symbolicName.equals(PlatformConstants.MDS_BUNDLE_PREFIX)) {
             return BundleType.MDS_BUNDLE;
         } else if (symbolicName.equals(PlatformConstants.SECURITY_SYMBOLIC_NAME)) {
             return BundleType.WS_BUNDLE;
@@ -88,7 +98,9 @@ public enum BundleType {
 
     private static BundleType getPlatformBundleType(String symbolicName) {
         String moduleName = symbolicName.substring(PlatformConstants.PLATFORM_BUNDLE_PREFIX.length());
-
+        if(PLATFORM_PRE_MDS_COMMON_BUNDLES.contains(moduleName)) {
+            return PLATFORM_BUNDLE_PRE_MDS_COMMON;
+        }
         if (PLATFORM_PRE_MDS_BUNDLES.contains(moduleName)) {
             return PLATFORM_BUNDLE_PRE_MDS;
         } else if (PLATFORM_PRE_WS_BUNDLES.contains(moduleName)) {

@@ -2,13 +2,13 @@
     <parent>
         <artifactId>motech</artifactId>
         <groupId>org.motechproject</groupId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../../</relativePath>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>motech-platform-dataservices</artifactId>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
     <name>MOTECH Platform Data Services</name>
     <properties>
@@ -44,6 +44,7 @@
             <groupId>org.quartz-scheduler</groupId>
             <artifactId>quartz</artifactId>
         </dependency>
+
         <dependency>
             <groupId>org.motechproject</groupId>
             <artifactId>motech-platform-osgi-extender-fragment</artifactId>
@@ -65,23 +66,40 @@
             <artifactId>motech-pax-it</artifactId>
             <version>${project.version}</version>
             <scope>test</scope>
+            <exclusions>
+                <exclusion>
+                    <groupId>com.google.guava</groupId>
+                    <artifactId>org.motechproject.com.google.guava</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-web</artifactId>
+            <groupId>org.motechproject</groupId>
+            <artifactId>org.motechproject.spring-web</artifactId>
         </dependency>
+
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-orm</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context-support</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>javax.transaction</groupId>
             <artifactId>com.springsource.javax.transaction</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-collections</groupId>
-            <artifactId>commons-collections</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-collections4</artifactId>
         </dependency>
         <dependency>
             <groupId>commons-codec</groupId>
             <artifactId>commons-codec</artifactId>
         </dependency>
+
         <dependency>
             <groupId>commons-beanutils</groupId>
             <artifactId>commons-beanutils</artifactId>
@@ -112,10 +130,14 @@
         </dependency>
         <dependency>
             <groupId>org.datanucleus</groupId>
+            <artifactId>javax.persistence</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.datanucleus</groupId>
             <artifactId>datanucleus-jodatime</artifactId>
         </dependency>
         <dependency>
-            <groupId>com.googlecode.flyway</groupId>
+            <groupId>org.flywaydb</groupId>
             <artifactId>flyway-core</artifactId>
         </dependency>
         <dependency>
@@ -131,20 +153,20 @@
             <artifactId>org.motechproject.javax.time</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-orm</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-orm</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-tx</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-tx</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.cglib</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-aop</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-aop</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
@@ -156,35 +178,61 @@
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
-            <artifactId>org.motechproject.org.postgresql</artifactId>
+            <artifactId>postgresql</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-config</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-security-config</artifactId>
         </dependency>
         <dependency>
-            <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-web</artifactId>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-security-web</artifactId>
         </dependency>
         <dependency>
             <groupId>org.reflections</groupId>
             <artifactId>org.motechproject.reflections</artifactId>
+            <exclusions>
+                <exclusion>
+                    <artifactId>guava</artifactId>
+                    <groupId>com.google.guava</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
+
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>org.motechproject.com.google.guava</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.google.code.findbugs</groupId>
+            <artifactId>jsr305</artifactId>
+        </dependency>
+
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.paranamer</artifactId>
         </dependency>
-        <dependency>
+        <!--<dependency>
             <groupId>javax.validation</groupId>
-            <artifactId>com.springsource.javax.validation</artifactId>
+            <artifactId>validation-api</artifactId>
+        </dependency>-->
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-test</artifactId>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-test</artifactId>
+            <artifactId>gemini-blueprint-core</artifactId>
+         </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -202,6 +250,14 @@
         <dependency>
             <groupId>org.apache.bval</groupId>
             <artifactId>org.apache.bval.bundle</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
@@ -227,6 +283,15 @@
             <groupId>com.itextpdf</groupId>
             <artifactId>itextpdf</artifactId>
         </dependency>
+        <dependency>
+            <groupId>javax.validation</groupId>
+            <artifactId>validation-api</artifactId>
+         </dependency>
+        <!-- Added Servlet Library -->
+        <!--<dependency>-->
+            <!--<groupId>javax.servlet</groupId>-->
+            <!--<artifactId>javax.servlet-api</artifactId>-->
+        <!--</dependency>-->
     </dependencies>
     <build>
         <resources>
@@ -257,7 +322,7 @@
             <plugin>
                 <groupId>org.datanucleus</groupId>
                 <artifactId>datanucleus-maven-plugin</artifactId>
-                <version>3.3.0-release</version>
+                <version>4.0.0-release</version>
                 <configuration>
                     <api>JDO</api>
                     <verbose>true</verbose>
@@ -276,14 +341,14 @@
                     <dependency>
                         <groupId>org.datanucleus</groupId>
                         <artifactId>datanucleus-core</artifactId>
-                        <version>3.2.12</version>
+                        <version>4.1.0-release</version>
                     </dependency>
                 </dependencies>
             </plugin>
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -324,7 +389,7 @@
                             org.motechproject.mdsmigration.java;version=${project.version}
                         </Export-Package>
                         <Import-Package>
-                            com.googlecode.flyway.core,
+                            org.flywaydb.core,
                             javax.jdo.spi,
                             javax.validation,
                             javax.validation.constraints,
@@ -332,6 +397,12 @@
                             net.sf.cglib.proxy,
                             net.sf.cglib.reflect,
                             org.aopalliance.aop,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
+                            org.springframework.cglib.reflect,
+                            com.google.common.base;version="20.0.0.r034",
+                            com.google.common.collect;version="20.0.0.r034",
                             org.apache.bval.jsr303,
                             org.apache.bval.constraints,
                             org.apache.commons.vfs2.provider.gzip,
@@ -360,6 +431,12 @@
                             org.springframework.orm.jdo,
                             org.springframework.security.config,
                             org.springframework.web.context,
+                            org.motechproject.bundle.extender,
+                            javassist.bytecode,
+                            javassist.bytecode.annotation,
+                            org.aspectj.lang,
+                            org.aspectj.runtime.internal,
+                            org.apache.bval.util,
                             *
                         </Import-Package>
                         <!--
@@ -370,6 +447,7 @@
                             files inside motech-platform-dataservices resolves the problem. This instruction
                             should be removed when problem will be solved inside flyway-core.
                         -->
+                        <!-- TODO DHIRAJ - I THINK THIS CAN BE REMOVED - CHECK AND REMOVE -->
                         <Embed-Dependency>
                             flyway-core;inline=com/googlecode/flyway/core/dbsupport/**/*.sql
                         </Embed-Dependency>
@@ -424,7 +502,7 @@
                             </dependency>
                             <dependency>
                                 <groupId>org.postgresql</groupId>
-                                <artifactId>org.motechproject.org.postgresql</artifactId>
+                                <artifactId>postgresql</artifactId>
                                 <version>${postgres.version}</version>
                             </dependency>
                         </dependencies>

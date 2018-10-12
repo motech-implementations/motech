@@ -1,6 +1,6 @@
 package org.motechproject.server.web.controller;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.osgi.web.LocaleService;
 import org.motechproject.server.startup.StartupManager;

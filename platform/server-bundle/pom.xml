@@ -7,12 +7,12 @@
     <parent>
         <groupId>org.motechproject</groupId>
         <artifactId>motech</artifactId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../</relativePath>
     </parent>
 
     <artifactId>motech-platform-server-bundle</artifactId>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
     <name>MOTECH Platform Server Bundle</name>
 
@@ -62,31 +62,35 @@
             <artifactId>commons-validator</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-digester</groupId>
-            <artifactId>commons-digester</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-digester3</artifactId>
         </dependency>
         <dependency>
-            <groupId>commons-lang</groupId>
-            <artifactId>commons-lang</artifactId>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
         </dependency>
         <dependency>
             <groupId>org.springframework.security</groupId>
-            <artifactId>spring-security-core</artifactId>
+            <artifactId>org.motechproject.org.springframework.security.spring-security-core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-test</artifactId>
+            <artifactId>gemini-blueprint-test</artifactId>
             <scope>test</scope>
         </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-test-mvc</artifactId>
+        <!--<dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-test-mvc</artifactId>
             <scope>test</scope>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.hamcrest</groupId>
             <artifactId>hamcrest-all</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>org.motechproject.com.google.code.gson</artifactId>
         </dependency>
     </dependencies>
     <build>
@@ -134,10 +138,11 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
+                        <Spring-Context> *;timeout:=600</Spring-Context>
                         <BluePrint-Enabled>true</BluePrint-Enabled>
                         <Context-Path>server</Context-Path>
                         <Resource-path>server/resources</Resource-path>
@@ -164,6 +169,10 @@
                             org.springframework.context.support,
                             org.springframework.web.servlet.i18n,
                             org.springframework.web.servlet.view,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                     </instructions>

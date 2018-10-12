@@ -1,6 +1,6 @@
 package org.motechproject.mds.helper;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.framework.BundleWiringImpl;
 import org.eclipse.gemini.blueprint.util.OsgiBundleUtils;
 import org.eclipse.gemini.blueprint.util.OsgiStringUtils;

@@ -2,9 +2,9 @@ package org.motechproject.mds.builder.impl;
 
 import javassist.CtClass;
 import javassist.NotFoundException;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
-import org.apache.commons.lang.reflect.FieldUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.reflect.FieldUtils;
 import org.motechproject.commons.date.model.Time;
 import org.motechproject.mds.builder.EntityMetadataBuilder;
 import org.motechproject.mds.domain.ClassData;
@@ -56,8 +56,8 @@ import javax.jdo.metadata.PackageMetadata;
 import javax.jdo.metadata.ValueMetadata;
 import java.util.Map;
 
-import static org.apache.commons.lang.StringUtils.defaultIfBlank;
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 import static org.motechproject.mds.util.Constants.MetadataKeys.DATABASE_COLUMN_NAME;
 import static org.motechproject.mds.util.Constants.MetadataKeys.MAP_KEY_TYPE;
 import static org.motechproject.mds.util.Constants.MetadataKeys.MAP_VALUE_TYPE;
@@ -159,11 +159,27 @@ public class EntityMetadataBuilderImpl implements EntityMetadataBuilder {
                         if (null != collMd) {
                             fixCollectionMetadata(collMd);
                         }
+
+
+                        //Defining column name for join and element results in setting it both as XML attribute and child element
+                        fixDuplicateColumnDefinitions(mmd);
                     }
                 }
             }
         }
     }
+
+    private void fixDuplicateColumnDefinitions(MemberMetadata mmd) {
+        JoinMetadata jmd = mmd.getJoinMetadata();
+        ElementMetadata emd = mmd.getElementMetadata();
+        if (jmd != null && ArrayUtils.isNotEmpty(jmd.getColumns()) && StringUtils.isNotEmpty(jmd.getColumn())) {
+            jmd.setColumn(null);
+        }
+        if (emd != null && ArrayUtils.isNotEmpty(emd.getColumns()) && StringUtils.isNotEmpty(emd.getColumn())) {
+            emd.setColumn(null);
+        }
+    }
+
 
     @Override
     public void addBaseMetadata(JDOMetadata jdoMetadata, ClassData classData, EntityType entityType, Class<?> definition) {
@@ -450,15 +466,21 @@ public class EntityMetadataBuilderImpl implements EntityMetadataBuilder {
         java.lang.reflect.Field fieldDefinition = FieldUtils.getDeclaredField(definition, field.getName(), true);
         Join join = fieldDefinition.getAnnotation(Join.class);
 
-        JoinMetadata jmd = null;
-        // Join metadata must be present at both sides of the M:N relation in Datanucleus 3.2
-        if (join == null || entityType != EntityType.STANDARD) {
-            jmd = fmd.newJoinMetadata();
-            jmd.setOuter(false);
-        }
+//        JoinMetadata jmd = null;
+//        // Join metadata must be present at both sides of the M:N relation in Datanucleus 3.2
+//        if (join == null || entityType != EntityType.STANDARD) {
+//            jmd = fmd.newJoinMetadata();
+//            jmd.setOuter(false);
+//        }
 
         // If tables and column names have been specified in annotations, do not set their metadata
         if (!holder.isOwningSide()) {
+            JoinMetadata jmd = null;
+            // Join metadata must be present at exactly one side of the M:N relation in Datanucleus 4+
+            if (join == null || entityType != EntityType.STANDARD) {
+                jmd = fmd.newJoinMetadata();
+            }
+
             Persistent persistent = fieldDefinition.getAnnotation(Persistent.class);
             Element element = fieldDefinition.getAnnotation(Element.class);
 

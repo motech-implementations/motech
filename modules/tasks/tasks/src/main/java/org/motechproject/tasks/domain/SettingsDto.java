@@ -1,7 +1,7 @@
 package org.motechproject.tasks.domain;
 
-import org.apache.commons.lang.StringUtils;
-import org.codehaus.jackson.annotate.JsonIgnore;
+import org.apache.commons.lang3.StringUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 public class SettingsDto {
 

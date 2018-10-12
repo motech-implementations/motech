@@ -1,6 +1,6 @@
 package org.motechproject.server.web.validator;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.validator.EmailValidator;
 import org.motechproject.config.core.domain.ConfigSource;
 import org.motechproject.security.service.MotechUserService;

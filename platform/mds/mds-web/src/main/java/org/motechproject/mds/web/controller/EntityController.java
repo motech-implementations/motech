@@ -1,6 +1,6 @@
 package org.motechproject.mds.web.controller;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.motechproject.mds.dto.AdvancedSettingsDto;
 import org.motechproject.mds.dto.DraftData;
 import org.motechproject.mds.dto.DraftResult;

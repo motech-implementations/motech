@@ -12,5 +12,5 @@
     <properties>
         <test.properties>testParent</test.properties>
     </properties>
-    <version>0-27-SNAPSHOT</version>
+    <version>0-27.8-SNAPSHOT</version>
 </project>

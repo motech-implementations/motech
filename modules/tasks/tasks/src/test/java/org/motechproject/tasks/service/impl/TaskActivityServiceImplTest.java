@@ -21,7 +21,7 @@ import java.util.List;
 import java.util.Set;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.exception.ExceptionUtils.getStackTrace;
+import static org.apache.commons.lang3.exception.ExceptionUtils.getStackTrace;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.Matchers.any;

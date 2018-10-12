@@ -1,7 +1,7 @@
 package org.motechproject.config.core.domain;
 
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.config.core.MotechConfigurationException;
 
 /**

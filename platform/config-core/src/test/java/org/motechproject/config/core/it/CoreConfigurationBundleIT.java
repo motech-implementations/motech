@@ -1,5 +1,6 @@
 package org.motechproject.config.core.it;
 
+
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.config.core.domain.BootstrapConfig;
@@ -33,8 +34,12 @@ public class CoreConfigurationBundleIT extends BasePaxIT {
 
     @Override
     protected Collection<String> getAdditionalTestDependencies() {
-        return Arrays.asList("org.codehaus.jackson:org.motechproject.org.codehaus.jackson");
+        return Arrays.asList("com.fasterxml.jackson.core:jackson-databind",
+                "com.fasterxml.jackson.core:jackson-core","com.fasterxml.jackson.core:jackson-annotations"  );
     }
+
+
+
 
     @Test
     public void testBootstrapConfigBundleIT() {

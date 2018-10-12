@@ -1,6 +1,6 @@
 package org.motechproject.mds.builder;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.LocalDate;
 import org.junit.Before;

@@ -5,11 +5,11 @@ package org.motechproject.admin.security;
  */
 public final class SecurityConstants {
 
-    public static final String MANAGE_MESSAGES = "hasRole('manageMessages')";
-    public static final String MANAGE_BUNDLES = "hasRole('manageBundles')";
-    public static final String MANAGE_LOGS = "hasRole('manageLogs')";
-    public static final String MANAGE_ACTIVEMQ = "hasRole('manageActivemq')";
-    public static final String MANAGE_SETTINGS = "hasRole('manageSettings')";
+    public static final String MANAGE_MESSAGES = "hasAuthority('manageMessages')";
+    public static final String MANAGE_BUNDLES = "hasAuthority('manageBundles')";
+    public static final String MANAGE_LOGS = "hasAuthority('manageLogs')";
+    public static final String MANAGE_ACTIVEMQ = "hasAuthority('manageActivemq')";
+    public static final String MANAGE_SETTINGS = "hasAuthority('manageSettings')";
 
     private SecurityConstants() {
     }

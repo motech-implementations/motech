@@ -1,6 +1,6 @@
 package org.motechproject.mds.helper;
 
-import org.apache.commons.lang.reflect.MethodUtils;
+import org.apache.commons.lang3.reflect.MethodUtils;
 import org.motechproject.mds.domain.Field;
 import org.motechproject.mds.domain.FieldMetadata;
 import org.motechproject.mds.dto.TypeDto;

@@ -1,7 +1,7 @@
 package org.motechproject.mds.it;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.hamcrest.Matcher;
 import org.hamcrest.Matchers;
 import org.joda.time.DateTime;
@@ -163,11 +163,13 @@ public class FilterContextIT extends BaseInstanceIT {
 
         MotechDataService service = getService();
 
-        service.create(objectInstance(clazz, true, NOW.toDate(), NOW, "now"));
-        service.create(objectInstance(clazz, true, threeDaysAgo.toDate(), threeDaysAgo, "threeDaysAgo"));
-        service.create(objectInstance(clazz, false, eightDaysAgo.toDate(), eightDaysAgo, "eightDaysAgo"));
-        service.create(objectInstance(clazz, false, notThisMonth.toDate(), notThisMonth, "notThisMonth"));
-        service.create(objectInstance(clazz, false, notThisYear.toDate(), notThisYear, "notThisYear"));
+        if (service.count() == 0) {
+            service.create(objectInstance(clazz, true, NOW.toDate(), NOW, "now"));
+            service.create(objectInstance(clazz, true, threeDaysAgo.toDate(), threeDaysAgo, "threeDaysAgo"));
+            service.create(objectInstance(clazz, false, eightDaysAgo.toDate(), eightDaysAgo, "eightDaysAgo"));
+            service.create(objectInstance(clazz, false, notThisMonth.toDate(), notThisMonth, "notThisMonth"));
+            service.create(objectInstance(clazz, false, notThisYear.toDate(), notThisYear, "notThisYear"));
+        }
 
         assertEquals("There were issues creating test data", 5, service.count());
     }

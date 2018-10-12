@@ -1,6 +1,6 @@
 package org.motechproject.scheduler.contract;
 
-import org.apache.commons.lang.ObjectUtils;
+import org.apache.commons.lang3.ObjectUtils;
 import org.joda.time.Period;
 import org.motechproject.event.MotechEvent;
 

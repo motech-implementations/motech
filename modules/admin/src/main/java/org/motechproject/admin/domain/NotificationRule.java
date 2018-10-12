@@ -1,6 +1,6 @@
 package org.motechproject.admin.domain;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.admin.messages.ActionType;
 import org.motechproject.admin.messages.Level;
 import org.motechproject.mds.annotations.Access;

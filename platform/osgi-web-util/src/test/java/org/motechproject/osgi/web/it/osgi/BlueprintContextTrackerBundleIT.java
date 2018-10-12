@@ -1,5 +1,6 @@
 package org.motechproject.osgi.web.it.osgi;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.osgi.web.HttpServiceTrackers;
@@ -38,6 +39,7 @@ public class BlueprintContextTrackerBundleIT extends BasePaxIT {
                 .setHeader("Context-Path", "/test");
     }
 
+    //TODO Upgrade Atish
     @Test
     public void testThatHttpServiceTrackerWasAdded() throws InterruptedException {
         final Bundle testBundle = bundleContext.getBundle();

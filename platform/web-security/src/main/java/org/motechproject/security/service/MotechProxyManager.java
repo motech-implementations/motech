@@ -15,6 +15,7 @@ import org.springframework.security.web.FilterChainProxy;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.stereotype.Component;
 
+import javax.servlet.ServletException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
@@ -51,7 +52,7 @@ public class MotechProxyManager {
      * to create a new FilterChainProxy. The order of the rules in the
      * list matters for filtering purposes.
      */
-    public synchronized void rebuildProxyChain() {
+    public synchronized void rebuildProxyChain() throws ServletException {
         LOGGER.info("Rebuilding proxy chain");
         updateSecurityChain(securityRulesDAO.getRules());
         LOGGER.info("Rebuilt proxy chain");
@@ -62,7 +63,7 @@ public class MotechProxyManager {
      * any kind of security authentication so it should only ever be used by the activator,
      * which does not have an authentication object.
      */
-    public void initializeProxyChain() {
+    public void initializeProxyChain() throws ServletException {
         LOGGER.info("Initializing proxy chain");
 
         MotechSecurityConfiguration securityConfiguration = securityRulesDAO.getMotechSecurityConfiguration();
@@ -130,7 +131,7 @@ public class MotechProxyManager {
      *
      * @param securityRules list that contains new security rules
      */
-    private void updateSecurityChain(List<MotechURLSecurityRule> securityRules) {
+    private void updateSecurityChain(List<MotechURLSecurityRule> securityRules) throws ServletException {
         LOGGER.debug("Updating security chain");
 
         // sort rules by priority descending

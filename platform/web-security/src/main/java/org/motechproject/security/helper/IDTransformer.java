@@ -1,7 +1,7 @@
 package org.motechproject.security.helper;
 
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.collections.Transformer;
+import org.apache.commons.collections4.Transformer;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 

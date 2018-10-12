@@ -3,8 +3,8 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:security="http://www.springframework.org/schema/security"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-3.1.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/security http://www.springframework.org/schema/security/spring-security-4.2.xsd">
 
     <security:global-method-security pre-post-annotations="enabled"/>
 
@@ -56,7 +56,8 @@
     </security:http>
 
     <bean id="loginFormAuthentication" class="org.motechproject.security.authentication.MotechLoginUrlAuthenticationEntryPoint">
-        <property name="loginFormUrl" value="/module/server/login"/>
+        <constructor-arg value="/module/server/login"/>
+        <!--<property name="loginFormUrl" value="/module/server/login"/>-->
     </bean>
 
     <security:http auto-config="false" entry-point-ref="loginFormAuthentication" use-expressions="true">
@@ -100,32 +101,40 @@
                     <bean class="org.openid4java.consumer.ConsumerManager"/>
                 </constructor-arg>
                 <constructor-arg index="1">
-                    <list value-type="org.springframework.security.openid.OpenIDAttribute">
-                        <bean class="org.springframework.security.openid.OpenIDAttribute">
-                            <constructor-arg index="0" value="aeEmail"/>
-                            <constructor-arg index="1" value="http://openid.net/schema/contact/internet/email"/>
-                            <property name="required" value="true"/>
-                            <property name="count" value="1"/>
-                        </bean>
-                        <bean class="org.springframework.security.openid.OpenIDAttribute">
-                            <constructor-arg index="0" value="axEmail"/>
-                            <constructor-arg index="1" value="http://axschema.org/contact/email"/>
-                            <property name="required" value="true"/>
-                            <property name="count" value="1"/>
-                        </bean>
-                        <bean class="org.springframework.security.openid.OpenIDAttribute">
-                            <constructor-arg index="0" value="aeGuid"/>
-                            <constructor-arg index="1" value="http://openid.net/schema/person/guid"/>
-                            <property name="required" value="true"/>
-                            <property name="count" value="1"/>
-                        </bean>
-                        <bean class="org.springframework.security.openid.OpenIDAttribute">
-                            <constructor-arg index="0" value="aeAlias"/>
-                            <constructor-arg index="1" value="http://openid.net/schema/namePerson/friendly"/>
-                            <property name="required" value="true"/>
-                            <property name="count" value="1"/>
-                        </bean>
-                    </list>
+                    <bean class = "org.springframework.security.openid.RegexBasedAxFetchListFactory">
+                        <constructor-arg>
+                                <map>
+                                    <entry key=".*">
+                                        <list value-type="org.springframework.security.openid.OpenIDAttribute">
+                                            <bean class="org.springframework.security.openid.OpenIDAttribute">
+                                                <constructor-arg index="0" value="aeEmail"/>
+                                                <constructor-arg index="1" value="http://openid.net/schema/contact/internet/email"/>
+                                                <property name="required" value="true"/>
+                                                <property name="count" value="1"/>
+                                            </bean>
+                                            <bean class="org.springframework.security.openid.OpenIDAttribute">
+                                                <constructor-arg index="0" value="axEmail"/>
+                                                <constructor-arg index="1" value="http://axschema.org/contact/email"/>
+                                                <property name="required" value="true"/>
+                                                <property name="count" value="1"/>
+                                            </bean>
+                                            <bean class="org.springframework.security.openid.OpenIDAttribute">
+                                                <constructor-arg index="0" value="aeGuid"/>
+                                                <constructor-arg index="1" value="http://openid.net/schema/person/guid"/>
+                                                <property name="required" value="true"/>
+                                                <property name="count" value="1"/>
+                                            </bean>
+                                            <bean class="org.springframework.security.openid.OpenIDAttribute">
+                                                <constructor-arg index="0" value="aeAlias"/>
+                                                <constructor-arg index="1" value="http://openid.net/schema/namePerson/friendly"/>
+                                                <property name="required" value="true"/>
+                                                <property name="count" value="1"/>
+                                            </bean>
+                                        </list>
+                                    </entry>
+                                </map>
+                        </constructor-arg>
+                    </bean>
                 </constructor-arg>
             </bean>
         </property>

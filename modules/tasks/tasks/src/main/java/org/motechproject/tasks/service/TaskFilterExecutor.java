@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
 
-import static org.apache.commons.collections.CollectionUtils.isEmpty;
+import static org.apache.commons.collections4.CollectionUtils.isEmpty;
 import static org.motechproject.tasks.domain.KeyInformation.parse;
 
 /**

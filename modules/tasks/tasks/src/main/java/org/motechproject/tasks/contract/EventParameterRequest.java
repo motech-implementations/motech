@@ -2,7 +2,7 @@ package org.motechproject.tasks.contract;
 
 import java.util.Objects;
 
-import static org.apache.commons.lang.StringUtils.isBlank;
+import static org.apache.commons.lang3.StringUtils.isBlank;
 
 /**
  * Service layer object denoting a {@link org.motechproject.tasks.domain.EventParameter}. It is a part of the

@@ -151,4 +151,9 @@ public class EventAnnotationBeanPostProcessor implements DestructionAwareBeanPos
     private String getFullyQualifiedBeanName(Class<?> beanClass, String beanName) {
         return beanClass.getName() + ":" + beanName;
     }
+
+    //TODO UPGRADE ATISH
+    public boolean requiresDestruction(Object var1){
+        return true;
+    }
 }

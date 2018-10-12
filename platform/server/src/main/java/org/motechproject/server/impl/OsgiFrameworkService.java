@@ -2,7 +2,7 @@ package org.motechproject.server.impl;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.SuffixFileFilter;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.felix.framework.Felix;
 import org.eclipse.gemini.blueprint.OsgiException;
 import org.eclipse.gemini.blueprint.util.OsgiBundleUtils;

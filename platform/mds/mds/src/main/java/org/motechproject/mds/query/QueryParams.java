@@ -1,6 +1,6 @@
 package org.motechproject.mds.query;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.util.Constants;
 import org.motechproject.mds.util.Order;
 

@@ -1,6 +1,6 @@
 package org.motechproject.tasks.service;
 
-import org.apache.commons.lang.WordUtils;
+import org.apache.commons.lang3.text.WordUtils;
 import org.motechproject.commons.api.MotechException;
 import org.motechproject.tasks.domain.Task;
 import org.motechproject.tasks.events.constants.TaskFailureCause;

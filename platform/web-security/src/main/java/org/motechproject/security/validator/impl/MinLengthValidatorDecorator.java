@@ -1,6 +1,6 @@
 package org.motechproject.security.validator.impl;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.security.ex.PasswordTooShortException;
 import org.motechproject.security.ex.PasswordValidatorException;
 import org.motechproject.security.validator.PasswordValidator;

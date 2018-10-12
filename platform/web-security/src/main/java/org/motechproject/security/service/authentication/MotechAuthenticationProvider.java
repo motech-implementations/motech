@@ -1,6 +1,6 @@
 package org.motechproject.security.service.authentication;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.Days;
 import org.motechproject.commons.date.util.DateUtil;
 import org.motechproject.security.authentication.MotechPasswordEncoder;

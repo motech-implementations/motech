@@ -1,6 +1,6 @@
 package org.motechproject.tasks.domain;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.motechproject.mds.annotations.Access;
 import org.motechproject.mds.annotations.Cascade;
 import org.motechproject.mds.annotations.Entity;
@@ -15,7 +15,7 @@ import java.util.List;
 import java.util.Objects;
 
 import static java.util.Arrays.asList;
-import static org.apache.commons.lang.StringUtils.equalsIgnoreCase;
+import static org.apache.commons.lang3.StringUtils.equalsIgnoreCase;
 
 /**
  * Represents a single object of the task data provider. It describes fields and lookups of an entity that is used as a

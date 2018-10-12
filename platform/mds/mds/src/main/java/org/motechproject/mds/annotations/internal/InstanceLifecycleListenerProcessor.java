@@ -1,6 +1,6 @@
 package org.motechproject.mds.annotations.internal;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.mds.annotations.InstanceLifecycleListener;
 import org.motechproject.mds.annotations.InstanceLifecycleListenerType;
 import org.motechproject.mds.listener.MotechLifecycleListener;

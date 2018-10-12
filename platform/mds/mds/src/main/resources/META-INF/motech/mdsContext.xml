@@ -4,9 +4,9 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
        xmlns:util="http://www.springframework.org/schema/util"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.1.xsd
-       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.1.xsd
-       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.1.xsd">
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.3.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.3.xsd
+       http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.3.xsd">
 
     <import resource="classpath*:META-INF/motech/mdsCommonContext.xml"/>
 
@@ -15,7 +15,7 @@
     <context:annotation-config/>
     <context:component-scan base-package="org.motechproject.mds"/>
 
-    <bean id="flyway" class="com.googlecode.flyway.core.Flyway" init-method="migrate">
+    <bean id="flyway" class="org.flywaydb.core.Flyway" init-method="migrate">
         <property name="dataSource">
             <bean class="org.datanucleus.store.rdbms.datasource.dbcp.BasicDataSource">
                 <property name="driverClassName">
@@ -45,7 +45,7 @@
         </property>
         <property name="sqlMigrationPrefix" value="V"/>
         <property name="outOfOrder" value="true"/>
-        <property name="initOnMigrate" value="true"/>
+        <property name="validateOnMigrate" value="true"/>
     </bean>
 
     <bean id="swaggerMessageSource" class="org.springframework.context.support.ReloadableResourceBundleMessageSource">

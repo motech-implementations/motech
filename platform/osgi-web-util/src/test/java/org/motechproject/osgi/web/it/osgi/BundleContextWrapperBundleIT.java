@@ -1,5 +1,6 @@
 package org.motechproject.osgi.web.it.osgi;
 
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.motechproject.osgi.web.BundleContextWrapper;
@@ -25,6 +26,7 @@ public class BundleContextWrapperBundleIT extends BasePaxIT {
     @Inject
     private BundleContext bundleContext;
 
+    //TODO Upgrade Atish
     @Test
     public void testThatBundleContextWrapperReturnsCorrectApplicationContext() throws InterruptedException {
         BundleContextWrapper bundleContextWrapper = new BundleContextWrapper(bundleContext);

@@ -1,6 +1,6 @@
 package org.motechproject.mds.json;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.Entity;
 import org.motechproject.mds.domain.ImportExportBlueprint;
 import org.motechproject.mds.domain.Type;

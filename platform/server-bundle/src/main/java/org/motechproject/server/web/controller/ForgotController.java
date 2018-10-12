@@ -66,7 +66,7 @@ public class ForgotController {
    public ForgotViewData getForgotViewData(final HttpServletRequest request) {
         ForgotViewData view = new ForgotViewData();
 
-        view.setLoginMode(settingsFacade.getPlatformSettings().getLoginMode());
+        view.setLoginMode(LoginMode.valueOf(settingsFacade.getPlatformSettings().getLoginModeValue()));
         view.setEmailGetter(true);
         view.setProcessed(false);
         view.setEmail("");
@@ -79,9 +79,9 @@ public class ForgotController {
     @ResponseBody
     public String forgotPost(@RequestBody String email) {
 
-        LoginMode loginMode = settingsFacade.getPlatformSettings().getLoginMode();
+        String loginMode = settingsFacade.getPlatformSettings().getLoginModeValue();
 
-        if (loginMode.isRepository()) {
+        if (loginMode.equals(LoginMode.REPOSITORY.getName())) {
             try {
                 recoveryService.passwordRecoveryRequest(email);
             } catch (UserNotFoundException e) {

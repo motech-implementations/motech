@@ -60,7 +60,7 @@ Defining an entity in MDS is as simple as writing a Java class and defining a fe
     import org.motechproject.mds.annotations.Field;
     import org.motechproject.mds.annotations.UIDisplayable;
 
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import org.joda.time.DateTime;
     import java.util.List;
     import java.util.Objects;
@@ -433,7 +433,7 @@ Let's take a look at Patient. Here is how we might specify the entity:
     import org.motechproject.mds.annotations.Field;
     import org.motechproject.mds.annotations.Cascade;
 
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import java.util.List;
     import java.util.Objects;
 
@@ -476,7 +476,7 @@ The domain object for Provider is similar:
     import org.motechproject.mds.annotations.Field;
     import org.motechproject.mds.annotations.Cascade;
 
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import java.util.List;
     import java.util.Objects;
 
@@ -523,7 +523,7 @@ At the very least, a Concept in a concept dictionary requires a name and a data 
     import org.motechproject.mds.annotations.UIDisplayable;
 
     import javax.jdo.annotations.Unique;
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import java.util.List;
     import java.util.Objects;
 
@@ -577,7 +577,7 @@ Hence, our Observation entity look like this:
     import org.motechproject.mds.annotations.Field;
 
     import javax.jdo.annotations.Persistent;
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import java.util.List;
     import java.util.Objects;
     import java.util.Date;
@@ -635,7 +635,7 @@ Because an Encounter may (and typically will) include numerous Observations abou
     import org.motechproject.mds.annotations.Entity;
     import org.motechproject.mds.annotations.Field;
 
-    import org.apache.commons.lang.ObjectUtils;
+    import org.apache.commons.lang3.ObjectUtils;
     import java.util.Objects;
     import java.util.Date;
     import java.util.Set;

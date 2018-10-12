@@ -1,6 +1,6 @@
 package org.motechproject.osgi.web;
 
-import org.codehaus.jackson.annotate.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import org.motechproject.server.api.BundleInformation;
 import org.osgi.framework.Bundle;
 

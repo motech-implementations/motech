@@ -1,6 +1,6 @@
 package org.motechproject.mds.helper;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.Entity;
 import org.motechproject.mds.repository.AllEntities;
 import org.springframework.beans.factory.annotation.Autowired;

@@ -4,13 +4,13 @@
     <parent>
         <groupId>org.motechproject</groupId>
         <artifactId>motech</artifactId>
-        <version>0.27</version>
+        <version>0.27.8</version>
         <relativePath>../../../</relativePath>
     </parent>
 
     <artifactId>motech-tasks</artifactId>
     <name>MOTECH Tasks</name>
-    <version>0.27</version>
+    <version>0.27.8</version>
     <packaging>bundle</packaging>
 
     <properties>
@@ -59,8 +59,17 @@
         </dependency>
         <dependency>
             <groupId>org.eclipse.gemini.blueprint</groupId>
-            <artifactId>org.motechproject.gemini-blueprint-test</artifactId>
+            <artifactId>gemini-blueprint-test</artifactId>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.eclipse.gemini.blueprint</groupId>
+            <artifactId>gemini-blueprint-mock</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.servicemix.bundles</groupId>
+            <artifactId>org.apache.servicemix.bundles.spring-context</artifactId>
         </dependency>
     </dependencies>
 
@@ -121,7 +130,7 @@
             <plugin>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>maven-bundle-plugin</artifactId>
-                <version>2.3.4</version>
+                <version>3.5.1</version>
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
@@ -155,6 +164,10 @@
                             org.springframework.context.config,
                             org.springframework.web.multipart.commons,
                             org.springframework.web.servlet.config,
+                            org.datanucleus.enhancement,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

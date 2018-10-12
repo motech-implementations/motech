@@ -1,6 +1,6 @@
 package org.motechproject.mds.listener.register;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.listener.proxy.ProxyJdoListener;
 
 import javax.jdo.Constants;

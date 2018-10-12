@@ -1,6 +1,6 @@
 package org.motechproject.admin.notification;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.velocity.app.VelocityEngine;
 import org.joda.time.format.DateTimeFormat;
 import org.motechproject.admin.domain.StatusMessage;

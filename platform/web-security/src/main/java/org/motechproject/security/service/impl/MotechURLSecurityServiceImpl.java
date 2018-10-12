@@ -1,6 +1,6 @@
 package org.motechproject.security.service.impl;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
 import org.motechproject.security.constants.HTTPMethod;
 import org.motechproject.security.constants.Protocol;
 import org.motechproject.security.constants.Scheme;
@@ -18,6 +18,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import javax.servlet.ServletException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -55,7 +56,11 @@ public class MotechURLSecurityServiceImpl implements MotechURLSecurityService {
         }
 
         allSecurityRules.addOrUpdate(new MotechSecurityConfiguration(newRules));
-        proxyManager.rebuildProxyChain();
+        try {
+            proxyManager.rebuildProxyChain();
+        } catch (ServletException e) {
+            LOGGER.error("Error Updating security configuration due to ", e.getMessage());
+        }
 
         LOGGER.info("Updated security configuration");
     }

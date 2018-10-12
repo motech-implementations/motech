@@ -1,6 +1,6 @@
 package org.motechproject.server.web.form;
 
-import static org.apache.commons.lang.StringUtils.EMPTY;
+import static org.apache.commons.lang3.StringUtils.EMPTY;
 
 public class StartupForm {
     public static final String LANGUAGE = "language";

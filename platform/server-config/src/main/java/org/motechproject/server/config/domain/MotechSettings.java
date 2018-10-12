@@ -15,7 +15,9 @@ public interface MotechSettings {
 
     String getStatusMsgTimeout();
 
-    LoginMode getLoginMode();
+    //LoginMode getLoginMode();
+
+    String getLoginModeValue();
 
     String getProviderName();
 

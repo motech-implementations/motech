@@ -1,6 +1,6 @@
 package org.motechproject.mds.annotations.internal;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.motechproject.mds.annotations.CrudEvents;
 import org.motechproject.mds.dto.TrackingDto;
 import org.motechproject.mds.event.CrudEventType;
@@ -62,6 +62,8 @@ public class CrudEventsProcessor implements Processor<CrudEvents> {
                             case ALL:
                                 trackingDto.setAllEvents(true);
                                 break forEach;
+                            default:
+                                break;
                         }
                     }
                 }

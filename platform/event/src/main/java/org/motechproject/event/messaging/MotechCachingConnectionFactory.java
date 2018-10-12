@@ -1,7 +1,7 @@
 package org.motechproject.event.messaging;
 
 import org.apache.activemq.ActiveMQConnectionFactory;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.jms.connection.CachingConnectionFactory;
 
 import javax.jms.Connection;

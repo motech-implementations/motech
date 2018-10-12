@@ -1,6 +1,6 @@
 package org.motechproject.admin.bundles;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.motechproject.server.api.BundleInformation;
 import org.osgi.framework.Bundle;

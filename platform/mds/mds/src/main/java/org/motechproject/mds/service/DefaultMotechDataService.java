@@ -1,6 +1,6 @@
 package org.motechproject.mds.service;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.motechproject.mds.domain.Entity;
 import org.motechproject.mds.domain.Field;
 import org.motechproject.mds.event.CrudEventType;
@@ -40,7 +40,7 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import static org.apache.commons.lang.StringUtils.defaultIfBlank;
+import static org.apache.commons.lang3.StringUtils.defaultIfBlank;
 import static org.motechproject.commons.date.util.DateUtil.now;
 import static org.motechproject.mds.event.CrudEventBuilder.buildEventParams;
 import static org.motechproject.mds.event.CrudEventBuilder.createSubject;

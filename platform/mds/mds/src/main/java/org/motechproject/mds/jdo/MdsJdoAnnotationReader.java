@@ -1,6 +1,6 @@
 package org.motechproject.mds.jdo;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.datanucleus.api.jdo.metadata.JDOAnnotationReader;
 import org.datanucleus.metadata.MetaDataManager;
 import org.datanucleus.metadata.annotations.AnnotationObject;
@@ -32,11 +32,12 @@ public class MdsJdoAnnotationReader extends JDOAnnotationReader {
     }
 
     @Override
-    protected AnnotationObject isClassPersistenceCapable(Class cls) {
-        AnnotationObject annotationObject = super.isClassPersistenceCapable(cls);
+    protected AnnotationObject isClassPersistable(Class cls) {
+        AnnotationObject annotationObject = super.isClassPersistable(cls);
 
         // if super does not recognize this object as PC, then try looking for the Entity annotation
-        if (annotationObject == null && ReflectionsUtil.hasAnnotation(cls, Entity.class)) {
+        if (annotationObject == null && ReflectionsUtil.hasAnnotation(cls, Entity.class)
+                ) {
             // default params
             HashMap<String, Object> annotationParams = new HashMap<>();
             annotationParams.put("identityType", IdentityType.DATASTORE);

@@ -1,10 +1,10 @@
 package org.motechproject.mds.util;
 
 import javassist.CtClass;
-import org.apache.commons.collections.Predicate;
-import org.apache.commons.collections.PredicateUtils;
-import org.apache.commons.lang.ArrayUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.collections4.Predicate;
+import org.apache.commons.collections4.PredicateUtils;
+import org.apache.commons.lang3.ArrayUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.util.ReflectionUtils;
 
 import java.beans.IntrospectionException;
@@ -22,7 +22,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import static org.apache.commons.lang.StringUtils.capitalize;
+import static org.apache.commons.lang3.StringUtils.capitalize;
 import static org.springframework.util.ReflectionUtils.FieldCallback;
 import static org.springframework.util.ReflectionUtils.FieldFilter;
 import static org.springframework.util.ReflectionUtils.MethodCallback;

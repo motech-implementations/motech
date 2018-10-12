@@ -1,6 +1,7 @@
 package org.motechproject.security.domain;
 
-import org.apache.commons.collections.CollectionUtils;
+import org.apache.commons.collections4.CollectionUtils;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.Serializable;
 import java.util.List;
@@ -50,6 +51,7 @@ public class MotechUserProfile implements Serializable {
         return CollectionUtils.isNotEmpty(roles) && roles.contains(role);
     }
 
+    @JsonIgnore
     public boolean isActive() {
         if (UserStatus.BLOCKED.equals(this.userStatus)) {
             return false;

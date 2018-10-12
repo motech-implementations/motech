@@ -1,6 +1,6 @@
 package org.motechproject.server.web.helper;
 
-import org.codehaus.jackson.map.ObjectMapper;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import org.motechproject.commons.api.ClassUtils;
 import org.motechproject.osgi.web.util.BundleHeaders;
 import org.osgi.framework.Bundle;
@@ -14,7 +14,7 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 public final class Header {
     private static final Logger LOGGER = LoggerFactory.getLogger(Header.class);

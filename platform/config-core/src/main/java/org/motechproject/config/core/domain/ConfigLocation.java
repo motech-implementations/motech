@@ -2,8 +2,8 @@ package org.motechproject.config.core.domain;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.TrueFileFilter;
-import org.apache.commons.lang.builder.EqualsBuilder;
-import org.apache.commons.lang.builder.HashCodeBuilder;
+import org.apache.commons.lang3.builder.EqualsBuilder;
+import org.apache.commons.lang3.builder.HashCodeBuilder;
 import org.motechproject.config.core.MotechConfigurationException;
 import org.motechproject.config.core.filters.ConfigFileFilter;
 import org.slf4j.Logger;

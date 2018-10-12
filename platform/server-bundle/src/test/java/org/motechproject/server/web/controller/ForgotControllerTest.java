@@ -57,7 +57,7 @@ public class ForgotControllerTest {
     @Test
     public void testForgotPost() throws UserNotFoundException {
         when(cookieLocaleResolver.resolveLocale(request)).thenReturn(Locale.ENGLISH);
-        when(motechSettings.getLoginMode()).thenReturn(LoginMode.REPOSITORY);
+        when(motechSettings.getLoginModeValue()).thenReturn(LoginMode.REPOSITORY.getName());
         controller.forgotPost(EMAIL);
 
         verify(recoveryService).passwordRecoveryRequest(EMAIL);
@@ -77,7 +77,7 @@ public class ForgotControllerTest {
     public void testInvalidEmail() throws UserNotFoundException {
         doThrow(new UserNotFoundException()).when(recoveryService).passwordRecoveryRequest(EMAIL);
         when(cookieLocaleResolver.resolveLocale(request)).thenReturn(Locale.ENGLISH);
-        when(motechSettings.getLoginMode()).thenReturn(LoginMode.REPOSITORY);
+        when(motechSettings.getLoginModeValue()).thenReturn(LoginMode.REPOSITORY.getName());
 
         assertEquals("security.forgot.noSuchUser", controller.forgotPost(EMAIL));
 

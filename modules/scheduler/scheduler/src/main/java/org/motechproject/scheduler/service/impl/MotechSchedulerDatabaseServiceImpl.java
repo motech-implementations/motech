@@ -1,6 +1,6 @@
 package org.motechproject.scheduler.service.impl;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.joda.time.DateTime;
 import org.joda.time.format.DateTimeFormat;
 import org.motechproject.commons.sql.util.Drivers;
@@ -42,7 +42,7 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.Properties;
 
-import static org.apache.commons.lang.StringUtils.isNotBlank;
+import static org.apache.commons.lang3.StringUtils.isNotBlank;
 
 /**
  * Motech Scheduler Database Service implementation

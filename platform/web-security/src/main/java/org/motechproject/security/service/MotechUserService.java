@@ -139,7 +139,7 @@ public interface MotechUserService {
      *
      * @return list that contains profiles
      */
-    @PreAuthorize("hasAnyRole('manageUser', 'manageURL', 'mdsSchemaAccess', 'mdsDataAccess')")
+    @PreAuthorize("hasAnyAuthority('manageUser', 'manageURL', 'mdsSchemaAccess', 'mdsDataAccess')")
     List<MotechUserProfile> getUsers();
 
     /**
@@ -181,7 +181,7 @@ public interface MotechUserService {
      *
      * @return list that contains users with OpenId
      */
-    @PreAuthorize("hasAnyRole('manageUser', 'manageURL', 'mdsSchemaAccess', 'mdsDataAccess')")
+    @PreAuthorize("hasAnyAuthority('manageUser', 'manageURL', 'mdsSchemaAccess', 'mdsDataAccess')")
     List<MotechUserProfile> getOpenIdUsers();
 
     /**
