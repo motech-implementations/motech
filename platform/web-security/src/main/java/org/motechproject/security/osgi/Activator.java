@@ -30,7 +30,7 @@ import javax.servlet.ServletException;
  */
 public class Activator implements BundleActivator {
     private static final Logger LOGGER = LoggerFactory.getLogger(Activator.class);
-    private static final String CONTEXT_CONFIG_LOCATION = "classpath:META-INF/osgi/applicationWebSecurityBundle.xml";
+    private static final String CONTEXT_CONFIG_LOCATION = "classpath:META-INF/spring/applicationWebSecurityBundle.xml";
     private static final String SERVLET_URL_MAPPING = "/websecurity/api";
     private static final String RESOURCE_URL_MAPPING = "/websecurity";
     private static final String RESOURCE_URL_PATH = "websecurity";

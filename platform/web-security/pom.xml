@@ -113,10 +113,10 @@
                 <!--</exclusion>-->
             <!--</exclusions>-->
         <!--</dependency>-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.google.guice</groupId>
             <artifactId>com.springsource.com.google.inject</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xerces</artifactId>
@@ -244,7 +244,7 @@
                             org.springframework.cglib.core,
                             org.springframework.cglib.reflect,
                             org.eclipse.gemini.blueprint.extensions.annotation,
-                            com.google.inject,
+                            com.google.inject;version=2.0,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

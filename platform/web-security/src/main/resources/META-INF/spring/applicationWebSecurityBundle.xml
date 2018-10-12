@@ -19,13 +19,13 @@
         <osgi:registration-listener ref="rolePermissionRegListener" />
     </osgi:service>
 
-    <osgi:service ref="roleService" interface="org.motechproject.security.service.MotechRoleService">
+    <osgi:service ref="motechRoleService" interface="org.motechproject.security.service.MotechRoleService">
         <osgi:registration-listener ref="rolePermissionRegListener" />
     </osgi:service>
 
-    <osgi:service  ref="userService" interface="org.motechproject.security.service.MotechUserService"/>
+    <osgi:service  ref="motechUserService" interface="org.motechproject.security.service.MotechUserService"/>
 
-    <osgi:service  ref="recoveryService" interface="org.motechproject.security.service.PasswordRecoveryService" />
+    <osgi:service  ref="passwordRecoveryService" interface="org.motechproject.security.service.PasswordRecoveryService" />
 
     <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass" value="org.motechproject.osgi.web.BundledJspView"/>
