@@ -244,7 +244,6 @@
                             org.springframework.cglib.core,
                             org.springframework.cglib.reflect,
                             org.eclipse.gemini.blueprint.extensions.annotation,
-                            com.google.inject;version=2.0,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

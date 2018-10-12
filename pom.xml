@@ -1305,6 +1305,10 @@
                 <version>${spring.security.openid.version}-${external.dependency.release.tag.new}</version>
                 <exclusions>
                     <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-openid</artifactId>
+                    </exclusion>
+                    <exclusion>
                         <groupId>org.springframework</groupId>
                         <artifactId>spring-beans</artifactId>
                     </exclusion>
@@ -1370,6 +1374,10 @@
                       <exclusion>
                           <groupId>commons-logging</groupId>
                           <artifactId>commons-logging</artifactId>
+                      </exclusion>
+                      <exclusion>
+                            <groupId>org.openid4java</groupId>
+                            <artifactId>openid4java-nodeps</artifactId>
                       </exclusion>
                 </exclusions>
             </dependency>
