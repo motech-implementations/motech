@@ -37,7 +37,7 @@ import java.util.List;
  * Implementation of the {@link org.motechproject.security.service.PasswordRecoveryService}
  * Responsible for password recovery.
  */
-@Service
+@Service("passwordRecoveryService")
 public class PasswordRecoveryServiceImpl implements PasswordRecoveryService {
     private static final Logger LOGGER = LoggerFactory.getLogger(PasswordRecoveryServiceImpl.class);
 

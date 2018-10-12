@@ -142,7 +142,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Spring-Context> *;timeout:=600</Spring-Context>
+                        <Spring-Context> *;timeout:=300</Spring-Context>
                         <BluePrint-Enabled>true</BluePrint-Enabled>
                         <Context-Path>server</Context-Path>
                         <Resource-path>server/resources</Resource-path>
@@ -173,6 +173,7 @@
                             org.springframework.core,
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                     </instructions>

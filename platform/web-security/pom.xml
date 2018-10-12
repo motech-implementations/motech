@@ -193,7 +193,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Spring-Context> *;timeout:=600</Spring-Context>
+                        <Spring-Context> *;timeout:=300</Spring-Context>
                         <Bundle-Activator>
                             org.motechproject.security.osgi.Activator
                         </Bundle-Activator>
@@ -243,6 +243,8 @@
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
                             org.springframework.cglib.reflect,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
+                            com.google.inject,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

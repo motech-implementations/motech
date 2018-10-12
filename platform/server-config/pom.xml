@@ -105,6 +105,7 @@
                             javax.annotation;version="0.0.0",
                             org.datanucleus.enhancement,
                             org.springframework.core,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                     </instructions>

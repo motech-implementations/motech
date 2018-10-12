@@ -186,6 +186,7 @@
                             org.w3c.dom,
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

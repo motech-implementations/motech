@@ -437,6 +437,7 @@
                             org.aspectj.lang,
                             org.aspectj.runtime.internal,
                             org.apache.bval.util,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                         <!--
