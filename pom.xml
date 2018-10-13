@@ -28,12 +28,11 @@
         <felix.shell.version>1.4.3</felix.shell.version>-->
 
 
-        <felix.version>5.6.10</felix.version>
-        <felix.http.bridge.version>2.3.2</felix.http.bridge.version>
-        <felix.http.version>3.0.2</felix.http.version>
-	    <felix.http.jetty.version>3.2.4</felix.http.jetty.version>
-        <felix.http.api.version>2.3.2</felix.http.api.version>
-        <felix.eventadmin.version>1.5.0</felix.eventadmin.version>
+        <felix.version>6.0.0</felix.version>
+        <felix.http.version>4.0.0</felix.http.version>
+        <felix.http.api.version>3.0.0</felix.http.api.version>
+        <felix.http.proxy.version>3.0.4</felix.http.proxy.version>
+	    <felix.eventadmin.version>1.5.0</felix.eventadmin.version>
         <felix.scr.version>2.1.0</felix.scr.version>
         <felix.shell.version>1.4.3</felix.shell.version>
 
@@ -567,7 +566,17 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.http.bridge</artifactId>
-                <version>${felix.http.bridge.version}</version>
+                <version>${felix.http.version}</version>
+                <exclusions>
+                    <exclusion>
+                    <groupId>commons-fileupload</groupId>
+                    <artifactId>commons-fileupload</artifactId>
+                    </exclusion>
+                    <exclusion>
+                        <groupId>commons-io</groupId>
+                        <artifactId>commons-io</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -1130,12 +1139,18 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.http.proxy</artifactId>
-                <version>${felix.http.api.version}</version>
+                <version>${felix.http.proxy.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.framework</artifactId>
                 <version>${felix.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.codehaus.mojo</groupId>
+                        <artifactId>animal-sniffer-annotations</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
