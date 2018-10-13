@@ -94,6 +94,7 @@
                             org.springframework.transaction,
                             org.motechproject.event.listener,
                             org.datanucleus.enhancement,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>
