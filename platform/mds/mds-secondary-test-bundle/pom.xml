@@ -70,6 +70,8 @@
                             org.motechproject.mds.test.domain.mapdeserialisation,
                             org.motechproject.mds.test.service.differentbundles,
                             org.motechproject.mds.test.service.mapdeserialisation,
+                            org.datanucleus.enhancement,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>
