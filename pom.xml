@@ -35,6 +35,7 @@
 	    <felix.eventadmin.version>1.5.0</felix.eventadmin.version>
         <felix.scr.version>2.1.0</felix.scr.version>
         <felix.shell.version>1.4.3</felix.shell.version>
+        <felix.resolver.version>2.0.0</felix.resolver.version>
 
         <spring.version>4.3.12.RELEASE_1</spring.version>
         <spring.web.version>4.3.12.RELEASE-${external.dependency.release.tag.new}</spring.web.version>
@@ -99,8 +100,13 @@
             <artifactId>org.apache.felix.framework</artifactId>
         </dependency>
         <dependency>
+        <dependency>
+            <groupId>org.apache.felix</groupId>
+            <artifactId>org.apache.felix.resolver</artifactId>
+        </dependency>
+        <dependency>
             <groupId>org.osgi</groupId>
-            <artifactId>org.osgi.core</artifactId>
+            <artifactId>osgi.core</artifactId>
         </dependency>
         <dependency>
             <groupId>org.osgi</groupId>
@@ -473,7 +479,7 @@
             <!-- OSGi -->
             <dependency>
                 <groupId>org.osgi</groupId>
-                <artifactId>org.osgi.core</artifactId>
+                <artifactId>osgi.core</artifactId>
                 <version>6.0.0</version>
             </dependency>
             <dependency>
@@ -1151,6 +1157,11 @@
                         <artifactId>animal-sniffer-annotations</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>org.apache.felix.resolver</artifactId>
+                <version>${felix.resolver.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
