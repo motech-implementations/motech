@@ -22,7 +22,8 @@ import static org.junit.Assert.assertTrue;
 
 @RunWith(PaxExam.class)
 @ExamReactorStrategy(PerSuite.class)
-public class BlueprintContextTrackerBundleIT extends BasePaxIT {
+public class
+BlueprintContextTrackerBundleIT extends BasePaxIT {
 
     private static final int WAIT_TIME = 5000;
 

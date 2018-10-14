@@ -102,6 +102,10 @@
                 </exclusion>
             </exclusions>
         </dependency>
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient-osgi</artifactId>
+        </dependency>
     </dependencies>
 
     <build>
@@ -186,6 +190,7 @@
                             org.springframework.core,
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
+                            org.apache.http.client,
                             *
                         </Import-Package>
                         <Export-Package>
