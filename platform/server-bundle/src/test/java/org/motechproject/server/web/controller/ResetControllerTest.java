@@ -78,7 +78,6 @@ public class ResetControllerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE
     public void testInvalidTokenOnView() throws Exception {
         ResetViewData expected = getResetViewData(true, false, null, new ResetForm());
 
@@ -90,7 +89,6 @@ public class ResetControllerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE
     public void testValidView() throws Exception {
         ResetViewData expected = getResetViewData(false, false, null, getResetForm(TOKEN, null, null));
 
@@ -104,7 +102,6 @@ public class ResetControllerTest {
     }
 
     @Test
-    @Ignore //TODO UPGRADE
     public void testValidationErrors() throws Exception {
         ResetViewData expected = getResetViewData(false, false, asList(ERROR), getResetForm(TOKEN, null, null));
 
