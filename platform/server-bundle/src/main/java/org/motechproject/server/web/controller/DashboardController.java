@@ -27,7 +27,7 @@ import static org.motechproject.commons.date.util.DateUtil.now;
  * The view returned by this controller will embed the UI of the currently requested module.
  */
 @Controller
-@PreAuthorize("hasRole('viewUI')")
+@PreAuthorize("hasAuthority('viewUI')")
 public class DashboardController {
 
     private StartupManager startupManager;
