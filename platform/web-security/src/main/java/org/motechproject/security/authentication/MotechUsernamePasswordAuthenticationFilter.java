@@ -10,7 +10,7 @@ public class MotechUsernamePasswordAuthenticationFilter extends UsernamePassword
     @Override
     protected String obtainUsername(HttpServletRequest request) {
         if(StringUtils.isEmpty(super.obtainUsername(request))) {
-            return "motech";
+            return request.getParameter("j_username");
         }
         return super.obtainUsername(request);
     }
@@ -18,7 +18,7 @@ public class MotechUsernamePasswordAuthenticationFilter extends UsernamePassword
     @Override
     protected String obtainPassword(HttpServletRequest request) {
         if(StringUtils.isEmpty(super.obtainPassword(request))) {
-            return "motech";
+            return request.getParameter("j_password");
         }
         return super.obtainPassword(request);
     }
