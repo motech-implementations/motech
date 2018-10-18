@@ -83,8 +83,8 @@
         <property name="filterProcessesUrl" value="/module/server/j_spring_security_logout"/>
     </bean>
 
-    <bean id="userAuthenticationProcessingFilter" class="org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter">
-        <property name="filterProcessesUrl" value="/j_spring_security_check"/>
+    <bean id="userAuthenticationProcessingFilter" class="org.motechproject.security.authentication.MotechUsernamePasswordAuthenticationFilter">
+        <property name="filterProcessesUrl" value="/module/server/motech-platform-server/j_spring_security_check"/>
         <property name="authenticationManager" ref="authenticationManager"/>
         <property name="authenticationFailureHandler" ref="loginMappingFailureHandler"/>
         <property name="authenticationSuccessHandler" ref="loginSuccessHandler"/>
