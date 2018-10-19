@@ -40,8 +40,8 @@ import static org.motechproject.mds.util.Constants.BundleNames.MDS_ENTITIES_SYMB
 @Component
 public class EntitiesBundleMonitor implements BundleListener, ServiceListener {
     private static final Logger LOGGER = LoggerFactory.getLogger(EntitiesBundleMonitor.class);
-    private static final Integer MAX_WAIT_COUNT = 2500;
-    private static final Long WAIT_TIME = 2000L;
+    private static final Integer MAX_WAIT_COUNT = 5000;
+    private static final Long WAIT_TIME = 200L;
 
     private final Object lock = new Object();
 
