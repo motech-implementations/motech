@@ -41,6 +41,12 @@
             <groupId>${project.groupId}</groupId>
             <artifactId>motech-platform-web-security</artifactId>
             <version>${project.version}</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>motech-scheduler</artifactId>
+                    <groupId>org.motechproject</groupId>
+                </exclusion>
+            </exclusions>
         </dependency>
     </dependencies>
 
@@ -70,6 +76,8 @@
                             org.motechproject.mds.test.domain.mapdeserialisation,
                             org.motechproject.mds.test.service.differentbundles,
                             org.motechproject.mds.test.service.mapdeserialisation,
+                            org.datanucleus.enhancement,
+                            org.springframework.core,
                             *
                         </Import-Package>
                     </instructions>
