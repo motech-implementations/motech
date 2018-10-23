@@ -23,16 +23,24 @@ import static org.junit.Assert.assertThat;
 public class RestAPIAuthenticationIT extends BaseTomcatIT {
     private final Logger logger = LoggerFactory.getLogger(getClass());
 
-    @Before
+    //@Before
+    // TODO: make @Before work with mvn install -PIT
     public void setUp() throws Exception {
+        logger.info("Waiting for tomcat in setup");
         waitForTomcat();
+        logger.info("Tomcat has started");
+        logger.info("Creating admin user");
         createAdminUser();
+        logger.info("Admin user is created");
+        logger.info("Logging out admin user");
         logout();
+        logger.info("Admin user is logged out");
     }
 
     @Test
-    public void testThatItShouldAllowRestApiAccessAfterFormAuthentication() throws IOException, JSONException,
-            InterruptedException {
+    public void testThatItShouldAllowRestApiAccessAfterFormAuthentication() throws Exception {
+
+        setUp();
 
         HttpGet statusRequest =
                 new HttpGet(String.format("http://%s:%d/motech-platform-server/module/server/web-api/status", HOST, PORT));

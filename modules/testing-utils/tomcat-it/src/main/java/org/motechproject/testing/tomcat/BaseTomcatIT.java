@@ -70,7 +70,7 @@ public class BaseTomcatIT {
     }
 
     protected void login() throws IOException, InterruptedException {
-        String uri = String.format("http://%s:%d/motech-platform-server/module/server/j_spring_security_check", HOST, PORT);
+        String uri = String.format("http://%s:%d/motech-platform-server/module/server/motech-platform-server/j_spring_security_check", HOST, PORT);
 
         final HttpPost loginPost = new HttpPost(uri);
 
