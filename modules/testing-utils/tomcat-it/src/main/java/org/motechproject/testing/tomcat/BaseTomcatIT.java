@@ -70,7 +70,7 @@ public class BaseTomcatIT {
     }
 
     protected void login() throws IOException, InterruptedException {
-        String uri = String.format("http://%s:%d/motech-platform-server/module/server/motech-platform-server/j_spring_security_check", HOST, PORT);
+        String uri = String.format("http://%s:%d/motech-platform-server/module/server/j_spring_security_check", HOST, PORT);
 
         final HttpPost loginPost = new HttpPost(uri);
 
@@ -83,6 +83,7 @@ public class BaseTomcatIT {
         logger.info("Trying to login into MOTECH as {}", MOTECH);
         HttpResponse response = HTTP_CLIENT.execute(loginPost);
         logger.info("Response status: {}", response.getStatusLine().getStatusCode());
+        logger.info(response.toString());
         EntityUtils.consume(response.getEntity());
         logger.info("Logged into MOTECH as {}", MOTECH);
     }
