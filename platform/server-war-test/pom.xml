@@ -123,13 +123,13 @@
                     <plugin>
                         <groupId>com.googlecode.t7mp</groupId>
                         <artifactId>maven-t7-plugin</artifactId>
-                        <version>0.9.16</version>
+                        <version>0.9.18</version>
                         <configuration>
                             <tomcatHttpPort>${tomcat.port}</tomcatHttpPort>
                             <tomcatShutdownPort>${tomcat.shutdown.port}</tomcatShutdownPort>
                             <tomcatShutdownCommand>SHUTDOWN</tomcatShutdownCommand>
                             <tomcatSetAwait>false</tomcatSetAwait>
-                            <tomcatVersion>7.0.28</tomcatVersion>
+                            <tomcatVersion>8.0.3</tomcatVersion>
                             <lookInside>false</lookInside>
                             <webapps>
                                 <webapp>
