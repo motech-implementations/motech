@@ -500,7 +500,7 @@ public class BasePaxIT {
      */
     protected static void login() throws IOException, InterruptedException {
         final HttpPost loginPost = new HttpPost(
-                String.format("http://localhost:%d/server/motech-platform-server/j_spring_security_check",
+                String.format("http://localhost:%d/module/server/motech-platform-server/j_spring_security_check",
                         TestContext.getJettyPort()));
 
         List<NameValuePair> nvps = new ArrayList<>();
