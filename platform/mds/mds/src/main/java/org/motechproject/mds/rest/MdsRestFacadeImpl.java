@@ -168,7 +168,12 @@ public class MdsRestFacadeImpl<T> implements MdsRestFacade<T> {
             throw operationNotSupportedEx("DELETE");
         }
 
-        dataService.deleteById(id);
+        T instance = dataService.findById(id);
+        if(instance != null) {
+            dataService.delete(instance);
+        } else {
+            new RestEntityNotFoundException("id", id.toString());
+        }
     }
 
     @Override

@@ -289,8 +289,9 @@ public abstract class DefaultMotechDataService<T> implements MotechDataService<T
     }
 
     @Override
+    @Deprecated
     public void deleteById(long id) {
-        delete(Constants.Util.ID_FIELD_NAME, id);
+        throw new  UnsupportedOperationException("DeleteById is not supported.");
     }
 
     @Override
