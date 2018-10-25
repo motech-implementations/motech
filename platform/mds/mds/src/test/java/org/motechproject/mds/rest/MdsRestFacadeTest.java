@@ -294,9 +294,14 @@ public class MdsRestFacadeTest {
     public void shouldDoDeleteOperation() throws IOException {
         setUpCrudAccess(false, false, false, true);
 
-        mdsRestFacade.delete(14L);
+        when(dataService.findById(1L)).thenReturn(recordOne);
+        mdsRestFacade.delete(1L);
+        ArgumentCaptor<Record> captor = ArgumentCaptor.forClass(Record.class);
+        verify(dataService).findById(1L);
+        verify(dataService).delete(captor.capture());
+        assertNotNull(captor.getValue());
+        assertEquals("restTest", captor.getValue().getValue());
 
-        verify(dataService).deleteById(14L);
     }
 
     @Test

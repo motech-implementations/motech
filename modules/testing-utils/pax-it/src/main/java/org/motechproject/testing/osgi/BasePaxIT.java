@@ -78,7 +78,7 @@ public class BasePaxIT {
 
     private static final int DEFAULT_BLUEPRINT_TIMEOUT = 60000; // ms
     private static final int DEFAULT_EXAM_TIMEOUT = 30000; // ms
-    private static final int DEFAULT_HTTP_TIMEOUT = 60; // s
+    private static final int DEFAULT_HTTP_TIMEOUT = 5 * 60; // s
 
     public static final String IGNORE_BUNDLE_LOG_CONFIGS_OPTION = "org.motechproject.logging.ignoreBundles";
     public static final String TESTED_BUNDLE_SYMBOLIC_NAME_OPTION = "org.motechproject.testing.osgi.TestedSymbolicName";

@@ -405,19 +405,20 @@
                             <tomcatSetAwait>false</tomcatSetAwait>
                             <tomcatVersion>8.0.3</tomcatVersion>
                             <lookInside>false</lookInside>
+                            <tomcatConfigDirectory>${basedir}/src/test/resources/conf</tomcatConfigDirectory>
                         </configuration>
                         <executions>
                             <execution>
                                 <id>tomcat-start</id>
                                 <goals>
-                                    <goal>run-forked</goal>
+                                    <goal>run</goal>
                                 </goals>
                                 <phase>pre-integration-test</phase>
                             </execution>
                             <execution>
                                 <id>tomcat-stop</id>
                                 <goals>
-                                    <goal>stop-forked</goal>
+                                    <goal>stop</goal>
                                 </goals>
                                 <phase>post-integration-test</phase>
                             </execution>
