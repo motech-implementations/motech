@@ -50,7 +50,7 @@ public class MotechNativeTestContainer
     private static final Logger LOGGER = LoggerFactory.getLogger(MotechNativeTestContainer.class);
 
     private static final int WAIT_PERIOD = 1500;
-    private static final int MAX_WAIT_RETRIES = 900;
+    private static final int MAX_WAIT_RETRIES = 1200;
 
     private static final String TESTED_SYMBOLIC_NAME = "org.motechproject.testing.osgi.TestedSymbolicName";
     private static final String FAKE_MODULE_STARTUP_EVENT = "org.motechproject.testing.osgi.FakeStartupModulesEvent";
