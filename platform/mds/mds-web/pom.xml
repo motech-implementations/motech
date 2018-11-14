@@ -96,7 +96,7 @@
                         <Context-Path>mds</Context-Path>
                         <Resource-Path>mds/resources</Resource-Path>
                         <Blueprint-Enabled>true</Blueprint-Enabled>
-                        <Spring-Context> *;timeout:=600</Spring-Context>
+                        <Spring-Context> *;timeout:=900</Spring-Context>
                         <Import-Package>
                             net.sf.cglib.core,
                             net.sf.cglib.proxy,
