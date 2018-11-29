@@ -121,6 +121,7 @@
                             org.springframework.core,
                             org.motechproject.security.service,
                             org.w3c.dom,
+                            org.springframework.cglib.reflect,
                             *
                         </Import-Package>
                         <Bundle-DocURL>
