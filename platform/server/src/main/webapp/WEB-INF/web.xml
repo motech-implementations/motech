@@ -52,6 +52,11 @@
         <url-pattern>/module/*</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>proxy</servlet-name>
+        <jsp-file>/org.motechproject.motech-platform-server-bundle/webapp/WEB-INF/jsp/startup.jsp</jsp-file>
+    </servlet>
+
     <error-page>
         <error-code>401</error-code>
         <location>/bootstrap/error/401</location>
