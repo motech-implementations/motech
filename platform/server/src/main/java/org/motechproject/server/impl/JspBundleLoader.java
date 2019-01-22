@@ -51,8 +51,12 @@ public class JspBundleLoader implements BundleLoader, ServletContextAware {
         File destRoot = new File(servletContext.getRealPath("/"));
         try {
             if (tempRoot != null) {
-                tempDir = new File(tempRoot, String.valueOf(bundle.getBundleId()));
-                destDir = new File(destRoot, String.valueOf(bundle.getBundleId()));
+                //tempDir = new File(tempRoot, String.valueOf(bundle.getBundleId()));
+                //destDir = new File(destRoot, String.valueOf(bundle.getBundleId()));
+
+
+                tempDir = tempRoot;
+                destDir = destRoot;
 
                 //search for jars in bundle
                 Enumeration<URL> jars = bundle.findEntries("/", "*.jar", true);

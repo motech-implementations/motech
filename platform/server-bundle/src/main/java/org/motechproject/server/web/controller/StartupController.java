@@ -23,6 +23,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.view.InternalResourceView;
 
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
@@ -93,9 +94,14 @@ public class StartupController {
         ModelAndView view = new ModelAndView("startup");
 
         if (startupManager.canLaunchBundles()) {
+
             view.setViewName(REDIRECT_HOME);
+            //InternalResourceView justview = new InternalResourceView("");
+           // view.setView(justview);
         } else {
-            view.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
+            String bundleStr = Header.generateHeader(bundleContext.getBundle());
+            System.out.println("********************************\n" + bundleStr +"\n*****************");
+            view.addObject("mainHeader",bundleStr);
         }
 
         return view;

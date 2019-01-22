@@ -52,6 +52,62 @@
         <url-pattern>/module/*</url-pattern>
     </servlet-mapping>
 
+   <servlet>
+        <servlet-name>startup</servlet-name>
+        <jsp-file>/webapp/WEB-INF/jsp/startup.jsp</jsp-file>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>startup</servlet-name>
+        <url-pattern>/module/server/startup.do</url-pattern>
+    </servlet-mapping>
+     <servlet>
+         <servlet-name>changePassword</servlet-name>
+         <jsp-file>/webapp/WEB-INF/jsp/changePassword.jsp</jsp-file>
+     </servlet>
+
+     <servlet-mapping>
+         <servlet-name>changePassword</servlet-name>
+         <url-pattern>/module/server/changePassword.do</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>forgot</servlet-name>
+         <jsp-file>/webapp/WEB-INF/jsp/forgot.jsp</jsp-file>
+     </servlet>
+
+     <servlet-mapping>
+         <servlet-name>forgot</servlet-name>
+         <url-pattern>/module/server/forgot.do</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>login</servlet-name>
+         <jsp-file>/webapp/WEB-INF/jsp/loginPage.jsp</jsp-file>
+     </servlet>
+
+     <servlet-mapping>
+         <servlet-name>login</servlet-name>
+         <url-pattern>/module/server/login.do</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>reset</servlet-name>
+         <jsp-file>/webapp/WEB-INF/jsp/reset.jsp</jsp-file>
+     </servlet>
+
+     <servlet-mapping>
+         <servlet-name>reset</servlet-name>
+         <url-pattern>/module/server/reset.do</url-pattern>
+     </servlet-mapping>
+     <servlet>
+         <servlet-name>index</servlet-name>
+         <jsp-file>/webapp/WEB-INF/jsp/index.jsp</jsp-file>
+     </servlet>
+
+     <servlet-mapping>
+         <servlet-name>index</servlet-name>
+         <url-pattern>/module/server/index.do</url-pattern>
+     </servlet-mapping>
+
+
     <error-page>
         <error-code>401</error-code>
         <location>/bootstrap/error/401</location>
