@@ -82,6 +82,6 @@ public class LoginControllerTest {
                 get("/login")
         ).andReturn().getModelAndView();
 
-        assertEquals("loginPage", actualModelAndView.getViewName());
+        assertEquals("redirect:login.do", actualModelAndView.getViewName());
     }
 }

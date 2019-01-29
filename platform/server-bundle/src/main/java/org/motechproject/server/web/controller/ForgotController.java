@@ -54,8 +54,9 @@ public class ForgotController {
             return new ModelAndView(Constants.REDIRECT_STARTUP);
         }
 
-        ModelAndView view = new ModelAndView("forgot");
-        view.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
+        ModelAndView view = new ModelAndView("redirect:forgot.do");
+
+//        view.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
         view.addObject("error", request.getParameter("error"));
 
         return view;

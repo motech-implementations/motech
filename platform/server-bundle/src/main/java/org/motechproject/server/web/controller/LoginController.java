@@ -47,14 +47,12 @@ public class LoginController {
         }
 
         if (startupManager.isConfigRequired()) {
-            ModelAndView view =  new  ModelAndView(Constants.REDIRECT_STARTUP);
-//            InternalResourceView justview = new InternalResourceView("/webapp/WEB-INF/jsp/startup.jsp");
-//            view.setView(justview);
+            ModelAndView view =  new  ModelAndView(Constants.REDIRECT_STARTUP);;
             return view;
         }
 
-        ModelAndView view = new ModelAndView("loginPage");
-        view.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
+        ModelAndView view = new ModelAndView("redirect:login.do");
+//        view.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
         response.addHeader("login-required", "true");
 
         return view;

@@ -29,6 +29,10 @@
     <servlet>
         <servlet-name>proxy</servlet-name>
         <servlet-class>org.motechproject.server.impl.ProxyServlet</servlet-class>
+        <!--<init-param>
+            <param-name>jspFile</param-name>
+            <param-value>/org.motechproject.motech-platform-server-bundle/webapp/WEB-INF/jsp/</param-value>
+        </init-param>-->
         <load-on-startup>2</load-on-startup>
     </servlet>
     
@@ -104,7 +108,7 @@
 
      <servlet-mapping>
          <servlet-name>index</servlet-name>
-         <url-pattern>/module/server/index.do</url-pattern>
+         <url-pattern>/module/server/home</url-pattern>
      </servlet-mapping>
 
 

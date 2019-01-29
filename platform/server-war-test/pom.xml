@@ -129,7 +129,7 @@
                             <tomcatShutdownPort>${tomcat.shutdown.port}</tomcatShutdownPort>
                             <tomcatShutdownCommand>SHUTDOWN</tomcatShutdownCommand>
                             <tomcatSetAwait>false</tomcatSetAwait>
-                            <tomcatVersion>8.0.3</tomcatVersion>
+                            <tomcatVersion>8.5.4</tomcatVersion>
                             <lookInside>false</lookInside>
                             <tomcatConfigDirectory>${basedir}/../server/src/test/resources/conf</tomcatConfigDirectory>
                             <webapps>

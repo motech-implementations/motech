@@ -53,8 +53,7 @@ public class ResetController {
 
     @RequestMapping(value = "/changepassword", method = RequestMethod.GET)
     public ModelAndView changePasswordView(HttpServletRequest request) {
-        ModelAndView mav = new ModelAndView("changePassword");
-        mav.addObject("mainHeader", Header.generateHeader(bundleContext.getBundle()));
+        ModelAndView mav = new ModelAndView("reset:changePassword.do");
 
         return mav;
     }
