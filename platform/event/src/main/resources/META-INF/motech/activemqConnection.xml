@@ -22,9 +22,17 @@
         <constructor-arg value="#{tenantIdentity.getId()}-${jms.topic.for.events}"/>
     </bean>
 
+
+
+    <bean id="prefetchPolicy" class="org.apache.activemq.ActiveMQPrefetchPolicy">
+        <property name="queuePrefetch" value="1" />
+    </bean>
+
+
     <bean id="connectionFactory" class="org.motechproject.event.messaging.MotechCachingConnectionFactory" destroy-method="destroy">
         <property name="targetConnectionFactory">
             <bean class="org.apache.activemq.ActiveMQConnectionFactory">
+                <property name="prefetchPolicy" ref="prefetchPolicy" />
                 <property name="brokerURL" value="${jms.broker.url}"/>
                 <property name="trustAllPackages" value="true"/>
                 <property name="redeliveryPolicy.maximumRedeliveries" value="0"/>
