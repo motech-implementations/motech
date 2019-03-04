@@ -25,7 +25,7 @@
 
 
     <bean id="prefetchPolicy" class="org.apache.activemq.ActiveMQPrefetchPolicy">
-        <property name="queuePrefetch" value="1" />
+        <property name="queuePrefetch" value="0" />
     </bean>
 
 
