@@ -96,7 +96,7 @@
                         <Context-Path>mds</Context-Path>
                         <Resource-Path>mds/resources</Resource-Path>
                         <Blueprint-Enabled>true</Blueprint-Enabled>
-                        <Spring-Context> *;timeout:=600</Spring-Context>
+                        <Spring-Context> *;timeout:=900</Spring-Context>
                         <Import-Package>
                             net.sf.cglib.core,
                             net.sf.cglib.proxy,
@@ -119,6 +119,9 @@
                             org.springframework.cglib.core,
                             org.springframework.cglib.proxy,
                             org.springframework.core,
+                            org.motechproject.security.service,
+                            org.w3c.dom,
+                            org.springframework.cglib.reflect,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

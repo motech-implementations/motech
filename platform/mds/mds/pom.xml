@@ -353,6 +353,7 @@
                 <configuration>
                     <instructions>
                         <Blueprint-Enabled>true</Blueprint-Enabled>
+                        <Spring-Context> *;timeout:=600</Spring-Context>
                         <Export-Package>
                             org.motechproject.mds.annotations;version=${project.version},
                             org.motechproject.mds.builder;version=${project.version},
@@ -437,6 +438,7 @@
                             org.aspectj.lang,
                             org.aspectj.runtime.internal,
                             org.apache.bval.util,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                         <!--

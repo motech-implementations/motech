@@ -29,9 +29,10 @@
 
 
         <felix.version>5.6.10</felix.version>
+        <felix.http.bridge.version>2.3.2</felix.http.bridge.version>
         <felix.http.version>3.0.2</felix.http.version>
 	    <felix.http.jetty.version>3.2.4</felix.http.jetty.version>
-        <felix.http.api.version>3.0.0</felix.http.api.version>
+        <felix.http.api.version>2.3.2</felix.http.api.version>
         <felix.eventadmin.version>1.5.0</felix.eventadmin.version>
         <felix.scr.version>2.1.0</felix.scr.version>
         <felix.shell.version>1.4.3</felix.shell.version>
@@ -566,7 +567,7 @@
             <dependency>
                 <groupId>org.apache.felix</groupId>
                 <artifactId>org.apache.felix.http.bridge</artifactId>
-                <version>${felix.http.version}</version>
+                <version>${felix.http.bridge.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.felix</groupId>
@@ -1305,6 +1306,10 @@
                 <version>${spring.security.openid.version}-${external.dependency.release.tag.new}</version>
                 <exclusions>
                     <exclusion>
+                        <groupId>org.springframework.security</groupId>
+                        <artifactId>spring-security-openid</artifactId>
+                    </exclusion>
+                    <exclusion>
                         <groupId>org.springframework</groupId>
                         <artifactId>spring-beans</artifactId>
                     </exclusion>
@@ -1371,10 +1376,14 @@
                           <groupId>commons-logging</groupId>
                           <artifactId>commons-logging</artifactId>
                       </exclusion>
+                      <exclusion>
+                            <groupId>org.openid4java</groupId>
+                            <artifactId>openid4java-nodeps</artifactId>
+                      </exclusion>
                 </exclusions>
             </dependency>
             <!-- Guice in version 2.0 required for OpenID4java -->
-            <dependency>
+            <!--<dependency>
                 <groupId>com.google.guice</groupId>
                 <artifactId>com.springsource.com.google.inject</artifactId>
                 <version>2.0.0</version>
@@ -1384,7 +1393,7 @@
                         <artifactId>com.springsource.org.aopalliance</artifactId>
                     </exclusion>
                 </exclusions>
-            </dependency>
+            </dependency>-->
             <dependency>
                 <groupId>org.ops4j.base</groupId>
                 <artifactId>ops4j-base-util-property</artifactId>

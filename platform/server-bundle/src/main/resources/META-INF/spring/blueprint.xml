@@ -26,11 +26,11 @@
     <osgi:service id="localeServiceOsgi" auto-export="interfaces" ref="localeService"
                   interface="org.motechproject.osgi.web.LocaleService"/>
 
-    <osgi:reference id="userService" interface="org.motechproject.security.service.MotechUserService"/>
+    <osgi:reference id="motechUserService" interface="org.motechproject.security.service.MotechUserService"/>
 
-    <osgi:reference id="roleService" interface="org.motechproject.security.service.MotechRoleService"/>
+    <osgi:reference id="motechRoleService" interface="org.motechproject.security.service.MotechRoleService"/>
 
-    <osgi:reference id="recoveryService" interface="org.motechproject.security.service.PasswordRecoveryService"/>
+    <osgi:reference id="passwordRecoveryService" interface="org.motechproject.security.service.PasswordRecoveryService"/>
 
     <osgi:reference id="eventAdmin" interface="org.osgi.service.event.EventAdmin"/>
 

@@ -28,7 +28,7 @@ import java.util.Properties;
 public class SettingsFacade {
 
     private static final Logger LOGGER = LoggerFactory.getLogger(SettingsFacade.class);
-    private static final int CONFIG_SERVICE_WAIT_TIME = 10000; // 10s
+    private static final int CONFIG_SERVICE_WAIT_TIME = 100000; // 10s
 
     private ConfigurationService configurationService;
 

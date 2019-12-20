@@ -113,10 +113,10 @@
                 <!--</exclusion>-->
             <!--</exclusions>-->
         <!--</dependency>-->
-        <dependency>
+        <!--<dependency>
             <groupId>com.google.guice</groupId>
             <artifactId>com.springsource.com.google.inject</artifactId>
-        </dependency>
+        </dependency>-->
         <dependency>
             <groupId>org.apache.servicemix.bundles</groupId>
             <artifactId>org.apache.servicemix.bundles.xerces</artifactId>
@@ -193,7 +193,7 @@
                 <extensions>true</extensions>
                 <configuration>
                     <instructions>
-                        <Spring-Context> *;timeout:=600</Spring-Context>
+                        <Spring-Context> *;timeout:=300</Spring-Context>
                         <Bundle-Activator>
                             org.motechproject.security.osgi.Activator
                         </Bundle-Activator>
@@ -243,6 +243,7 @@
                             org.springframework.cglib.proxy,
                             org.springframework.cglib.core,
                             org.springframework.cglib.reflect,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                         <Bundle-DocURL>

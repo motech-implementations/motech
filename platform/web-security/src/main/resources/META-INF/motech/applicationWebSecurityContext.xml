@@ -19,6 +19,7 @@
 
     <context:annotation-config/>
     <context:component-scan base-package="org.motechproject.security"/>
+    <context:component-scan base-package="org.motechproject.security.service"/>
 
     <mvc:annotation-driven/>
 </beans>

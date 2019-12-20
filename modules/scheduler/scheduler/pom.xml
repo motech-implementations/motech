@@ -179,6 +179,7 @@
                             org.springframework.validation.beanvalidation,
                             org.apache.commons.pool.impl,
                             javax.jdo.annotations,
+                            org.eclipse.gemini.blueprint.extensions.annotation,
                             *
                         </Import-Package>
                         <!-- Spring context support has optional import of Quartz. This gives runtime exception.

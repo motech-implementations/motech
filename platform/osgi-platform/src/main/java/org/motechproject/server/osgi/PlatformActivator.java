@@ -76,9 +76,6 @@ public class PlatformActivator implements BundleActivator {
         // start the http bridge
         startBundles(BundleType.HTTP_BUNDLE);
 
-        // start platform bundles common ones depends on
-        startBundles(BundleType.PLATFORM_BUNDLE_PRE_MDS_COMMON);
-
         // start platform bundles on which MDS depends on
         startBundles(BundleType.PLATFORM_BUNDLE_PRE_MDS);
 
@@ -118,7 +115,6 @@ public class PlatformActivator implements BundleActivator {
 
         platformStarted();
 
-        startBundles(BundleType.MOTECH_MODULE);
         LOGGER.info("MOTECH Platform started");
     }
 
@@ -264,8 +260,7 @@ public class PlatformActivator implements BundleActivator {
     private void startupModules() {
         synchronized (lock) {
             if (httpServiceRegistered && startupEventReceived && platformStarted) {
-                //TODO UPGRADE WHY SHOULD THEY BE STARTED HERE - Starting in platformactivator above
-                //startBundles(BundleType.MOTECH_MODULE);
+                startBundles(BundleType.MOTECH_MODULE);
             }
         }
     }

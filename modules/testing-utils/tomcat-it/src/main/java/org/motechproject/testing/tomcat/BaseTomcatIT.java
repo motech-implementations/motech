@@ -83,6 +83,7 @@ public class BaseTomcatIT {
         logger.info("Trying to login into MOTECH as {}", MOTECH);
         HttpResponse response = HTTP_CLIENT.execute(loginPost);
         logger.info("Response status: {}", response.getStatusLine().getStatusCode());
+        logger.info(response.toString());
         EntityUtils.consume(response.getEntity());
         logger.info("Logged into MOTECH as {}", MOTECH);
     }

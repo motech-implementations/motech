@@ -182,6 +182,11 @@
                             org.eclipse.gemini.blueprint.config,
                             org.springframework.security.config,
                             org.datanucleus.enhancement,
+                            org.springframework.validation.beanvalidation,
+                            org.springframework.core,
+                            org.springframework.cglib.proxy,
+                            org.springframework.cglib.core,
+                            org.springframework.cglib.reflect,
                             *
                         </Import-Package>
                         <Export-Package>

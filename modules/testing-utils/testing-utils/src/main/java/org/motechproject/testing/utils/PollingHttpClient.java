@@ -34,7 +34,7 @@ public class PollingHttpClient {
      * timeout of 1 minute.
      */
     public PollingHttpClient() {
-        this(new DefaultHttpClient(), 60);
+        this(new DefaultHttpClient(), 5 * 60 /* 5 Minutes */);
     }
 
     /**
@@ -174,9 +174,10 @@ public class PollingHttpClient {
                     response = httpClient.execute(httpUriRequest);
 
                     if (responseNotFound(response, expectedErrorCode)) {
+                        LOGGER.info(httpUriRequest.toString());
                         LOGGER.warn("Response not found. Thread stopped for 2 seconds.");
                         if (response != null) {
-                            LOGGER.warn("Response status: {}", response.getStatusLine().getStatusCode());
+                            LOGGER.warn("Response status: {}, Expected status: {}", response.getStatusLine().getStatusCode(), expectedErrorCode);
                         }
                         Thread.sleep(2 * MILLIS_PER_SEC);
                     }
@@ -186,6 +187,7 @@ public class PollingHttpClient {
                 }
 
                 waitingFor = System.currentTimeMillis() - startTime;
+                LOGGER.info("Waited for {}s, remaining {}s", (int)(waitingFor/1000), maxWaitPeriodInSeconds);
             } while (responseNotFound(response, expectedErrorCode) && waitingFor < timeoutInMillis);
 
             return response == null ? null : responseHandler.handleResponse(response);

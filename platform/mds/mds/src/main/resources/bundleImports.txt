@@ -69,5 +69,6 @@ org.datanucleus.util,
 org.datanucleus.identity,
 org.aspectj.lang,
 org.aspectj.runtime.internal,
-org.apache.bval.util
+org.apache.bval.util,
+ org.eclipse.gemini.blueprint.extensions.annotation
 

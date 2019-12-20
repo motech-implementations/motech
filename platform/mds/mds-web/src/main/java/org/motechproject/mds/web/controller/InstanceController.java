@@ -284,7 +284,7 @@ public class InstanceController extends MdsController {
         if (gridSettings.getFields() == null) {
             return null;
         } else {
-            return objectMapper.readValue(gridSettings.getFields(), new TypeReference() {});
+            return objectMapper.readValue(gridSettings.getFields(), new TypeReference<Object>() {});
         }
     }
 

@@ -139,7 +139,7 @@ public class WebSecurityBundleIT extends BaseIT {
     }
 
     @Test
-    @Ignore //TODO UPGRADE ATISH
+    @Ignore // This test requires motech-osgi-integration-tests bundle to .motech/bundles.
     public void testUpdatingProxyOnRestart() throws InterruptedException, BundleException, IOException, ClassNotFoundException, InvalidSyntaxException {
         getLogger().info("Build 1st custom security configuration");
         MotechSecurityConfiguration config = SecurityTestConfigBuilder.buildConfig("noSecurity", null, null);
@@ -154,8 +154,7 @@ public class WebSecurityBundleIT extends BaseIT {
         int defaultSize = manager.getDefaultSecurityConfiguration().getSecurityRules().size();
         getLogger().info("Number of default security rules: " + defaultSize);
 
-        // TODO atish add +2
-        assertEquals(1 + defaultSize, manager.getFilterChainProxy().getFilterChains().size());
+        assertEquals(3 + defaultSize, manager.getFilterChainProxy().getFilterChains().size());
 
         getLogger().info("Build 2nd custom security configuration");
         MotechSecurityConfiguration updatedConfig = SecurityTestConfigBuilder.buildConfig("addPermissionAccess", "anyPermission", null);
@@ -163,9 +162,8 @@ public class WebSecurityBundleIT extends BaseIT {
 
         restartSecurityBundle();
 
-        // TODO atish add +2
         manager = getFromContext(MotechProxyManager.class);
-        assertEquals(2 + defaultSize, manager.getFilterChainProxy().getFilterChains().size());
+        assertEquals(4 + defaultSize, manager.getFilterChainProxy().getFilterChains().size());
     }
 
     private void updateSecurity(String fileName) throws IOException, InterruptedException {

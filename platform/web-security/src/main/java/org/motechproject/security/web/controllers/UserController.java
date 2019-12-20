@@ -214,7 +214,11 @@ public class UserController {
     public String handlePasswordValidatorException(HttpServletRequest request, PasswordValidatorException ex) {
         LOGGER.debug("Password did not pass validation: {}", ex.getMessage());
 
-        Locale locale = localeService.getUserLocale(request);
+        Locale locale = Locale.ENGLISH;
+        if(localeService != null ) {
+             locale = localeService.getUserLocale(request);
+        }
+
         String errorMsg = settingService.getPasswordValidator().getValidationError(locale);
 
         return "literal:" + errorMsg;
@@ -244,8 +248,8 @@ public class UserController {
         this.settingService = settingService;
     }
 
-    @Autowired
-    public void setLocaleService(LocaleService localeService) {
-        this.localeService = localeService;
-    }
+//    @Autowired
+//    public void setLocaleService(LocaleService localeService) {
+//        this.localeService = localeService;
+//    }
 }
